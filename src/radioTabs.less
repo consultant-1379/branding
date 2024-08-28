@@ -1,0 +1,147 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebRadioTabs {
+    position: relative;
+    border-top: 1px solid @white;
+    white-space: nowrap;
+
+    // This is needed to avoid issues with floats.
+    display: inline-block;
+    width: 100%;
+
+    &-input {
+        display: none;
+    }
+    &-label {
+        float: left;
+        padding: 8px 20px 7px;
+
+        position: relative;
+        cursor: pointer;
+        color: #000000;
+        margin-left: -1px;
+        border-bottom: 1px solid #cccccc;
+
+        .applyVerticalGradient(@white, darken(@white, 10%), '#FFFFFFFF', '#FFE6E6E6');
+
+        .applyBorderRadius(~"3px 3px 0 0");
+        .applyBoxShadow(~"inset 0 1px 0 #CCCCCC, inset 1px 0 0 #CCCCCC, inset -1px 0 0 #CCCCCC");
+
+        &_more, &_more_active {
+            padding: 8px 10px 7px;
+            height: 100%;
+
+            .ebIcon {
+                &:hover {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &_more_active{
+
+        }
+
+        &:nth-child(2) {
+            margin-left: 0;
+        }
+        &:hover {
+            .applyVerticalGradient(darken(@white, 5%), @white, '#FFF2F2F2', '#FFFFFFFF');
+        }
+        &:active {
+            .applyVerticalGradient(darken(@white, 10%), @white, '#FFE6E6E6', '#FFFFFFFF');
+        }
+    }
+
+    &-contents {
+        margin-top: 27px;
+        border-top: 1px solid #cccccc;
+        white-space: normal;
+
+        &:after {
+            content: "";
+            height: 0;
+            display: block;
+            clear: both;
+        }
+    }
+
+    &-content {
+        margin-top: 2.4rem;
+        display: none;
+    }
+
+    &-input[type=radio]:checked + .ebRadioTabs-label {
+        background: white;
+        border-bottom-color: white;
+        color: #333333;
+    }
+
+    &-List {
+        position: absolute;
+        z-index: 10;
+        min-width: 60px;
+
+        padding: 5px 0 10px 0;
+        margin: 15px 0 0;
+        right: 0;
+
+        list-style: none;
+        background-color: @white;
+        border: lighten(@black, 75%) solid 1px;
+
+        .applyBoxShadow(~'0 0 5px 0', fade(@black, 20%));
+        .applyBorderRadius(2px);
+
+        &-separator {
+            height: 10px;
+            margin: 0 10px 10px 10px;
+            border-bottom: 1px solid #DCDCDC;
+        }
+        &-item {
+            max-width: 200px;
+            padding: 0px 10px;
+            line-height: 30px;
+            font-size: 1.2rem;
+
+            background-color: @white;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            &:hover {
+                .applyTintBg(@textLinkBlue, 0.1);
+            }
+        }
+    }
+
+    &-input[type=radio]:nth-of-type(1):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(1) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(2):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(2) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(3):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(3) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(4):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(4) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(5):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(5) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(6):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(6) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(7):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(7) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(8):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(8) {
+        display: block;
+    }
+    &-input[type=radio]:nth-of-type(9):checked ~ .ebRadioTabs-contents > .ebRadioTabs-content:nth-child(9) {
+        display: block;
+    }
+
+}

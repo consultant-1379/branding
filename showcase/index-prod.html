@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asset Library</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="assets/1/css/assets.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/1/css/systemBar.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var require = {
+            paths: {
+                jscore: 'jscore/1'
+            }
+        };
+    </script>
+    <script src="jscore/1/require/require.js"></script>
+    <script>
+        require(['asset-library/AssetLibrary'], function (App) {
+            var currentApp = new App();
+            currentApp.start(document.getElementById('container'));
+        });
+    </script>
+</body>
+</html>

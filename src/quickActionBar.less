@@ -1,0 +1,72 @@
+@import "common/mixins";
+
+.ebQuickActionBar {
+    margin-top: 1.2rem;
+    padding: 0.4rem 0;
+    background-color: #E6E6E6;
+    font-size: 0;
+
+    .applyBorderRadius(3px);
+
+    > * {
+        margin-left: 0.4rem;
+        margin-right: 0.4rem;
+        vertical-align: middle;
+    }
+
+    &-iconHolder {
+        display: inline-block;
+        vertical-align: middle;
+        height: 1.6rem;
+    }
+    &-separator {
+        display: inline-block;
+        vertical-align: middle;
+        border-left: 1px solid #CCCCCC;
+        margin: 0 8px;
+        height: 2.4rem;
+    }
+
+    // TODO: &-Commands is deprecated! Should be removed.
+    &-Commands, &-commands {
+        display: inline-block;
+        margin: 0;
+        font-size: 0;
+
+        // TODO: &-Commands-iconHolder is deprecated! Should be removed.
+        &-iconHolder {
+            display: inline-block;
+            vertical-align: middle;
+            height: 1.6rem;
+        }
+        // TODO: &-Commands-separator is deprecated! Should be removed.
+        &-separator {
+            display: inline-block;
+            vertical-align: middle;
+            border-left: 1px solid #CCCCCC;
+            margin: 0 8px;
+            height: 2.4rem;
+        }
+
+        > * {
+            margin-left: 0.4rem;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+
+        // TODO: &-Commands-block is deprecated! Should be removed.
+        &-block, &Block {
+            margin: 0 0.8rem;
+            display: inline-block;
+
+            > * {
+                margin-left: 0.4rem;
+                margin-right: 0.4rem;
+                vertical-align: middle;
+            }
+            :last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

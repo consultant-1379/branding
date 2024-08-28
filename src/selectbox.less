@@ -1,0 +1,169 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+@additionalWidth: 35px;
+@textIconDiffWidth: 6px;
+
+@selectMini: (@miniW + @additionalWidth);
+@selectSmall: (@smallW + @additionalWidth);
+@selectDefault: (@defaultW + @additionalWidth);
+@selectLong: (@longW + @additionalWidth);
+@selectxLong: (@xLongW + @additionalWidth);
+
+.ebSelect {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+    height: @defaultHeight;
+    width: @selectDefault;
+
+    // TODO: &-list is deprecated! Should be removed.
+    &-list, &-body {
+        position: absolute;
+        margin-top: 6px;
+        display: none;
+        width: 100%;
+
+        &_rightAlign {
+            right: 0;
+        }
+    }
+
+    // TODO: &-Header is deprecated! Should be removed.
+    &-Header, &-header {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+        padding: 6px 8px;
+
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+
+        text-align: left;
+        text-decoration: none;
+        white-space: nowrap;
+        color: lighten(@black, 20%);
+
+        background-color: @white;
+        border: none;
+
+        cursor: pointer;
+
+        .applyBoxShadow(~'inset 0 0 0 1px', fade(@black, 20%));
+        .applyBorderRadius(3px);
+        .applyBoxSizing(~'border-box');
+
+        .applyButtonDefaultVGradient();
+
+        .ebSelect-value {
+            display: inline-block;
+            vertical-align: middle;
+
+            width: @defaultW + @textIconDiffWidth;
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .ebSelect-iconHolder {
+            display: inline-block;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        &:hover {
+            .applyButtonHoverVGradient();
+        }
+        &:active {
+            .applyButtonActiveVGradient();
+        }
+    }
+
+    // TODO: &-Header, &-list are deprecated! Should be removed.
+    .ebSelect-Header:focus + .ebSelect-list,
+    .ebSelect-header:focus + .ebSelect-body,
+    .ebSelect-Header:active + .ebSelect-list,
+    .ebSelect-header:active + .ebSelect-body,
+    &:focus > .ebSelect-list,
+    &:focus > .ebSelect-body,
+    &:active > .ebSelect-list,
+    &:active > .ebSelect-body {
+        display: block;
+    }
+
+    &_disabled {
+        // TODO: &-Header is deprecated! Should be removed.
+        .ebSelect-Header, .ebSelect-header {
+            background: rgba(0, 0, 0, 0.1);
+            color: #B2B2B2;
+
+            &, &:hover, &:active, .ebSelect-iconHolder:hover {
+                .applyDisabledFormAction();
+            }
+
+            &:hover, &:active {
+                background: rgba(0, 0, 0, 0.1);
+                color: #B2B2B2;
+            }
+
+            .ebSelect-iconHolder,
+            .ebSelect-iconHolder:hover,
+            .ebSelect-iconHolder:active {
+                opacity: 0.3;
+            }
+        }
+
+        // TODO: .ebSelect-Header, .ebSelect-body are deprecated! Should be removed.
+        .ebSelect-Header:focus + .ebSelect-list,
+        .ebSelect-header:focus + .ebSelect-body,
+        .ebSelect-Header:active + .ebSelect-list,
+        .ebSelect-header:active + .ebSelect-body,
+        &:focus > .ebSelect-list,
+        &:focus > .ebSelect-body,
+        &:active > .ebSelect-list,
+        &:active > .ebSelect-body {
+            display: none;
+        }
+    }
+
+    // TODO: &_wMargin is deprecated! Should be removed.
+    &_wMargin {
+        margin: 6px;
+    }
+
+    // TODO: &_miniW, &_smallW, &_longW, &_xLongW are deprecated! Should be removed.
+    &_miniW, &_width_mini {
+        width: @selectMini;
+        .ebSelect-value {
+            width: (@miniW + @textIconDiffWidth);
+        }
+
+    }
+    &_smallW, &_width_small {
+        width: @selectSmall;
+        .ebSelect-value {
+            width: (@smallW + @textIconDiffWidth);//(@selectSmall - @iconWidth);
+        }
+    }
+    &_longW, &_width_long {
+        width: @selectLong;
+        .ebSelect-value {
+            width: (@selectLong - @additionalWidth + @textIconDiffWidth);
+        }
+    }
+    &_xLongW, &_width_xLong {
+        width: @selectxLong;
+        .ebSelect-value {
+            width: (@selectxLong - @additionalWidth + @textIconDiffWidth);
+        }
+    }
+}

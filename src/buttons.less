@@ -1,0 +1,144 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+//mixin for coloured buttons
+.colored {
+    .applyVerticalGradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), '#00000000', '#33000000');
+
+    &:hover {
+        .applyVerticalGradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), '#00000000', '#1A000000');
+    }
+    &:active {
+        .applyVerticalGradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), '#33000000', '#00000000');
+    }
+}
+
+@btnSmallHeight: 2.0rem;
+@btnLargeHeight: 3.8rem;
+
+.ebBtn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: lighten(@black, 20%);
+    background-color: @white;
+    border: none;
+    min-width: 60px;
+
+    .applyBoxShadow(~'inset 0 0 0 1px', fade(@black, 20%));
+    .applyBorderRadius(3px);
+    .applyBoxSizing(~'border-box');
+
+    padding: 0 8px;
+    line-height: 2.4rem;
+    height: @defaultHeightRem;
+
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+
+    > * {
+        vertical-align: middle;
+    }
+
+    .applyButtonDefaultVGradient();
+    &:hover {
+        text-decoration: none;
+        .applyButtonHoverVGradient();
+    }
+    &:active {
+        text-decoration: none;
+        .applyButtonActiveVGradient();
+    }
+
+    &_color {
+        &_blue {
+            .colored();
+            color: #F0F0F0;
+            background-color: #0966b3;
+        }
+
+
+        &_darkBlue {
+            color: #F0F0F0;
+            background-color: #00285E;
+
+            .applyVerticalGradient(#0966b3, #00285E, '#FF0966b3', '#FF00285E');
+
+            &:hover {
+                .applyVerticalGradient(#2275bb, #0D3366, '#CC0966b3', '#D400285E');
+            }
+            &:active {
+                .applyVerticalGradient(#00285E, #0966b3, '#FF00285E', '#FF0966b3');
+            }
+        }
+        &_paleBlue {
+            .colored();
+            color: #F0F0F0;
+            background-color: #00A9D4;
+        }
+        &_darkGreen {
+            .colored();
+            color: #F0F0F0;
+            background-color: #00625F;
+        }
+        &_green {
+            .colored();
+            color: #F0F0F0;
+            background-color: #89BA17;
+        }
+        &_orange {
+            .colored();
+            color: #F0F0F0;
+            background-color: #F08A00;
+        }
+        &_red {
+            .colored();
+            color: #F0F0F0;
+            background-color: #E32119;
+        }
+        &_purple {
+            .colored();
+            color: #F0F0F0;
+            background-color: #7B0663;
+        }
+    }
+    &_small {
+        font-size: 1.1rem;
+        line-height: 2rem;
+        padding: 0 6px;
+        height: @btnSmallHeight;
+    }
+
+    &_large {
+        font-size: 1.4rem;
+        line-height: 3.8rem;
+        padding: 0 10px;
+        height: @btnLargeHeight;
+    }
+
+    &:disabled, &_disabled {
+
+        cursor: not-allowed;
+        -ms-touch-action: none;
+        touch-action: none;
+
+        background: rgba(0, 0, 0, 0.1);
+        color: #B2B2B2;
+
+        &:hover, &:active {
+            background: rgba(0, 0, 0, 0.1);
+            color: #B2B2B2;
+            cursor: not-allowed;
+        }
+
+        .ebIcon {
+            opacity: 0.3;
+        }
+    }
+}

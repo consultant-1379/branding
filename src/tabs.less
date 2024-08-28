@@ -1,0 +1,285 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyUserSelect(@params) {
+    -moz-user-select: @params;
+    -khtml-user-select: @params;
+    -webkit-user-select: @params;
+    -o-user-select: @params;
+}
+
+.ebTabs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 180px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &_addClose {
+        .ebTabs {
+            &-tabArea_responsive {
+                right: 59px;
+            }
+            &-rightBtn {
+                right: 29px;
+            }
+            &-tabItem {
+                padding-right: 28px;
+            }
+            &-closeBtn, &-addBtn {
+                display: block;
+            }
+        }
+    }
+
+    &-top {
+        position: relative;
+        width: 100%;
+        max-height: 30px;
+        height: 30px;
+        padding-right: 1px;
+        cursor: pointer;
+
+        &_enabled_true {
+            cursor: pointer;
+        }
+
+        &_enabled_false {
+            cursor: not-allowed;
+        }
+    }
+
+    &-tabArea {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 30px;
+        max-height: 30px;
+        font-size: 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &_responsive {
+            left: 30px;
+            right: 30px;
+
+            & > .ebTabs-tabItem {
+                &:first-child {
+                    border-left: none;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    &-closeBtn, &-addBtn {
+        display: none;
+    }
+
+    &-closeBtn {
+        position: absolute;
+        right: 7px;
+        top: 0;
+        padding: 6px 0;
+        line-height: 1.2rem;
+        z-index: 1;
+    }
+
+    &-leftBtn, &-rightBtn, &-addBtn, &-closeBtn {
+        &Icon {
+            text-align: center;
+            line-height: 1rem;
+        }
+    }
+
+    &-leftBtn, &-rightBtn, &-addBtn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 28px;
+        height: 27px;
+
+        .applyUserSelect(none);
+        .applyVerticalGradient(@white, darken(@white, 10%), '#FFFFFFFF', '#FFE6E6E6');
+        .applyBorderRadius(~"3px 3px 0 0");
+
+        border: 1px solid #cccccc;
+        border-width: 1px 1px 0 1px;
+
+        &Icon {
+            padding: 7px 8px;
+        }
+
+        &_visible {
+            &_false {
+                display: none;
+            }
+
+            &_true {
+                display: block;
+            }
+        }
+
+        &_enabled {
+            &_true {
+                &:hover {
+                    .applyVerticalGradient(darken(@white, 5%), @white, '#FFE6E6E6', '#FFFFFFFF');
+                }
+                &:active {
+                    .applyVerticalGradient(darken(@white, 10%), @white, '#FFE6E6E6', '#FFFFFFFF');
+                }
+
+                cursor: pointer;
+            }
+
+            &_false {
+                .applyDisabledFormAction();
+                opacity: 0.5;
+
+                .ebTabs {
+                    &-leftIcon, &-rightIcon, &-addIcon {
+                        &, &:active, &:hover {
+                            opacity: 0.3;
+                            .applyDisabledFormAction();
+                        }
+                    }
+                }
+            }
+        }
+
+        // TODO: &-icon is deprecated! Should be removed.
+        &-icon {
+            position: relative;
+            margin: 10px 10px 8px 10px;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+        }
+    }
+
+    &-leftBtn {
+        left: 0;
+    }
+
+    &-rightBtn {
+        right: 0;
+    }
+
+    &-addBtn {
+        right: 0;
+        border-left-width: 0;
+        &Icon {
+            padding: 5px 6px;
+        }
+    }
+
+    // TODO: .ebTabItem is deprecated! Should be removed.
+    .ebTabItem, &-tabItem {
+        display: inline-block;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        text-overflow: ellipsis;
+        padding: 7px 12px 7px;
+        position: relative;
+        cursor: pointer;
+        color: #000000;
+        z-index: 1;
+
+        &Wrapper {
+            position: relative;
+            display: inline-block;
+            width: auto;
+
+            &:first-child .ebTabs-tabItem {
+                border-left: none;
+            }
+
+            &:last-child .ebTabs-tabItem {
+                border-right: none;
+            }
+        }
+
+        .applyVerticalGradient(@white, darken(@white, 10%), '#FFFFFFFF', '#FFE6E6E6');
+        .applyUserSelect(none);
+        .applyBorderRadius(~"3px 3px 0 0");
+
+        border-bottom: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        border-left: 1px solid #cccccc;
+
+        &:last-child {
+            border-right: 1px solid #cccccc;
+        }
+
+        &:hover {
+            .applyVerticalGradient(darken(@white, 5%), @white, '#FFF2F2F2', '#FFFFFFFF');
+        }
+        &:active {
+            .applyVerticalGradient(darken(@white, 10%), @white, '#FFE6E6E6', '#FFFFFFFF');
+        }
+
+        &_selected_true {
+            filter: none; /* IE6-9 */
+            background-image: none;
+            background-color: white;
+            border-bottom-color: transparent;
+
+            border-right: 1px solid #cccccc;
+
+            & + .ebTabItem, & + .ebTabs-tabItem {
+                border-left: none;
+            }
+
+            &:hover {
+                filter: none; /* IE6-9 */
+                background-image: none;
+            }
+        }
+
+        &_closable_false {
+            & + .ebTabs-closeBtn {
+                display: none;
+            }
+            &.ebTabs-tabItem {
+                padding: 7px 12px 7px;
+            }
+        }
+
+        &_enabled_false {
+            .applyDisabledFormAction();
+
+            &, &:active, &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                color: #B2B2B2;
+            }
+
+            & + .ebTabs-closeBtn .ebTabs-closeBtnIcon {
+                &, &:active, &:hover {
+                    opacity: 0.3;
+                    .applyDisabledFormAction();
+                }
+            }
+        }
+    }
+
+    &-contentDiv {
+        white-space: normal;
+        position: relative;
+        top: -3px;
+        border-top: 1px solid #cccccc;
+        clear: both;
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkboxes :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+
+    <style type="text/css">
+        body {
+            margin: 15px 15px 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="ebBreadcrumbs">
+    <div class="ebBreadcrumbs-item"><a href="index.html" class="ebBreadcrumbs-link">Brand Assets</a></div>
+    <div class="ebBreadcrumbs-item"><a href="checkboxes.html" class="ebBreadcrumbs-link">Checkboxes</a></div>
+</div>
+
+<h1>Checkboxes</h1>
+
+<h2>Labeled:</h2>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="1"/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">Label after checkbox</span>
+</label>
+<button class="ebBtn ebBtn_default">Gray Button</button>
+<label>
+    <span class="ebCheckbox-label">Label before checkbox</span>
+    <input class="ebCheckbox" type="checkbox" value="2" />
+    <span class="ebCheckbox-inputStatus"></span>
+</label>
+<br>
+<label>
+    <span class="ebCheckbox-label">Label before checkbox</span>
+    <input class="ebCheckbox" type="checkbox" value="3" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+</label>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="4" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">Label after checkbox</span>
+</label>
+
+<h2>Labeled and disabled:</h2>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="1" disabled/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">Label after checkbox</span>
+</label>
+<br>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="2" disabled/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">Label after checkbox</span>
+</label>
+<br>
+<label>
+    <span class="ebCheckbox-label">Label before checkbox</span>
+    <input class="ebCheckbox" type="checkbox" value="3" disabled/>
+    <span class="ebCheckbox-inputStatus"></span>
+</label>
+<br>
+<label>
+    <span class="ebCheckbox-label">Label before checkbox</span>
+    <input class="ebCheckbox" type="checkbox" value="3" checked disabled/>
+    <span class="ebCheckbox-inputStatus"></span>
+</label>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="4" checked disabled/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">Label after checkbox</span>
+</label>
+
+<h2>Standalone:</h2>
+<input class="ebCheckbox" type="checkbox" value="1" />
+<span class="ebCheckbox-inputStatus"></span>
+
+<input class="ebCheckbox" type="checkbox" value="2" checked/>
+<span class="ebCheckbox-inputStatus"></span>
+
+<h2>Standalone and disabled:</h2>
+<input class="ebCheckbox" type="checkbox" value="3" disabled/>
+<span class="ebCheckbox-inputStatus"></span>
+
+<input class="ebCheckbox" type="checkbox" value="4" disabled checked/>
+<span class="ebCheckbox-inputStatus"></span>
+
+<h2>Third state:</h2>
+<input class="ebCheckbox" type="checkbox" value="1" />
+<span class="ebCheckbox-inputStatus ebCheckbox-inputStatus_triple"></span>
+
+<input class="ebCheckbox" type="checkbox" value="2" checked/>
+<span class="ebCheckbox-inputStatus ebCheckbox-inputStatus_triple"></span>
+
+<h2>Third state and disabled:</h2>
+<input class="ebCheckbox" type="checkbox" value="3" disabled/>
+<span class="ebCheckbox-inputStatus ebCheckbox-inputStatus_triple"></span>
+
+<input class="ebCheckbox" type="checkbox" value="4" disabled checked/>
+<span class="ebCheckbox-inputStatus ebCheckbox-inputStatus_triple"></span>
+
+<h2>Text before checkboxes:</h2>
+Lorem ipsum:
+<input class="ebCheckbox" type="checkbox" value="1" />
+<span class="ebCheckbox-inputStatus"></span>
+
+<input class="ebCheckbox" type="checkbox" value="2" checked/>
+<span class="ebCheckbox-inputStatus"></span>
+
+<h2>Label outside checkbox</h2>
+<label for="myCheck" class="ebCheckbox-label">CLICK HERE</label>
+<p>text here and checkbox then</p>
+<input class="ebCheckbox" id="myCheck" type="checkbox" value="1"/>
+<span class="ebCheckbox-inputStatus"></span>
+
+<input class="ebCheckbox" type="checkbox" value="2" checked/>
+<span class="ebCheckbox-inputStatus"></span>
+
+
+<h2>Checkboxes text and icon:</h2>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="1" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">
+        <i class="ebIcon ebIcon_plus"></i>
+        <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+    </span>
+</label>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="4" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">
+        <i class="ebIcon ebIcon_alarmCritical"></i>
+        <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+    </span>
+</label>
+<label>
+    <input class="ebCheckbox" type="checkbox" value="4" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">
+        <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+    </span>
+</label>
+
+<label>
+    <input class="ebCheckbox" type="checkbox" value="4" checked/>
+    <span class="ebCheckbox-inputStatus"></span>
+    <span class="ebCheckbox-label">
+        <i class="ebIcon ebIcon_technicianPresent"></i>
+        <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+    </span>
+</label>
+
+<h2>Checkbox in list</h2>
+
+<ul class="ebList">
+    <li class="ebList-item">
+        <label>
+            <input class="ebCheckbox" type="checkbox" value="4" checked/>
+            <span class="ebCheckbox-inputStatus"></span>
+            <span class="ebCheckbox-label">
+                <i class="ebIcon ebIcon_technicianPresent"></i>
+                <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+            </span>
+        </label>
+    </li>
+    <li class="ebList-item">
+        <label>
+            <input class="ebCheckbox" type="checkbox" value="4" checked/>
+            <span class="ebCheckbox-inputStatus"></span>
+            <span class="ebCheckbox-label">
+                <i class="ebIcon ebIcon_alarmCritical"></i>
+                <span class="ebCheckbox-label-text">Lorem Ipsum</span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+
+</body>
+</html>

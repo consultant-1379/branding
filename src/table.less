@@ -1,0 +1,199 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyTableColors(@bgColor, @headerBgPercent, @hoverRowBgPercent, @activeRowBgPercent, @evenRowBgPercent) {
+    &.ebTable {
+        & thead tr th {
+            .applyTintBg(@bgColor, @headerBgPercent);
+            border-top: none;
+            border-bottom: none;
+        }
+        & tbody tr {
+            &:hover > * {
+                background-color: fade(@bgColor, percentage(@hoverRowBgPercent));
+            }
+            &:active > * {
+                background-color: fade(@bgColor, percentage(@activeRowBgPercent));
+            }
+        }
+
+        &_striped {
+            tbody tr {
+                &:nth-of-type(even) {
+                    .applyTintBg(@bgColor, @evenRowBgPercent);
+                }
+            }
+        }
+    }
+}
+
+.ebTable {
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: lighten(@black, 10%);
+
+    &_fullW {
+        width: 100%;
+    }
+
+    &-th_resizable,
+    &-th_sortable {
+        position: relative;
+    }
+
+    &-th_sortable {
+        .ebTable-header {
+            padding-right: 18px;
+        }
+    }
+
+    &-header {
+        position: relative;
+        display: block;
+//        box-sizing: border-box;
+        .applyBoxSizing(border-box);
+        width: 100%;
+
+        &Resize {
+            position: absolute;
+            top: -20px; // FF support
+            bottom: -20px; // FF support
+            right: -12px;
+            width: 5px;
+            cursor: col-resize;
+        }
+
+        &Sort {
+            position: absolute;
+            top: calc(~"50% - 10px");
+            right: 0;
+        }
+
+        &Text {
+            padding: 4px 0;
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+    }
+
+    & thead tr {
+        height: 3.2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: left;
+
+        & th {
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            text-align: left; // IE has centered alignment
+
+            cursor: default;
+
+            border-top: lighten(@black, 80%) solid 1px;
+            border-bottom: lighten(@black, 80%) solid 1px;
+            border-right: lighten(@black, 90%) solid 1px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+        &:hover {
+            background: none;
+        }
+        &:active {
+            background: none;
+        }
+    }
+    & tbody tr {
+        height: 3.2rem;
+        font-size: 1.2rem;
+        border-bottom: lighten(@black, 90%) solid 1px;
+
+        & td {
+            margin: 0;
+            padding: 0 1.2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: default;
+            border-right: lighten(@black, 90%) solid 1px;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+        &:hover > * {
+            background-color: fade(@textLinkBlue, 10%);
+        }
+        &:active > * {
+            background-color: fade(@textLinkBlue, 20%);
+        }
+    }
+    &_striped {
+        tbody tr {
+            border-bottom: none;
+            td {
+                border-right: none;
+            }
+            &:not(.ebTableRow_highlighted):nth-of-type(even) {
+                background-color: lighten(@black, 95%);
+            }
+        }
+    }
+    &_pinstripe tr td {
+        border-bottom: lighten(@black, 90%) solid 1px;
+    }
+
+    & tr.ebTableRow_highlighted {
+        background-color: @eHighlightOdd;
+
+        &:hover > * {
+            background-color: fade(@textLinkBlue, 10%);
+        }
+        &:active > * {
+            background-color: fade(@textLinkBlue, 20%);
+        }
+    }
+
+    // colored tables
+    &_color {
+        &_paleBlue {
+            .applyTableColors(@paleBlue, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_purple {
+            .applyTableColors(@purple, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_darkGreen {
+            .applyTableColors(@darkGreen, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_green {
+            .applyTableColors(@green, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_yellow {
+            .applyTableColors(@yellow, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_orange {
+            .applyTableColors(@orange, 0.4, 0.2, 0.3, 0.1);
+        }
+        &_red {
+            .applyTableColors(@red, 0.4, 0.2, 0.3, 0.1);
+        }
+    }
+
+    &_borderTop_none {
+        & thead tr th {
+            border-top: none;
+        }
+    }
+
+}

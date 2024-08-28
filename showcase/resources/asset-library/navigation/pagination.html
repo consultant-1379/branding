@@ -1,0 +1,120 @@
+<h3 class="eaAssetLibrary-Heading">Pagination</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body-noside ebText">
+        A "UL" list is used to create the page numbering. The modifier "ebPagination-entryAnchor_current" is used to set
+        the currently selected page. The modifier "ebPagination-entryAnchor_dots" is used to disable pointer events on
+        the "..." anchor elements.
+    </div>
+
+    <div class="eaAssetLibrary-Block-body-noside">
+        <ul class="ebPagination">
+            <li class="ebPagination-previous">
+                <a class="ebPagination-previousAnchor" href="#pagination"></a>
+            </li>
+            <li class="ebPagination-pagesContainer">
+                <ul class="ebPagination ebPagination-pages">
+                    <li class="ebPagination-entry">
+                        <a class="ebPagination-entryAnchor" href="#pagination">1</a>
+                    </li>
+                    <li class="ebPagination-entry">
+                        <a class="ebPagination-entryAnchor ebPagination-entryAnchor" href="#pagination">2</a>
+                    </li>
+                    <li class="ebPagination-entry">
+                        <a class="ebPagination-entryAnchor" href="#pagination">3</a>
+                    </li>
+                    <li class="ebPagination-entry">
+                        <a class="ebPagination-entryAnchor ebPagination-entryAnchor_current" href="#pagination">4</a>
+                    </li>
+                    <li class="ebPagination-entry">
+                        <a class="ebPagination-entryAnchor" href="#pagination">5</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ebPagination-next">
+                <a class="ebPagination-nextAnchor" href="#pagination"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--====================================================-->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;ul class="ebPagination"&gt;<br>
+        &nbsp;&nbsp;&lt;li class="ebPagination-previous"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-previousAnchor" href="#"&gt;&lt;/a&gt;<br>
+        &nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li class="ebPagination-pagesContainer"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="ebPagination ebPagination-pages"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebPagination-entry"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-entryAnchor" href="#"&gt;1&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebPagination-entry"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-entryAnchor ebPagination-entryAnchor" href="#"&gt;2&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebPagination-entry"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-entryAnchor" href="#"&gt;3&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebPagination-entry"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-entryAnchor ebPagination-entryAnchor_current" href="#"&gt;4&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebPagination-entry"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-entryAnchor" href="#"&gt;5&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+        &nbsp;&nbsp;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li class="ebPagination-next"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="ebPagination-nextAnchor" href="#"&gt;&lt;/a&gt;<br>
+        &nbsp;&nbsp;&lt;/li&gt;<br>
+        &lt;/ul&gt;<br>
+    </code>
+</div>
+
+<div class="eaAssetLibrary-Block-body eaAssetLibrary-AssetList-listItem-Guideline">
+    <h4 class="eaAssetLibrary-Heading">Implementation Guideline</h4>
+
+    <ul class="ebPagination">
+        <li class="ebPagination-previous">
+            <a class="ebPagination-previousAnchor" href="#pagination"></a>
+        </li>
+        <li class="ebPagination-pagesContainer">
+            <ul class="ebPagination ebPagination-pages">
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor" href="#pagination">1</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor ebPagination-entryAnchor" href="#">2</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor" href="#pagination">3</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor ebPagination-entryAnchor_current" href="#pagination">4</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor" href="#pagination">5</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor ebPagination-entryAnchor_dots" href="#pagination">...</a>
+                </li>
+                <li class="ebPagination-entry">
+                    <a class="ebPagination-entryAnchor" href="#pagination">10</a>
+                </li>
+            </ul>
+        </li>
+        <li class="ebPagination-next">
+            <a class="ebPagination-nextAnchor" href="#pagination"></a>
+        </li>
+    </ul>
+    <br>
+
+    <div class="ebText">Responsive pagination requires javascript.</div>
+
+    <p class="ebText">
+        If you are using JSCore, the pagination exists as Widget in the
+        <a href="../../../../widgets/latest/showcase/index.html#pagination">Widget Library #pagination</a>
+    </p>
+</div>

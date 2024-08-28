@@ -1,0 +1,81 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebTooltip {
+    position: fixed;
+    width: 100px;
+    z-index: 99;
+    opacity: 1;
+
+    &-outer {
+        position: relative;
+        clear: both;
+        margin-top: 0;
+        margin-bottom: 3px;
+        width: 100%;
+        display: block;
+
+        background-color: @white;
+        border: 1px solid #999;
+
+        .applyBorderRadius(3px);
+        .applyBoxShadow(~'0px 1px 3px', fade(@black, 20%));
+
+        z-index: 99;
+    }
+
+    &_fades {
+        .applyTransition(~"opacity .2s linear");
+    }
+
+    &-contentText {
+        margin: 2px 6px 2px 6px;
+        color: #666;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        display: block;
+    }
+
+    &_visible_false {
+        opacity: 0;
+    }
+
+    &_visible_true {
+        opacity: 1;
+    }
+
+    &_size {
+        &_small {
+            width: 100px;
+        }
+        &_large {
+            width: 200px;
+        }
+    }
+
+    &-outer {
+        &_corner_default {
+            position: absolute;
+            left: 12px;
+            top: 18px;
+        }
+
+        &_corner_topRight {
+            position: absolute;
+            left: -100%;
+            top: 18px;
+        }
+
+        &_corner_bottomLeft {
+            position: absolute;
+            left: 12px;
+            bottom: 0px;
+        }
+
+        &_corner_bottomRight {
+            position: absolute;
+            left: -100%;
+            bottom: 0px;
+        }
+    }
+}

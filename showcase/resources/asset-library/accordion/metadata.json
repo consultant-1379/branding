@@ -1,0 +1,25 @@
+{
+    "title": "Accordion",
+    "assetId": "accordion",
+    "status": "baselined",
+    "items": [
+        {
+            "file": "accordion.html",
+            "anchorName": "accordion",
+            "anchorTitle": "Accordion",
+            "status": "none"
+        },
+        {
+            "file": "withWidgets.html",
+            "status": "none"
+        },
+        {
+            "file": "guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "disabled.html",
+            "status": "none"
+        }
+    ]
+}

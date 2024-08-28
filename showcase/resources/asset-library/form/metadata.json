@@ -1,0 +1,193 @@
+{
+    "title": "Form Elements",
+    "assetId": "form",
+    "status": "none",
+    "items": [
+        {
+            "file": "input/input.html",
+            "anchorName": "formInput",
+            "anchorTitle": "Input Fields",
+            "status": "none"
+        },
+        {
+            "file": "input/disabled.html",
+            "status": "none"
+        },
+        {
+            "file": "input/readonly.html",
+            "status": "none"
+        },
+        {
+            "file": "input/sizeVariation.html",
+            "status": "none"
+        },
+        {
+            "file": "input/validation.html",
+            "status": "beta"
+        },
+        {
+            "file": "input/guideline.html",
+            "status": "none"
+        },
+
+        {
+            "file": "label/label.html",
+            "anchorName": "formLabel",
+            "anchorTitle": "Labels",
+            "status": "none"
+        },
+        {
+            "file": "label/required.html",
+            "status": "beta"
+        },
+
+        {
+            "file": "textArea/textArea.html",
+            "anchorName": "formTextArea",
+            "anchorTitle": "Text Area",
+            "status": "baselined"
+        },
+
+        {
+            "file": "checkbox/checkbox.html",
+            "anchorName": "checkbox",
+            "anchorTitle": "Checkbox",
+            "status": "baselined"
+        },
+        {
+            "file": "checkbox/checkboxIcons.html",
+            "status": "beta"
+        },
+        {
+            "file": "checkbox/disabled.html",
+            "status": "none"
+        },
+
+        {
+            "file": "radio/radio.html",
+            "anchorName": "radioButton",
+            "anchorTitle": "Radio Button",
+            "status": "baselined"
+        },
+        {
+            "file": "radio/disabled.html",
+            "status": "none"
+        },
+
+        {
+            "file": "commonLists/componentList.html",
+            "anchorName": "componentList",
+            "anchorTitle": "Component List",
+            "status": "none"
+        },
+        {
+            "file": "commonLists/groupedComponentList.html",
+            "anchorName": "groupedComponentList",
+            "anchorTitle": "Grouped Component List",
+            "status": "beta"
+        },
+        {
+            "file": "commonLists/guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "commonLists/commonList.html",
+            "anchorName": "commonList",
+            "anchorTitle": "Common List",
+            "status": "none"
+        },
+        {
+            "file": "commonLists/commonListStriped.html",
+            "anchorName": "commonListStriped",
+            "anchorTitle": "Common List Striped",
+            "status": "none"
+        },
+        {
+            "file": "commonLists/commonListStripedNested.html",
+            "anchorName": "commonListStripedNested",
+            "anchorTitle": "Common List Striped and Nested",
+            "status": "none"
+        },
+
+        {
+            "file": "contextMenu/contextMenu.html",
+            "anchorName": "contextMenu",
+            "anchorTitle": "Context Menu",
+            "status": "none"
+        },
+        {
+            "file": "contextMenu/guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "contextMenu/variations.html",
+            "status": "none"
+        },
+
+        {
+            "file":"dropdown/dropdown.html",
+            "anchorName":"dropdown",
+            "anchorTitle":"Dropdown",
+            "status": "baselined"
+        },
+        {
+            "file": "dropdown/guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "dropdown/disabled.html",
+            "status": "none"
+        },
+
+        {
+            "file": "select/select.html",
+            "anchorName": "selectBox",
+            "anchorTitle": "Select Box",
+            "status": "baselined"
+        },
+        {
+            "file": "select/multiSelect.html",
+            "anchorName": "multiSelectBox",
+            "anchorTitle": "Multi Select Box",
+            "status": "none"
+        },
+        {
+            "file": "select/disabled.html",
+            "status": "none"
+        },
+        {
+            "file": "select/guideline.html",
+            "status": "none"
+        },
+
+        {
+            "file": "combobox/combobox.html",
+            "anchorName": "combobox",
+            "anchorTitle": "Combo Box",
+            "status": "baselined"
+        },
+        {
+            "file": "combobox/guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "combobox/disabled.html",
+            "status": "none"
+        },
+
+        {
+            "file": "spinner/spinner.html",
+            "anchorName": "spinner",
+            "anchorTitle": "Spinner",
+            "status": "baselined"
+        },
+        {
+            "file": "spinner/guideline.html",
+            "status": "none"
+        },
+        {
+            "file": "spinner/spinnerWithLabel.html",
+            "status": "none"
+        }
+    ]
+}

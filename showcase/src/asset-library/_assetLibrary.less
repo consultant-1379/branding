@@ -1,0 +1,882 @@
+// common mixins
+.applyTransition(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -ms-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition;
+}
+
+.applyTransitionDelay(@delay) {
+    -webkit-transition-delay: @delay;
+    -moz-transition-delay: @delay;
+    -ms-transition-delay: @delay;
+    -o-transition-delay: @delay;
+    transition-delay: @delay;
+}
+
+//.eaAssetLibrary
+
+// standart colors
+@black: #000000;
+@white: #FFFFFF;
+
+@purple: #7b0663;
+@red: #e32119;
+@orange: #f08a00;
+@yellow: #fabb00;
+@green: #89ba17;
+@darkGreen: #00625f;
+@paleBlue: #00a9d4;
+@grey: #333333;
+@darkBlue: #00285e;
+@textLinkBlue: #0066b3;
+
+// Ericsson colors
+@eBlack: #000000;
+@eWhite: #FFFFFF;
+@eBlue: #0967B2;
+
+@eHoverBlue: #e6f0f7;
+@eHighlightEven: #c4d6e5;
+@eHighlightOdd: #cee1f0;
+
+@font-face {
+    font-family: "ericsson_capital_ttregular";
+    src: url("resources/EricssonCapitalTT.ttf");
+}
+
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    height: 100%;
+}
+
+h2.eaAssetLibrary-Heading {
+    border: none;
+    margin: 0;
+
+    em {
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+h3.eaAssetLibrary-Heading {
+    border: none;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.6rem;
+
+    em {
+        font-weight: bold;
+        font-style: normal;
+    }
+}
+
+//=====================================================================
+//=====================================================================    SMALL DEVICE
+
+@media (min-width: 120px)
+and (max-width: 480px) {
+
+    .eaAssetLibrary {
+        &-Header {
+            height: 90px;
+
+            &-TopBanner {
+                height: 90px;
+            }
+
+            &-MainTitle {
+                padding-top: 10px;
+
+                h1.eaAssetLibrary-Heading {
+                    font-size: 1.8rem;
+                }
+                .eaAssetLibrary-List-listItem {
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        &-Overview {
+            &-head {
+                position: relative;
+            }
+            &-side {
+                text-align: center;
+            }
+        }
+        &-Block {
+            &-side {
+                position: relative;
+                margin-top: 20px;
+            }
+        }
+
+        &-Body {
+
+            &-SideMenu {
+                position: relative;
+                width: 100%;
+                border-bottom: 1px solid #333333;
+
+                .eaAssetLibrary-List {
+                    &-listItem {
+                        //border-bottom: 1px solid #e6e6e6;
+
+                        &:last-child {
+                            border: none;
+                        }
+
+                        .ebAccordion-header {
+                            border: none;
+                            font-weight: normal;
+                            margin: 0;
+
+                            .eaAssetLibrary-Heading {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+
+            }
+            &-View {
+                margin-top: 20px;
+                position: relative;
+            }
+        }
+
+        &-Footer {
+            display: none;
+            //            position: fixed;
+            //            bottom: 0;
+            //            left: 0;
+            //            right: 0;
+            //            width: 300px;
+            //            height: 50px;
+            //            margin: 0 auto;
+        }
+
+        &-BackTop {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            .ebBtn, .ebIcon.ebIcon_button {
+                float: left;
+                margin: 0;
+                height: 25px;
+            }
+            .ebIcon.ebIcon_button {
+                min-width: 40px;
+                background-color: orange;
+            }
+        }
+
+        .ebDialog {
+            &Box {
+                min-height: 250px;
+            }
+        }
+    }
+}
+
+//====================================================================      COMMON PART FOR
+//====================================================================      SMALL and MEDIUM
+@media (min-width: 120px)
+and (max-width: 1024px) {
+    .eaAssetLibrary {
+        &-AssetList {
+            .eaAssetLibrary-DemoList-listItem {
+                display: inline-block;
+            }
+        }
+        .eaAssetLibrary-Block-half {
+            margin-top: 15px;
+
+            &:first-of-type {
+                margin-right: 2.4rem;
+            }
+        }
+    }
+}
+
+//====================================================================      COMMON PART FOR
+//====================================================================      MEDIUM AND LARGE
+@media only screen
+and (min-width: 482px) {
+
+    .eaAssetLibrary {
+        &-Header {
+            height: 130px;
+
+            &-MainTitle {
+                padding-top: 50px;
+
+                .eaAssetLibrary-List-listItem {
+                    padding: 0 26px;
+                }
+            }
+        }
+
+        &-Overview {
+            &-title {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 225px;
+
+                h2, h3 {
+                    padding: 0;
+                }
+            }
+            &-body {
+                margin-left: -moz-calc(~"225px + 3%");
+                margin-left: -webkit-calc(~"225px + 3%");
+                margin-left: -o-calc(~"225px + 3%");
+                margin-left: calc(~"225px + 3%");
+            }
+        }
+
+        &-Body {
+            &-SideMenu {
+                position: fixed;
+                width: 225px;
+
+                .eaAssetLibrary-List {
+                    &-listItem {
+                        border-left: 2px solid #e6e6e6;
+
+                        .ebAccordion-header {
+                            border: none;
+                            font-weight: normal;
+                            margin: 0;
+                        }
+
+                        &_current {
+                            border-left-color: #00a9d4;
+                        }
+                    }
+                }
+            }
+            &-View {
+                position: absolute;
+                top: 30px;
+                right: 0;
+                left: 225px;
+                margin-left: 3%;
+            }
+        }
+        &-Footer {
+            display: none;
+        }
+    }
+}
+
+//====================================================================
+//====================================================================   MEDIUM DEVICE
+@media (min-width: 481px)
+and (max-width: 700px) {
+
+    .eaAssetLibrary {
+        &-Body {
+
+            &-SideMenu {
+                top: 460px;
+            }
+        }
+    }
+}
+
+@media (min-width: 701px)
+and (max-width: 1024px) {
+    .eaAssetLibrary {
+        &-Body {
+            &-SideMenu {
+                top: 400px;
+            }
+        }
+    }
+}
+
+@media (min-width: 481px)
+and (max-width: 1024px) {
+
+    .eaAssetLibrary {
+        &-Overview {
+            &-side {
+                text-align: left;
+
+                margin-left: -moz-calc(~"225px + 3%");
+                margin-left: -webkit-calc(~"225px + 3%");
+                margin-left: -o-calc(~"225px + 3%");
+                margin-left: calc(~"225px + 3%");
+            }
+        }
+        &-Block {
+            &-body {
+                margin-right: 0;
+            }
+
+            &-side {
+                position: relative;
+                margin-top: 20px;
+            }
+        }
+
+        &-AssetList-listItem {
+            &-code, &-Guideline {
+                margin: 0 3% 0 0;
+            }
+        }
+    }
+}
+
+//====================================================================
+//====================================================================      LARGE DEVICE
+@media only screen
+and (min-width: 1025px) {
+
+    .eaAssetLibrary {
+        &-Block {
+            &-head {
+            }
+            &-body {
+                margin-right: 235px;
+
+                &-noside {
+                    margin-right: 3%;
+                }
+                &-height200 {
+                    height: 200px;
+                }
+                &-height300 {
+                    height: 300px;
+                }
+            }
+            &-side {
+                width: 225px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                text-align: center;
+            }
+            &-customSide {
+
+                .ebSpinner {
+                    position: absolute;
+                    top: -35px;
+                }
+            }
+
+            &-half {
+                display: inline-block;
+                vertical-align: middle;
+                width: 55%;
+
+                &:first-of-type {
+                    width: 40%;
+                    margin-right: 2.4rem;
+                }
+            }
+        }
+
+        &-Body {
+            &-SideMenu {
+                top: 345px;
+            }
+        }
+
+        &-AssetList {
+            &-listItem {
+                &-code {
+                    margin: 0 3% 0 0;
+                }
+                &-Guideline {
+                    margin: 0 25% 0 0;
+                }
+            }
+            .eaAssetLibrary-DemoList-listItem {
+                display: block;
+            }
+        }
+    }
+}
+
+//====================================================================
+//====================================================================
+.eaAssetLibrary {
+    position: relative;
+    min-width: 300px;
+
+    &-AssetWrapper {
+        position: relative;
+    }
+
+    &-AssetListItem, &-AssetWrapper {
+        &-status {
+            position: absolute;
+            right: 0;
+            top: 15px;
+
+            padding: 1px 6px;
+            font-weight: bold;
+            font-style: italic;
+            text-transform: capitalize;
+        }
+    }
+
+    &-AssetListItem {
+        &_status {
+            &_beta {
+                .eaAssetLibrary-AssetListItem-status {
+                    color: #7b0663;
+                }
+            }
+            &_baselined {
+                .eaAssetLibrary-AssetListItem-status {
+                    display: none;
+                    //                    color: #89ba17;
+                }
+            }
+            &_deprecated {
+                .eaAssetLibrary-AssetListItem-status {
+                    color: #e32119;
+                }
+            }
+            &_none {
+                .eaAssetLibrary-AssetListItem-status {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-AssetWrapper {
+        position: relative;
+
+        &-status {
+            top: 5px;
+            padding-top: 15px;
+        }
+
+        &_status {
+            &_beta {
+                .eaAssetLibrary-AssetWrapper-status {
+                    color: #7b0663;
+                }
+            }
+            &_baselined {
+                .eaAssetLibrary-AssetWrapper-status {
+                    display: none;
+                    //                    color: #89ba17;
+                }
+            }
+            &_deprecated {
+                .eaAssetLibrary-AssetWrapper-status {
+                    color: #e32119;
+                }
+            }
+            &_none {
+                .eaAssetLibrary-AssetWrapper-status {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-Block {
+        position: relative;
+        display: block;
+        margin: 15px 0;
+        min-height: 50px;
+
+        &-head, &-body, &-side {
+            display: block;
+        }
+        &-box {
+            border-radius: 3px;
+        }
+        &-bordered {
+            border: 1px solid #cccccc;
+        }
+    }
+
+    &-AccordionBody {
+        padding-left: 30px;
+    }
+
+    &-Header {
+        position: relative;
+        margin: 0 auto;
+        padding: 0 5%;
+        border-bottom: 1px solid #eaeaea;
+
+        &-ColorStrip {
+            -webkit-transform: translateZ(0);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: 4px;
+            background: #0066b3;
+            background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #a1c517), color-stop(25%, #009045), color-stop(50%, #0082b6), color-stop(75%, #151f77), color-stop(100%, #db004f));
+            background: -webkit-linear-gradient(left, #a1c517 0%, #009045 25%, #0082b6 50%, #151f77 75%, #db004f 100%);
+            background: -moz-linear-gradient(left, #a1c517 0%, #009045 25%, #0082b6 50%, #151f77 75%, #db004f 100%);
+            background: -o-linear-gradient(left, #a1c517 0%, #009045 25%, #0082b6 50%, #151f77 75%, #db004f 100%);
+            background: linear-gradient(left, #a1c517 0%, #009045 25%, #0082b6 50%, #151f77 75%, #db004f 100%);
+        }
+        &-MainTitle {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            white-space: nowrap;
+
+            .eaAssetLibrary-Heading {
+                margin: 0;
+                font-family: 'ericsson_capital_ttregular', Arial, sans-serif;
+                color: #00285e;
+                font-size: 2.4rem;
+            }
+
+            h1, img {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            img {
+                margin-right: 20px;
+                width: 30px;
+            }
+
+            .eaAssetLibrary-List {
+                position: relative;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                &-listItem {
+                    display: inline;
+                    border-left: #cccccc solid 1px;
+
+                    &:first-child {
+                        border-left: none;
+                    }
+                }
+                .eaAssetLibrary-Link {
+                    text-decoration: none;
+                    color: #0066b3;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    &-Overview {
+        position: relative;
+        width: 100%;
+        min-height: 50px;
+        padding-bottom: 30px;
+        margin-top: 30px;
+
+        border-bottom: 1px solid #333333;
+
+        &-title {
+            h2, h3 {
+                line-height: 2rem;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &-Body {
+        max-width: 960px;
+        position: relative;
+
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 5%;
+
+        &-Main {
+            position: relative;
+            height: 100%;
+        }
+
+        &-SideMenu {
+            z-index: 20;
+            -webkit-transform: translateZ(0);
+
+            .eaAssetLibrary-List {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                &-listItem {
+                    line-height: 30px;
+                    padding-left: 20px;
+                }
+
+                .eaAssetLibrary-Heading_standAlone {
+                    margin: 0;
+                    line-height: 30px;
+                    padding: 0 0 0 20px;
+                    font-weight: normal;
+                }
+
+                .ebAccordion {
+                    line-height: normal;
+
+                    &-Header {
+                        font-weight: normal;
+                        border: none;
+                        padding-top: 1.2rem;
+                        padding-bottom: 0;
+                    }
+                    &-List {
+                        &-item {
+                            padding: 0.6rem 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-View {
+
+            h2.eaAssetLibrary-Heading, h3.eaAssetLibrary-Heading {
+                margin-top: 15px;
+                line-height: 40px;
+            }
+            h2.eaAssetLibrary-Heading {
+                border-top: 1px solid #333333;
+                color: #19b3da;
+            }
+
+            h3.eaAssetLibrary-Heading {
+                border-top: 1px solid #cccccc;
+                font-size: 1.4rem;
+            }
+            h4.eaAssetLibrary-Heading {
+                border-bottom: none;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &-AssetList {
+        position: relative;
+
+        div:first-child {
+            .eaAssetLibrary-AssetListItem-header {
+                border-top: none;
+                margin-top: 0;
+            }
+        }
+        div:last-child {
+            .eaAssetLibrary-AssetListItem {
+                margin-bottom: 50%;
+            }
+        }
+
+        &-listItem {
+            position: relative;
+
+            .eaAssetLibrary-Block {
+                &-side {
+                    text-align: left;
+                }
+
+                &-dummyText {
+                    max-height: 320px;
+                    overflow: hidden;
+                    padding: 6px;
+                }
+
+                &-dummyTextDialog {
+                    max-height: 320px;
+                    overflow: hidden;
+                    margin: 0;
+                }
+            }
+
+            &-code {
+                font-family: monospace;
+                display: block;
+                background-color: #eeeeee;
+                padding: 15px;
+            }
+
+            &-Guideline {
+                display: block;
+                border: 1px solid #f8bb16;
+                padding: 15px;
+            }
+
+            .ebDialog {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                height: 320px;
+                //                background-color: none;
+
+                &Box {
+                    min-width: 260px;
+                }
+            }
+        }
+
+        .eaAssetLibrary-DemoList {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .eaAssetLibrary-ColorBox, .eaAssetLibrary-ColorText {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .eaAssetLibrary-ColorBox {
+            width: 150px;
+            height: 50px;
+            margin-right: 20px;
+        }
+    }
+
+    &-Accordion {
+        vertical-align: top;
+        position: relative;
+
+        &-contents {
+            position: relative;
+            overflow: hidden;
+            max-height: 0;
+            width: 100%;
+            margin: 0;
+
+            .applyTransition(~"max-height .5s ease-out");
+        }
+
+        &-show {
+            display: none;
+            margin-top: -3px;
+        }
+
+        &-hide {
+            margin-top: -3px;
+        }
+
+        &-hide:target + .eaAssetLibrary-Accordion-show {
+            display: block;
+            height: auto;
+        }
+
+        &-hide:target {
+            display: none;
+        }
+
+        &-hide:target ~ .eaAssetLibrary-Accordion-contents {
+            max-height: 550px;
+
+            @media screen and (max-width: 1024px) {
+                max-height: 915px;
+            }
+            @media screen and (max-width: 620px) {
+                max-height: 1035px;
+            }
+            @media screen and (min-width: 482px) and (max-width: 600px) {
+                max-height: 1635px;
+            }
+        }
+
+        &-hide, .eaAssetLibrary-Accordion-show {
+            float: left;
+        }
+    }
+
+    &-IconContainer {
+        background-color: black;
+        border-radius: 4px;
+    }
+
+    &-IconList {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        left: 0;
+        list-style: none;
+        display: inline-block;
+
+        & > li {
+            float: left;
+            min-width: 170px;
+            width: 25%;
+            line-height: 32px;
+            margin-right: 8px;
+
+            & > i {
+                margin-right: 8px;
+            }
+        }
+
+        &_noWrapPadding {
+            padding-left: 6px;
+            border-radius: 3px;
+
+            & li {
+                white-space: nowrap;
+                padding-right: 20px;
+            }
+        }
+    }
+
+    &-IconBlock {
+        & > .ebIcon {
+            margin: 4px;
+        }
+    }
+
+    &-ButtonTable {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        left: 0;
+        display: inline-block;
+
+        &-Button {
+            padding: 4px 0;        }
+
+        &-Modifier {
+            padding-left: 16px;
+        }
+    }
+
+    // this fixes an issue where the underline is visible when hovering on a button with anchor tag
+    &-AnchorFix:hover {
+        text-decoration: none;
+    }
+
+    &-DialogHolder {
+        min-height: 200px;
+        position: relative;
+    }
+
+    &-addMargin {
+        margin: 6px;
+        display: inline-block;
+    }
+}
+
+
+

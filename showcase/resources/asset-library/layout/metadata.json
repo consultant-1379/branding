@@ -1,0 +1,62 @@
+{
+    "title": "Layout",
+    "assetId": "layout",
+    "status": "none",
+    "items": [
+        {
+            "file": "systemBar.html",
+            "anchorName": "systemBar",
+            "anchorTitle": "System Bar",
+            "status": "baselined"
+        },
+        {
+            "file": "navigation.html",
+            "anchorName": "layoutNavigation",
+            "anchorTitle": "Navigation",
+            "status": "baselined"
+        },
+        {
+            "file": "appHeading.html",
+            "anchorName": "layoutAppH",
+            "anchorTitle": "App Heading",
+            "status": "baselined"
+        },
+        {
+            "file": "quickAction.html",
+            "anchorName": "layoutQuickAction",
+            "anchorTitle": "Quick Action Bar",
+            "status": "baselined"
+        },
+        {
+            "file": "sectionHeading.html",
+            "anchorName": "layoutSectionH",
+            "anchorTitle": "Section Heading",
+            "status": "baselined"
+        },
+        {
+            "file": "sectionHeadingWithCommands.html",
+            "anchorName": "layoutSectionHC",
+            "anchorTitle": "Section Heading with Commands",
+            "status": "baselined"
+        },
+        {
+            "file": "sectionSubHeading.html",
+            "anchorName": "layoutSectionSubH",
+            "anchorTitle": "Section Subheading",
+            "status": "baselined"
+        },
+        {
+            "file": "sectionSubheadingWithCommands.html",
+            "anchorName": "layoutSectionSubHC",
+            "anchorTitle": "Section Subheading with Commands",
+            "status": "baselined"
+        },
+        {
+            "file": "wizard.html",
+            "anchorName": "wizard",
+            "anchorTitle": "Wizard",
+            "status": "beta"
+        }
+
+    ]
+}

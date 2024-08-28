@@ -1,0 +1,301 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyKeyFrames(@color, @activePercent, @passivePercent) {
+    0% {
+        .applyTintBg(@color, @passivePercent);
+    }
+    25% {
+        .applyTintBg(@color, @activePercent);
+    }
+    75% {
+        .applyTintBg(@color, @passivePercent);
+    }
+}
+
+.ebLoader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+
+    &-Dots {
+        position: relative;
+        margin: 0 20px;
+
+        &, &:before, &:after {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+
+            .applyTintBg(@purple, 0.4);
+
+            .applyBorderRadius(2px);
+
+            .applyAnimationDuration(0.9s);
+            .applyAnimationName(pulse);
+            .applyAnimationIterationCount(infinite);
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -20px;
+
+            .applyAnimationDelay(0.6s);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: -20px;
+
+            .applyAnimationDelay(0.3s);
+        }
+
+        &_size {
+            &_small {
+                margin: 0 10px;
+
+                &, &:before, &:after {
+                    .applyBorderRadius(2px);
+                    width: 8px;
+                    height: 8px;
+                }
+                &:before {
+                    left: -10px;
+                }
+                &:after {
+                    right: -10px;
+                }
+            }
+            &_big {
+                margin: 0 30px;
+
+                &, &:before, &:after {
+                    .applyBorderRadius(3px);
+                    width: 24px;
+                    height: 24px;
+                }
+                &:before {
+                    left: -30px;
+                }
+                &:after {
+                    right: -30px;
+                }
+            }
+        }
+
+        &_color {
+            // TODO: Could be uncommented to revert some colors. Unnecessary colors should be removed.
+            /*
+            &_red {
+                &, &:before, &:after {
+                    .applyTintBg(@red, 0.4);
+                    .applyAnimationName(ebLoader_pulseRed);
+                }
+            }
+
+            &_orange {
+                &, &:before, &:after {
+                    .applyTintBg(@orange, 0.4);
+                    .applyAnimationName(ebLoader_pulseOrange);
+                }
+            }
+            &_yellow {
+                &, &:before, &:after {
+                    .applyTintBg(@yellow, 0.4);
+                    .applyAnimationName(ebLoader_pulseYellow);
+                }
+            }
+            &_green {
+                &, &:before, &:after {
+                    .applyTintBg(@green, 0.4);
+                    .applyAnimationName(ebLoader_pulseGreen);
+                }
+            }
+            */
+            &_darkGreen {
+                &, &:before, &:after {
+                    .applyTintBg(@darkGreen, 0.4);
+                    .applyAnimationName(ebLoader_pulseDarkGreen);
+                }
+            }
+            &_paleBlue {
+                &, &:before, &:after {
+                    .applyTintBg(@paleBlue, 0.4);
+                    .applyAnimationName(ebLoader_pulsePaleBlue);
+                }
+            }
+            // TODO: Could be uncommented to revert some colors. Unnecessary colors should be removed.
+            /*
+            &_black {
+                &, &:before, &:after {
+                    .applyTintBg(@black, 0.4);
+                    .applyAnimationName(ebLoader_pulseBlack);
+                }
+            }
+            &_grey {
+                &, &:before, &:after {
+                    .applyTintBg(@grey, 0.4);
+                    .applyAnimationName(ebLoader_pulseGrey);
+                }
+            }
+            &_darkBlue {
+                &, &:before, &:after {
+                    .applyTintBg(@darkBlue, 0.4);
+                    .applyAnimationName(ebLoader_pulseDarkBlue);
+                }
+            }
+            &_textLinkBlue {
+                &, &:before, &:after {
+                    .applyTintBg(@textLinkBlue, 0.4);
+                    .applyAnimationName(ebLoader_pulseTextLinkBlue);
+                }
+            }
+            */
+        }
+    }
+
+    &-Holder {
+        position: relative;
+        text-align: center;
+        height: 100%;
+
+        .ebLoader-Dots {
+            position: absolute;
+            top: calc(~"50% - 8px");
+            left: calc(~"50% - 28px");
+
+            &_size {
+                &_small {
+                    top: calc(~"50% - 4px");
+                    left: calc(~"50% - 14px");
+                }
+                &_big {
+                    top: calc(~"50% - 12px");
+                    left: calc(~"50% - 42px");
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes pulse {
+    .applyKeyFrames(@purple, 0.8, 0.4);
+}
+@-moz-keyframes pulse {
+    .applyKeyFrames(@purple, 0.8, 0.4);
+}
+@keyframes pulse {
+    .applyKeyFrames(@purple, 0.8, 0.4);
+}
+
+// TODO: Could be uncommented to revert some colors. Unnecessary colors should be removed.
+/*
+@-webkit-keyframes ebLoader_pulseRed {
+    .applyKeyFrames(@red, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseRed {
+    .applyKeyFrames(@red, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseRed {
+    .applyKeyFrames(@red, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseOrange {
+    .applyKeyFrames(@orange, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseOrange {
+    .applyKeyFrames(@orange, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseOrange {
+    .applyKeyFrames(@orange, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseYellow {
+    .applyKeyFrames(@yellow, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseYellow {
+    .applyKeyFrames(@yellow, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseYellow {
+    .applyKeyFrames(@yellow, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseGreen {
+    .applyKeyFrames(@green, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseGreen {
+    .applyKeyFrames(@green, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseGreen {
+    .applyKeyFrames(@green, 0.8, 0.4);
+}
+*/
+
+@-webkit-keyframes ebLoader_pulseDarkGreen {
+    .applyKeyFrames(@darkGreen, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseDarkGreen {
+    .applyKeyFrames(@darkGreen, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseDarkGreen {
+    .applyKeyFrames(@darkGreen, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulsePaleBlue {
+    .applyKeyFrames(@paleBlue, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulsePaleBlue {
+    .applyKeyFrames(@paleBlue, 0.8, 0.4);
+}
+@keyframes ebLoader_pulsePaleBlue {
+    .applyKeyFrames(@paleBlue, 0.8, 0.4);
+}
+
+// TODO: Could be uncommented to revert some colors. Unnecessary colors should be removed.
+/*
+@-webkit-keyframes ebLoader_pulseBlack {
+    .applyKeyFrames(@black, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseBlack {
+    .applyKeyFrames(@black, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseBlack {
+    .applyKeyFrames(@black, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseGrey {
+    .applyKeyFrames(@grey, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseGrey {
+    .applyKeyFrames(@grey, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseGrey {
+    .applyKeyFrames(@grey, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseDarkBlue {
+    .applyKeyFrames(@darkBlue, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseDarkBlue {
+    .applyKeyFrames(@darkBlue, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseDarkBlue {
+    .applyKeyFrames(@darkBlue, 0.8, 0.4);
+}
+
+@-webkit-keyframes ebLoader_pulseTextLinkBlue {
+    .applyKeyFrames(@textLinkBlue, 0.8, 0.4);
+}
+@-moz-keyframes ebLoader_pulseTextLinkBlue {
+    .applyKeyFrames(@textLinkBlue, 0.8, 0.4);
+}
+@keyframes ebLoader_pulseTextLinkBlue {
+    .applyKeyFrames(@textLinkBlue, 0.8, 0.4);
+}
+*/
+

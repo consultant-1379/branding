@@ -1,0 +1,82 @@
+{
+    "properties": {
+        "buildDir": "target",
+        "package": "assets",
+        "packageDir": "$(buildDir)/package",
+        "version": "1.1.17",
+        "title": "Asset Library",
+        "description": "The Asset Library contains re-usable UI HTML5 assets that are approved by Ericsson Branding.",
+        "docs": "https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/branding/$(version)/"
+    },
+    "defaultPhase": "package",
+    "phases": {
+        "clean": {
+            "delete": {
+                "target": "$(buildDir)"
+            }
+        },
+        "assets": {
+            "execute": {
+                "command": "node node_modules/less/bin/lessc",
+                "attributes": [
+                    "src/assets.less",
+                    "$(packageDir)/$(package)/css/assets.css"
+                ]
+            }
+        },
+        "systembar": {
+            "execute": {
+                "command": "node node_modules/less/bin/lessc",
+                "attributes": [
+                    "src/systemBar.less",
+                    "$(packageDir)/$(package)/css/systemBar.css"
+                ]
+            }
+        },
+        "copy-resources": {
+            "copy": {
+                "from": "resources",
+                "to": "$(packageDir)/$(package)/"
+            }
+        },
+        "copy-dev-to-prod": {
+            "copy": {
+                "from": "$(packageDir)/$(package)/*",
+                "to": "$(packageDir)/$(package)/$(majorVersion)/"
+            }
+        },
+        "compress": {
+            "compress": {
+                "root": "$(packageDir)",
+                "files": [
+                    "*"
+                ],
+                "target": "$(buildDir)/$(package)-$(version).tar.gz"
+            }
+        },
+        "generate-cdt-json": {
+            "copy": {
+                "from": "build.json",
+                "to": "$(buildDir)/"
+            },
+            "generate-cdt-json": {
+                "to": "$(packageDir)/$(package)/cdt.json",
+                "type": "library"
+            }
+        },
+        "package": {
+            "depends": [
+                "clean",
+                "assets",
+                "systembar",
+                "copy-resources",
+                "copy-dev-to-prod",
+                "generate-cdt-json",
+                "compress"
+            ]
+        }
+    },
+    "dependencies": {
+        "jscore": "1.1.19"
+    }
+}

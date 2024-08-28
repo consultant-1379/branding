@@ -1,0 +1,43 @@
+{
+    "title":"Buttons",
+    "assetId":"button",
+    "status": "baselined",
+    "items": [
+        {
+            "file":"standard.html",
+            "anchorName":"standardButton",
+            "anchorTitle":"Standard Button",
+            "status": "none"
+        },
+        {
+            "file":"sizeVariation.html",
+            "anchorName":"buttonSizes",
+            "anchorTitle":"Button Sizes",
+            "status": "none"
+        },
+        {
+            "file":"disabled.html",
+            "status": "none"
+        },
+        {
+            "file":"buttonIcon.html",
+            "anchorName":"buttonIcon",
+            "anchorTitle":"Buttons With Icons",
+            "status": "none"
+        },
+        {
+            "file":"searchButton.html",
+            "status": "none"
+        },
+        {
+            "file":"colorVariationEB.html",
+            "anchorName":"buttonColorVariation",
+            "anchorTitle":"Colour Variations",
+            "status": "none"
+        },
+        {
+            "file":"colorVariationEP.html",
+            "status": "none"
+        }
+    ]
+}

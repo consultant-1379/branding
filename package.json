@@ -1,0 +1,10 @@
+{
+  "name": "assets",
+  "version": "1.0.1-SNAPSHOT",
+  "devDependencies": {
+    "cdt-build": "^2.1.2",
+    "cdt-package": "^2.1.7",
+    "cdt-serve": "^2.1.0",
+    "less": "1.7.1"
+  }
+}

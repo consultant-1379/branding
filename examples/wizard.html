@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard Layout :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+    <style>
+        body {
+            position: relative;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .wizardContainer {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            overflow: auto;
+            margin: 50px 0;
+        }
+        .wizardContainer_reduced{
+            height: 400px;
+        }
+
+        .dummyText p:first-of-type {
+            margin-top: 0
+        }
+
+        .ebWizard-bodyContainer {
+            /*background-color: #efefef;*/
+        }
+
+        .wizardModifiers {
+            padding-left: 20px;
+            line-height: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Wizard Layout</h1>
+
+Modifiers:
+<ul class="wizardModifiers">
+    <li>ebWizard:
+        <ul>
+            <li>horizontal</li>
+            <li>firstStep</li>
+            <li>lastStep</li>
+        </ul>
+    </li>
+    <li>ebWizard-headerStepSelectPrevious,<br/>
+        ebWizard-headerStepSelectNext:
+        <ul>
+            <li>disabled</li>
+            <li>hidden</li>
+        </ul>
+    </li>
+    <li>ebWizard-stepList:
+        <ul>
+            <li>open</li>
+        </ul>
+    </li>
+    <li>ebWizard-step:
+        <ul>
+            <li>current</li>
+            <li>valid</li>
+            <li>disabled</li>
+        </ul>
+    </li>
+</ul>
+
+
+<h2>Wizard normal step</h2>
+
+<p class="ebText ebText_error">The list puts the numbers automatically based on child order, the selected element's number (responsive design) needs to be set by JS</p>
+
+
+<div class="wizardContainer">
+
+    <div class="ebWizard ebWizard_horizontal">
+        <div class="ebWizard-headerStepSelect"><i class="ebWizard-headerStepSelectPrevious"></i><div class="ebWizard-step ebWizard-step_current"><span class="ebWizard-stepNumber">2</span><span class="ebWizard-stepTitle">Item 2</span></div><i class="ebWizard-headerStepSelectDropBtn"></i><i class="ebWizard-headerStepSelectNext"></i></div>
+        <ul class="ebWizard-stepList">
+            <li class="ebWizard-stepListItem ebWizard-step ebWizard-step_valid">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 1</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step_current ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 2</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step_disabled ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 3 with longer text label</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 4</span>
+            </li>
+        </ul>
+
+        <div class="ebWizard-bodyContainer eb_scrollbar">
+            <div class="dummyText">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel lorem libero, ut sollicitudin velit.
+                    Etiam vehicula lorem non neque laoreet at malesuada purus posuere. Nunc viverra arcu sed augue ultricies
+                    rhoncus. Etiam ac lorem arcu. Curabitur ut metus feugiat est imperdiet gravida eget eget arcu. Fusce
+                    vitae magna leo, ut pretium justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                    per inceptos himenaeos. Nullam imperdiet iaculis posuere. Etiam porttitor, nibh id venenatis mattis,
+                    tortor dui convallis dui, vitae tincidunt odio enim ut massa. Sed consectetur, enim eget varius rutrum,
+                    ante sem varius lorem, quis eleifend diam magna vitae nulla. Fusce a turpis eget erat aliquet
+                    condimentum. Quisque faucibus velit sed turpis viverra dictum.
+                </p>
+
+                <p>
+                    Morbi et tortor id metus sagittis tempus quis sed dui. Suspendisse nisi mauris, vulputate et commodo id,
+                    vehicula sit amet dui. Etiam nisi purus, hendrerit nec pulvinar et, sagittis at sapien. Praesent
+                    porttitor, lacus sit amet sodales luctus, leo nibh tincidunt arcu, quis bibendum eros nibh vitae mi.
+                    Maecenas ullamcorper varius convallis. Aliquam varius commodo viverra. Praesent imperdiet metus a justo
+                    elementum a faucibus velit lobortis. Nulla at massa quam. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Nullam convallis nunc vel sem tristique rutrum.
+                    Vestibulum fermentum mollis elit et eleifend. Phasellus et ornare massa.
+                </p>
+
+                <p>
+                    Aliquam eleifend auctor dui, ut congue velit convallis sed. Duis rutrum, dolor nec elementum vehicula,
+                    odio magna tincidunt dui, id rutrum tortor metus sed magna. Aliquam sit amet purus felis, sed vulputate
+                    justo. Donec ac justo rutrum dui elementum ultrices et non diam. In dolor ante, congue vitae eleifend
+                    ac, accumsan non felis. Ut non diam ac dolor placerat blandit at in ipsum. Vestibulum nulla velit,
+                    hendrerit id bibendum nec, dapibus nec tortor. Ut eget quam eros. Aenean iaculis erat ut urna placerat
+                    commodo. Nam laoreet ullamcorper tellus quis mattis. Mauris sit amet lacus ut sapien aliquam ultrices.
+                    Cras sapien enim, tempus nec convallis eget, pharetra et enim. Integer dictum leo ut nulla fermentum a
+                    imperdiet elit vestibulum.
+                </p>
+
+                <p>
+                    Pellentesque fringilla aliquam vestibulum. Quisque nec augue tortor. In dictum ultricies libero ac
+                    malesuada. Sed tincidunt ultricies nulla, et semper dui imperdiet in. Integer purus ante, blandit ac
+                    varius vitae, mollis a nisi. Sed sapien tortor, viverra vel accumsan eu, commodo eget est. Suspendisse
+                    varius, leo vitae vehicula posuere, magna nibh molestie mauris, ac mattis eros lectus id erat. Praesent
+                    volutpat scelerisque dui, id vehicula mi sagittis rhoncus. Etiam a mauris leo. Quisque condimentum
+                    gravida neque sed commodo. Sed sagittis purus at dolor rutrum semper. In eget sapien justo. Suspendisse
+                    nec tristique diam. Sed ornare nunc eu odio suscipit eget commodo libero porttitor. Aenean id diam
+                    magna. Nam vulputate blandit tellus, quis suscipit lacus dignissim nec.
+                </p>
+
+                <p>
+                    Nullam vitae tortor quis velit pulvinar venenatis quis eu nibh. Nullam odio libero, imperdiet quis
+                    lobortis a, venenatis in diam. Maecenas ultrices scelerisque diam. Curabitur consectetur, nulla ac
+                    vehicula consequat, enim massa pellentesque nisi, sed aliquet est urna egestas neque. Donec sit amet
+                    semper nisi. Nunc sed diam ligula, id pretium dui. Nam vestibulum lorem et libero ultricies ultrices.
+                    Etiam pretium nisl ac sapien vehicula consequat. Suspendisse posuere scelerisque libero, et pharetra
+                    elit tristique a. Mauris sit amet sem id sem pulvinar accumsan id at nunc.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ebWizard-footer">
+            <ul class="ebWizard-footerCommandList">
+                <li class="ebWizard-footerCommandListItem"><a href="#" class="ebWizard-footerBtnCancel">Cancel</a></li><li class="ebWizard-footerCommandListItem"><button type="button" class="ebWizard-footerBtnPrevious ebBtn eb_wMargin_side"><i class="ebIcon ebIcon_leftArrowLarge"></i> <span>Previous</span></button><button type="button" class="ebWizard-footerBtnNext ebBtn ebBtn_color_paleBlue eb_wMargin_side"><span>Next</span> <i class="ebIcon ebIcon_rightArrowLarge_white"></i></button>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+</div>
+
+<h2>Wizard first step</h2>
+
+<p class="ebText ebText_error">ebWizard_firstStep  modifier will hide the buttons automatically, no need JS</p>
+
+<div class="wizardContainer">
+
+    <div class="ebWizard ebWizard_horizontal ebWizard_firstStep">
+        <div class="ebWizard-headerStepSelect"><i class="ebWizard-headerStepSelectPrevious"></i><div class="ebWizard-step ebWizard-step_current"><span class="ebWizard-stepNumber">1</span><span class="ebWizard-stepTitle">Item 1</span></div><i class="ebWizard-headerStepSelectDropBtn"></i><i class="ebWizard-headerStepSelectNext"></i></div>
+        <ul class="ebWizard-stepList">
+            <li class="ebWizard-stepListItem ebWizard-step ebWizard-step_current">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 1</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 2</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step_disabled ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 3</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 4</span>
+            </li>
+        </ul>
+
+        <div class="ebWizard-bodyContainer eb_scrollbar">
+            <div class="dummyText">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel lorem libero, ut sollicitudin velit.
+                    Etiam vehicula lorem non neque laoreet at malesuada purus posuere. Nunc viverra arcu sed augue ultricies
+                    rhoncus. Etiam ac lorem arcu. Curabitur ut metus feugiat est imperdiet gravida eget eget arcu. Fusce
+                    vitae magna leo, ut pretium justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                    per inceptos himenaeos. Nullam imperdiet iaculis posuere. Etiam porttitor, nibh id venenatis mattis,
+                    tortor dui convallis dui, vitae tincidunt odio enim ut massa. Sed consectetur, enim eget varius rutrum,
+                    ante sem varius lorem, quis eleifend diam magna vitae nulla. Fusce a turpis eget erat aliquet
+                    condimentum. Quisque faucibus velit sed turpis viverra dictum.
+                </p>
+
+                <p>
+                    Morbi et tortor id metus sagittis tempus quis sed dui. Suspendisse nisi mauris, vulputate et commodo id,
+                    vehicula sit amet dui. Etiam nisi purus, hendrerit nec pulvinar et, sagittis at sapien. Praesent
+                    porttitor, lacus sit amet sodales luctus, leo nibh tincidunt arcu, quis bibendum eros nibh vitae mi.
+                    Maecenas ullamcorper varius convallis. Aliquam varius commodo viverra. Praesent imperdiet metus a justo
+                    elementum a faucibus velit lobortis. Nulla at massa quam. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Nullam convallis nunc vel sem tristique rutrum.
+                    Vestibulum fermentum mollis elit et eleifend. Phasellus et ornare massa.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ebWizard-footer">
+            <ul class="ebWizard-footerCommandList">
+                <li class="ebWizard-footerCommandListItem"><a href="#" class="ebWizard-footerBtnCancel">Cancel</a></li><li class="ebWizard-footerCommandListItem"><button type="button" class="ebWizard-footerBtnPrevious ebBtn eb_wMargin_side"><i class="ebIcon ebIcon_leftArrowLarge"></i> <span>Previous</span></button><button type="button" class="ebWizard-footerBtnNext ebBtn ebBtn_color_paleBlue eb_wMargin_side"><span>Next</span> <i class="ebIcon ebIcon_rightArrowLarge_white"></i></button><button type="button" class="ebWizard-footerBtnFinish ebBtn eb_wMargin_side ebBtn_color_darkBlue"> <span>Finish</span></button>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+</div>
+
+
+<h2>Wizard last step</h2>
+
+<p class="ebText ebText_error">ebWizard_lastStep  modifier will hide the buttons automatically, no need JS</p>
+
+<div class="wizardContainer">
+
+    <div class="ebWizard ebWizard_horizontal ebWizard_lastStep">
+        <div class="ebWizard-headerStepSelect"><i class="ebWizard-headerStepSelectPrevious"></i><div class="ebWizard-step ebWizard-step_current"><span class="ebWizard-stepNumber">1</span><span class="ebWizard-stepTitle">Item 1</span></div><i class="ebWizard-headerStepSelectDropBtn"></i><i class="ebWizard-headerStepSelectNext"></i></div>
+        <ul class="ebWizard-stepList">
+            <li class="ebWizard-stepListItem ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 1</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 2</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 3</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_current">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 4</span>
+            </li>
+        </ul>
+
+        <div class="ebWizard-bodyContainer eb_scrollbar">
+            <div class="dummyText">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel lorem libero, ut sollicitudin velit.
+                    Etiam vehicula lorem non neque laoreet at malesuada purus posuere. Nunc viverra arcu sed augue ultricies
+                    rhoncus. Etiam ac lorem arcu. Curabitur ut metus feugiat est imperdiet gravida eget eget arcu. Fusce
+                    vitae magna leo, ut pretium justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                    per inceptos himenaeos. Nullam imperdiet iaculis posuere. Etiam porttitor, nibh id venenatis mattis,
+                    tortor dui convallis dui, vitae tincidunt odio enim ut massa. Sed consectetur, enim eget varius rutrum,
+                    ante sem varius lorem, quis eleifend diam magna vitae nulla. Fusce a turpis eget erat aliquet
+                    condimentum. Quisque faucibus velit sed turpis viverra dictum.
+                </p>
+
+                <p>
+                    Morbi et tortor id metus sagittis tempus quis sed dui. Suspendisse nisi mauris, vulputate et commodo id,
+                    vehicula sit amet dui. Etiam nisi purus, hendrerit nec pulvinar et, sagittis at sapien. Praesent
+                    porttitor, lacus sit amet sodales luctus, leo nibh tincidunt arcu, quis bibendum eros nibh vitae mi.
+                    Maecenas ullamcorper varius convallis. Aliquam varius commodo viverra. Praesent imperdiet metus a justo
+                    elementum a faucibus velit lobortis. Nulla at massa quam. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Nullam convallis nunc vel sem tristique rutrum.
+                    Vestibulum fermentum mollis elit et eleifend. Phasellus et ornare massa.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ebWizard-footer">
+            <ul class="ebWizard-footerCommandList">
+                <li class="ebWizard-footerCommandListItem"><a href="#" class="ebWizard-footerBtnCancel">Cancel</a></li><li class="ebWizard-footerCommandListItem"><button type="button" class="ebWizard-footerBtnPrevious ebBtn eb_wMargin_side"><i class="ebIcon ebIcon_leftArrowLarge"></i> <span>Previous</span></button><button type="button" class="ebWizard-footerBtnNext ebBtn ebBtn_color_paleBlue eb_wMargin_side"><span>Next</span> <i class="ebIcon ebIcon_rightArrowLarge_white"></i></button><button type="button" class="ebWizard-footerBtnFinish ebBtn eb_wMargin_side ebBtn_color_darkBlue"> <span>Finish</span></button>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+</div>
+
+<h2>Wizard list overflow</h2>
+
+<p class="ebText ebText_error">The list height will automatically be adapted in function of the wizard container height and overflow with scrollbar if needed.</p>
+
+<div class="wizardContainer wizardContainer_reduced">
+
+    <div class="ebWizard">
+        <div class="ebWizard-headerStepSelect"><i class="ebWizard-headerStepSelectPrevious"></i><div class="ebWizard-step ebWizard-step_current"><span class="ebWizard-stepNumber">1</span><span class="ebWizard-stepTitle">Item 1</span></div><i class="ebWizard-headerStepSelectDropBtn"></i><i class="ebWizard-headerStepSelectNext"></i></div>
+        <ul class="ebWizard-stepList ebWizard-stepList_open eb_scrollbar">
+            <li class="ebWizard-stepListItem ebWizard-step ebWizard-step_current">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 1</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 2</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 3 with longer text label</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 4</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 5</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 6</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Item 7</span>
+            </li><li class="ebWizard-stepListItem ebWizard-step ebWizard-step_disabled">
+                <span class="ebWizard-stepNumber"></span><span class="ebWizard-stepTitle">Finish</span>
+            </li>
+        </ul>
+
+        <div class="ebWizard-bodyContainer eb_scrollbar">
+            <div class="dummyText">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel lorem libero, ut sollicitudin velit.
+                    Etiam vehicula lorem non neque laoreet at malesuada purus posuere. Nunc viverra arcu sed augue ultricies
+                    rhoncus. Etiam ac lorem arcu. Curabitur ut metus feugiat est imperdiet gravida eget eget arcu. Fusce
+                    vitae magna leo, ut pretium justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                    per inceptos himenaeos. Nullam imperdiet iaculis posuere. Etiam porttitor, nibh id venenatis mattis,
+                    tortor dui convallis dui, vitae tincidunt odio enim ut massa. Sed consectetur, enim eget varius rutrum,
+                    ante sem varius lorem, quis eleifend diam magna vitae nulla. Fusce a turpis eget erat aliquet
+                    condimentum. Quisque faucibus velit sed turpis viverra dictum.
+                </p>
+
+                <p>
+                    Morbi et tortor id metus sagittis tempus quis sed dui. Suspendisse nisi mauris, vulputate et commodo id,
+                    vehicula sit amet dui. Etiam nisi purus, hendrerit nec pulvinar et, sagittis at sapien. Praesent
+                    porttitor, lacus sit amet sodales luctus, leo nibh tincidunt arcu, quis bibendum eros nibh vitae mi.
+                    Maecenas ullamcorper varius convallis. Aliquam varius commodo viverra. Praesent imperdiet metus a justo
+                    elementum a faucibus velit lobortis. Nulla at massa quam. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Nullam convallis nunc vel sem tristique rutrum.
+                    Vestibulum fermentum mollis elit et eleifend. Phasellus et ornare massa.
+                </p>
+
+                <p>
+                    Aliquam eleifend auctor dui, ut congue velit convallis sed. Duis rutrum, dolor nec elementum vehicula,
+                    odio magna tincidunt dui, id rutrum tortor metus sed magna. Aliquam sit amet purus felis, sed vulputate
+                    justo. Donec ac justo rutrum dui elementum ultrices et non diam. In dolor ante, congue vitae eleifend
+                    ac, accumsan non felis. Ut non diam ac dolor placerat blandit at in ipsum. Vestibulum nulla velit,
+                    hendrerit id bibendum nec, dapibus nec tortor. Ut eget quam eros. Aenean iaculis erat ut urna placerat
+                    commodo. Nam laoreet ullamcorper tellus quis mattis. Mauris sit amet lacus ut sapien aliquam ultrices.
+                    Cras sapien enim, tempus nec convallis eget, pharetra et enim. Integer dictum leo ut nulla fermentum a
+                    imperdiet elit vestibulum.
+                </p>
+
+                <p>
+                    Pellentesque fringilla aliquam vestibulum. Quisque nec augue tortor. In dictum ultricies libero ac
+                    malesuada. Sed tincidunt ultricies nulla, et semper dui imperdiet in. Integer purus ante, blandit ac
+                    varius vitae, mollis a nisi. Sed sapien tortor, viverra vel accumsan eu, commodo eget est. Suspendisse
+                    varius, leo vitae vehicula posuere, magna nibh molestie mauris, ac mattis eros lectus id erat. Praesent
+                    volutpat scelerisque dui, id vehicula mi sagittis rhoncus. Etiam a mauris leo. Quisque condimentum
+                    gravida neque sed commodo. Sed sagittis purus at dolor rutrum semper. In eget sapien justo. Suspendisse
+                    nec tristique diam. Sed ornare nunc eu odio suscipit eget commodo libero porttitor. Aenean id diam
+                    magna. Nam vulputate blandit tellus, quis suscipit lacus dignissim nec.
+                </p>
+
+                <p>
+                    Nullam vitae tortor quis velit pulvinar venenatis quis eu nibh. Nullam odio libero, imperdiet quis
+                    lobortis a, venenatis in diam. Maecenas ultrices scelerisque diam. Curabitur consectetur, nulla ac
+                    vehicula consequat, enim massa pellentesque nisi, sed aliquet est urna egestas neque. Donec sit amet
+                    semper nisi. Nunc sed diam ligula, id pretium dui. Nam vestibulum lorem et libero ultricies ultrices.
+                    Etiam pretium nisl ac sapien vehicula consequat. Suspendisse posuere scelerisque libero, et pharetra
+                    elit tristique a. Mauris sit amet sem id sem pulvinar accumsan id at nunc.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ebWizard-footer">
+            <ul class="ebWizard-footerCommandList">
+                <li class="ebWizard-footerCommandListItem"><a href="#" class="ebWizard-footerBtnCancel">Cancel</a></li><li class="ebWizard-footerCommandListItem"><button type="button" class="ebWizard-footerBtnPrevious ebBtn eb_wMargin_side"><i class="ebIcon ebIcon_leftArrowLarge"></i> <span>Previous</span></button><button type="button" class="ebWizard-footerBtnNext ebBtn ebBtn_color_paleBlue eb_wMargin_side"><span>Next</span> <i class="ebIcon ebIcon_rightArrowLarge_white"></i></button>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+</div>
+
+
+</body>
+</html>

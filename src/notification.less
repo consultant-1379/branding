@@ -1,0 +1,89 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyColors(@color, @bgPercent, @borderPercent, @textPercent) {
+    .applyTintBg(@color, @bgPercent);
+    .applyTintBorderColor(@color, @borderPercent);
+    .applyTintColor(@color, @textPercent);
+}
+
+.applyContentColors(@color, @bgPercent, @borderPercent, @textPercent) {
+    .ebNotification-content {
+        .applyColors(@color, @bgPercent, @borderPercent, @textPercent);
+    }
+}
+
+.ebNotification {
+    display: inline-block;
+    opacity: 1;
+    .applyTransition(~"opacity .6s linear");
+    
+    &_closed {
+        opacity: 0;
+    }
+
+    &_toast {
+        position: absolute;
+        text-align: center;
+        top: 20px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        .ebNotification-content {
+            .applyBoxShadow(~'0 0 3px 1px', fade(@black, 20%));
+        }
+    }
+
+    &-content {
+        position: relative;
+        display: inline-block;
+        text-align: left;
+        white-space: nowrap;
+
+        border: 1px solid;
+        .applyColors(@grey, 0.1, 0.6, 2);
+
+        .applyBorderRadius(3px);
+    }
+
+    &_color {
+        &_paleBlue {
+            .applyContentColors(@paleBlue, 0.1, 0.6, 2);
+        }
+        &_green {
+            .applyContentColors(@green, 0.1, 0.6, 2);
+        }
+        &_yellow {
+            .applyContentColors(@yellow, 0.1, 0.6, 2);
+        }
+        &_red {
+            .applyContentColors(@red, 0.1, 0.6, 2);
+        }
+    }
+
+    &-icon {
+        float: left;
+        padding: 3px 4px 0 4px;
+    }
+
+    &-close {
+        position: absolute;
+        top: 3px;
+        right: 2px;
+        width: 16px;
+        height: 16px;
+    }
+
+    &-label {
+        padding: 3px 20px 3px 4px;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        display: inline-block;
+        white-space: normal;
+    }
+
+    &-icon + &-label {
+        width: calc(~"100% - 44px");
+    }
+}

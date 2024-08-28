@@ -1,0 +1,66 @@
+<project name="Asset Library Docs"
+         xmlns="http://maven.apache.org/DECORATION/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+    <bannerLeft>
+        <name>Asset Library</name>
+    </bannerLeft>
+
+    <publishDate position="right"/>
+
+    <bannerRight>
+        <src>images/logo.png</src>
+    </bannerRight>
+    <body>
+        <links>
+            <item name="CDS Portal" href="http://pdu-oss-tools.lmera.ericsson.se/cds/"/>
+            <item name="UI SDK" href="/../../uisdk/latest/index.html"/>
+            <item name="Ericsson" href="http://www.ericsson.com/"/>
+        </links>
+
+        <menu name="Asset Library">
+            <item name="Introduction" href="/index.html"/>
+            <item name="Showcase" href="/showcase/library/index.html"/>
+            <item name="Getting Started" href="/gettingStarted.html"/>
+        </menu>
+
+        <menu name="How To Report">
+            <item name="Issues and New features" href="/report/index.html"/>
+        </menu>
+
+        <menu name="How To Contribute">
+            <item name="Introduction" href="/contribute/index.html"/>
+            <item name="Contribute" href="/../../uisdk/latest/contribute/index.html"/>
+            <item name="Add a new Asset in the Showcase" href="/contribute/contributeAddToShowcase.html"/>
+        </menu>
+
+        <menu name="Guidelines">
+            <item name="CSS Code Style" href="/../../uisdk/latest/guidelines/css.html"/>
+        </menu>
+
+        <menu name="Tutorials">
+            <item name="Input Validation Documentation" href="/examples/inputValidation.html"/>
+        </menu>
+
+        <menu name="Additional Information">
+            <item name="FOSS and 3PP" href="/foss.html"/>
+            <item name="Revision History" href="/revisions.html"/>
+        </menu>
+
+    </body>
+
+    <skin>
+        <groupId>com.ericsson.cds</groupId>
+        <artifactId>ericsson-skin-stats</artifactId>
+        <version>1.0.1</version>
+    </skin>
+    <custom>
+        <uiStats>
+            <serverUrl>http://pdu-oss-tools.lmera.ericsson.se/cds/analytics/</serverUrl>
+            <siteId>2</siteId>
+        </uiStats>
+        <fluidoSkin>
+            <sourceLineNumbersEnabled>false</sourceLineNumbersEnabled>
+        </fluidoSkin>
+    </custom>
+</project>

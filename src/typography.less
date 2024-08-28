@@ -1,0 +1,98 @@
+@import "common/colors";
+
+body {
+    color: lighten(@black, 20%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: lighten(@black, 30%);
+    font-weight: bold;
+}
+
+h1 {
+    line-height: 3.2rem;
+    font-size: 3.2rem;
+    font-weight: normal;
+    padding: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
+}
+
+h2 {
+    border-bottom: lighten(@black, 40%) solid 1px;
+    line-height: 2.0rem;
+    font-size: 2.0rem;
+    font-weight: normal;
+    padding: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
+}
+
+h3 {
+    border-bottom: lighten(@black, 80%) solid 1px;
+    line-height: 1.6rem;
+    font-size: 1.6rem;
+    padding: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
+    font-weight: normal;
+    color: lighten(@black, 20%);
+}
+
+h4 {
+    border-bottom: lighten(@black, 80%) solid 1px;
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
+    font-weight: bold;
+    color: lighten(@black, 20%);
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+/* ==================================================== */
+.ebText {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #333333;
+
+    &_lead {
+        font-size: 1.8rem;
+        line-height: 3.4rem;
+    }
+    &_alternative {
+        font-size: 1.2rem;
+        color: @ebTextAlternative;
+    }
+    &_small {
+        font-size: 1.1rem;
+    }
+    &_disabled {
+        font-size: 1.2rem;
+        color: #b0b0af;
+    }
+    &_error {
+        font-size: 1.2rem;
+        color: #e32119;
+    }
+}
+
+/* ==================================================== */
+a {
+    font-size: 1.2rem;
+    color: @eBlue;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+/* ==================================================== */
+textArea {
+    resize: none;
+}

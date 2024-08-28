@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Version info
+cleanedVersion=`script/version`
+incrementalVersion=`echo $cleanedVersion | cut -d"." -f3`
+minorVersion=`echo $cleanedVersion | cut -d"." -f2`
+majorVersion=`echo $cleanedVersion | cut -d"." -f1`
+
+case $UPDATE_TYPE in
+    "major" )
+        majorVersion=$(($majorVersion+1))
+        minorVersion="0"
+        incrementalVersion="0" ;;
+    "minor" )
+        minorVersion=$(($minorVersion+1))
+        incrementalVersion="0" ;;
+    * )
+        incrementalVersion=$(($incrementalVersion+1)) ;;
+esac
+
+echo $majorVersion.$minorVersion.$incrementalVersion

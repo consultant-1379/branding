@@ -1,0 +1,83 @@
+.ebTree {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+    color: #333333;
+
+    &Item {
+        overflow-x: hidden;
+
+        &-expandButton > i {
+            display: none;
+        }
+
+        &_expandable > &-content > &-expandButton > i,
+        &-expandButton, &-checkbox, &-icon, &-label {
+            display: inline-block;
+        }
+
+        &-content {
+            min-height: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+
+        }
+
+        &-icon, &-expandButton {
+            width: 20px;
+        }
+
+        &-expandButton > i, &-icon > i {
+            height: 20px;
+        }
+
+        &-label {
+            font-size: 12px;
+            vertical-align: middle;
+            line-height: 2rem;
+        }
+
+        &-icon {
+            margin: 0px;
+            opacity: 0.4;
+        }
+
+        > .ebTree {
+            margin-left: 21px;
+        }
+
+        &-content {
+            position: relative;
+            border-radius: 3px;
+            padding: 4px;
+
+            &:hover {
+                background-color:#cce0f0;
+            }
+
+            &_selected {
+                background-color:#f2f2f2;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 0.3rem;
+                    background-color: #00A9D4;
+                }
+            }
+        }
+
+        &_disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+
+            > .ebTreeItem-content {
+                cursor: not-allowed;
+            }
+        }
+    }
+}

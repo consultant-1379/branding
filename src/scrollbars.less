@@ -1,0 +1,31 @@
+@import "common/mixins";
+@import "common/colors";
+
+.eb_scrollbar {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+
+        &-track {
+            background-color: #f0f0f0;
+            border: 1px solid transparent;
+            background-clip: content-box;
+            border-radius: 10px;
+        }
+
+        &-thumb {
+            background-color: #cccccc;
+            border-radius: 10px;
+            transition: all 0.2s linear;
+            border: 1px solid transparent;
+            background-clip: content-box;
+
+            &:hover {
+                background-color: #999999;
+            }
+        }
+    }
+}

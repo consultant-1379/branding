@@ -1,0 +1,47 @@
+<!--====================================================-->
+<h3 class="eaAssetLibrary-Heading">Toast Notification</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body_noside ebText">
+        You can use notification as a toast notification by adding ebNotification_toast to the root element of the
+        notification. This will cause the notification to appear at the top of its parent, centered horizontally.
+    </div>
+</div>
+
+<div class="eaAssetLibrary-Block">
+    <div style="height:200px; width:300px; position:relative; border: 1px solid #666;">
+        Parent div
+        <div class="ebNotification ebNotification_toast">
+            <div class="ebNotification-content">
+                <span class="ebNotification-label">Default Message</span>
+                <span class="ebNotification-close">
+                    <i class="ebIcon ebIcon_close ebIcon_interactive"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--====================================================-->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;div class="ebNotification ebNotification_toast"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="ebNotification-content"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebNotification-label"&gt;Default Message&lt;/span&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebNotification-close"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebIcon ebIcon_close ebIcon_interactive"&gt;&lt;/i&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+    </code>
+</div>
+
+<div class="eaAssetLibrary-Block-body eaAssetLibrary-AssetList-listItem-Guideline">
+    <h4 class="eaAssetLibrary-Heading">Implementation Guideline</h4>
+
+    <div class="ebText">
+        Add the toast notification to the application's root element to have application level notifications.
+    </div>
+</div>

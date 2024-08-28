@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inputs :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+
+    <style>
+        body {
+            padding: 15px;
+        }
+
+        .row200px {
+            vertical-align: top;
+            display: inline-block;
+            width: 20%;
+            min-width: 200px;
+            border: 1px solid #cccccc;
+        }
+
+        .row200px h5 {
+            text-align: center;
+        }
+
+        .row200px h6 {
+            font-size: 1.2rem;
+            margin: 0.6rem 0;
+        }
+
+        .ebInfoPopup-content {
+            display: none;
+        }
+
+        .ebInput-infoPopup:hover .ebInfoPopup-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="ebBreadcrumbs">
+    <div class="ebBreadcrumbs-item"><a href="index.html" class="ebBreadcrumbs-link">Brand Assets</a></div>
+    <div class="ebBreadcrumbs-item"><a href="inputs.html" class="ebBreadcrumbs-link">Inputs</a></div>
+</div>
+
+<h1>Inputs Elements</h1>
+
+<div>
+    <label class="ebLabel">Field label
+        <input type="text" class="ebInput eb_wMargin" placeholder="Input"/>
+    </label>
+    <button class="ebBtn ebBtn_default">Default button</button>
+    Input Active
+</div>
+
+<div>
+    <input type="text" class="ebInput ebInput_labeled eb_wMargin" disabled/> Input Disabled
+</div>
+
+<div>
+    <label class="ebLabel">
+        <input type="text" class="ebInput ebInput_labeled eb_wMargin ebInput_width_mini" placeholder="mini"/>
+        Mini
+    </label>
+</div>
+
+<div>
+    <label class="ebLabel">
+        <input type="text" class="ebInput ebInput_labeled eb_wMargin ebInput_width_small" placeholder="small"/>
+        Small
+    </label>
+</div>
+
+<div>
+    <label class="ebLabel">
+        <input type="text" class="ebInput ebInput_labeled eb_wMargin" placeholder="default"/>
+        Default
+    </label>
+</div>
+
+<div>
+    <label class="ebLabel">
+        <input type="text" class="ebInput ebInput_labeled eb_wMargin ebInput_width_long" placeholder="long"/>
+        Long
+    </label>
+</div>
+
+<div>
+    <label class="ebLabel">
+        <input type="text" class="ebInput ebInput_labeled eb_wMargin ebInput_width_xLong" placeholder="X long"/>
+        X Long
+    </label>
+</div>
+
+<br><br>
+
+<div>
+    <input type="text" class="ebInput ebInput_noRightSide" placeholder="No right side"/><input type="text"
+                                                                                               class="ebInput ebInput_noLeftSide"
+                                                                                               placeholder="No left side"/>
+</div>
+
+<br><br>
+
+<h2>Input Validation</h2>
+
+<p>There are 3 types of messages</p>
+<ul>
+    <li>(?):&nbsp;&nbsp; Info message</li>
+    <li>(ok):&nbsp;OK message</li>
+    <li>(X):&nbsp;&nbsp; Error message</li>
+</ul>
+<p>
+    There are 4 different scenario:
+<ol>
+    <li>(X): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default) The input does not show any message unless the input is
+        wrong
+    </li>
+    <li>(? or X): &nbsp;&nbsp;&nbsp;&nbsp;The input shows info message unless the input is wrong then display error</li>
+    <li>(OK or X): &nbsp;&nbsp;&nbsp;The input shows ok or error only</li>
+    <li>(? then OK or X): The input shows info first then ok or error</li>
+</ol>
+</p>
+<br/>
+<br/>
+
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h4>Input with margin</h4>
+
+<div class="row200px">
+
+    <input type="text" class="ebInput eb_wMargin" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput eb_wMargin" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput eb_wMargin" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput eb_wMargin" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+</div>
+
+<br/>
+<br/>
+
+
+<h4>Modifiers</h4>
+
+<!-- ************************** -->
+<div class="row200px">
+
+    <h6>ebInput_borderColor + status_hide</h6>
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status ebInput-status_hide">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status ebInput-status_hide">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+
+<div class="row200px">
+    <h6>ebInput_borderColor + status_info</h6>
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status ebInput-status_info">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status ebInput-status_info">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+
+<div class="row200px">
+    <h6>ebInput_borderColor + status_ok</h6>
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status ebInput-status_ok">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status ebInput-status_ok">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+
+<div class="row200px">
+    <h6>ebInput_borderColor_red + status_error</h6>
+    <input type="text" class="ebInput ebInput_borderColor_red" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status ebInput-status_error">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_borderColor_red" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status ebInput-status_error">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error</span>
+    </span>
+
+</div>
+<br/>
+<br/>
+<!--=====================================================================================-->
+
+<h3>Instant Validation (default)</h3>
+
+<h4>Pattern</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+</div>
+
+<!-- ************************** -->
+
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+</div>
+
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h4>Input Type</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h4>Required</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h3>Focus loose Validation</h3>
+
+<h4>Pattern</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+</div>
+
+<!-- ************************** -->
+
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">Lowercase</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="aaa"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" placeholder="lowercase" pattern="[a-z]+" value="AAA"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Not Lowercase</span>
+    </span>
+</div>
+
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h4>Input Type</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">email</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="aaa@bbb.cc"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+    <input type="email" class="ebInput ebInput_validation_focusLost" value="wrongEmail"/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Invalid email</span>
+    </span>
+
+</div>
+
+<!--=====================================================================================-->
+<!--=====================================================================================-->
+<h4>Required</h4>
+
+<div class="row200px">
+    <h5>Default (X)</h5>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(? or X)</h5>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusInfo">required</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+<!-- ************************** -->
+<div class="row200px">
+    <h5>(OK or X)</h5>
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk"></span>
+        <span class="ebInput-statusError"></span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" value="aaa" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+    <input type="text" class="ebInput ebInput_validation_focusLost" required/>
+    <span class="ebInput-status">
+        <span class="ebInput-statusOk">OK</span>
+        <span class="ebInput-statusError">Error required</span>
+    </span>
+
+</div>
+
+</body>
+</html>

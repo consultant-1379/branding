@@ -1,0 +1,78 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyUserSelect(@params) {
+    -moz-user-select: @params;
+    -khtml-user-select: @params;
+    -webkit-user-select: @params;
+    -o-user-select: @params;
+}
+
+.ebContextMenu {
+    position: relative;
+    width: 16px;
+    height: 16px;
+
+    &:focus {
+        outline: none;
+    }
+
+    // TODO: &-ExpandBtn is deprecated! Should be removed.
+    &-ExpandBtn, &-expandBtn {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        .applyUserSelect(none);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // TODO: &-Dropdown is deprecated! Should be removed.
+    &-Dropdown, &-body {
+        position: absolute;
+        z-index: 10;
+        min-width: 60px;
+        width: auto;
+        height: auto;
+
+        &_corner {
+            &_default {
+                position: absolute;
+                top: 20px;
+                left: 0px;
+            }
+            &_topRight {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+            }
+            &_bottomLeft {
+                position: absolute;
+                bottom: 20px;
+                left: 0px;
+            }
+            &_bottomRight {
+                position: absolute;
+                bottom: 20px;
+                right: 0px;
+            }
+        }
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .applyUserSelect(none);
+        .applyBoxShadow(~'0 0 5px 0', fade(@black, 20%));
+
+        &_visible_false {
+            visibility: hidden;
+        }
+
+        &_visible_true {
+            display: block;
+        }
+    }
+}

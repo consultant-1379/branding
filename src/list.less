@@ -1,0 +1,55 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &_striped > &-item {
+        border-bottom: 1px solid #E6E6E6;
+
+        &_noStripe {
+            border-bottom: none;
+        }
+    }
+
+    &-separator {
+        height: 1px;
+        margin: 0.4rem;
+        background-color: #E6E6E6;
+    }
+
+    &-item {
+        color: #333333;
+        padding: 0 0.8rem;
+        min-height: 2.4rem;
+        line-height: 2.2rem;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+//        > * {
+//            white-space: nowrap;
+//            text-overflow: ellipsis;
+//            overflow: hidden;
+//            display: block;
+//        }
+
+        &:hover:not(.ebList-item_noHoverColor) {
+            .applyTintBg(@textLinkBlue, 0.1);
+        }
+        &:active:not(.ebList-item_noHoverColor) {
+            .applyTintBg(@textLinkBlue, 0.2);
+        }
+
+        &_noHoverColor {
+            background-color: transparent;
+        }
+    }
+
+    &-item > & {
+        margin-left: 1.2rem;
+    }
+}

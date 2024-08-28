@@ -1,0 +1,124 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+.ebDropdown {
+    position: relative;
+    display: inline-block;
+
+    height: @defaultHeightRem;
+    padding: 0;
+    margin: 0;
+
+    // TODO: &-list is deprecated! Should be removed.
+    &-list, &-body {
+        position: absolute;
+        margin-top: 6px;
+        display: none;
+        min-width: 100%;
+
+        &_rightAlign {
+            right: 0;
+        }
+    }
+
+    // TODO: &-Header is deprecated! Should be removed.
+    &-Header, &-header {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        height: 100%;
+        min-width: 60px;
+
+        margin: 0;
+        padding: 6px 8px;
+
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+
+        text-align: left;
+        text-decoration: none;
+        white-space: nowrap;
+        color: lighten(@black, 20%);
+
+        background-color: @white;
+        border: none;
+
+        cursor: pointer;
+
+        .applyBoxShadow(~'inset 0 0 0 1px', fade(@black, 20%));
+        .applyBorderRadius(3px);
+        .applyBoxSizing(~'border-box');
+
+        .applyButtonDefaultVGradient();
+
+        &:hover {
+            .applyButtonHoverVGradient();
+        }
+        &:active {
+            .applyButtonActiveVGradient();
+        }
+
+        .ebDropdown-caption {
+            display: inline-block;
+            padding: 0 4px 0 0;
+            vertical-align: middle;
+            min-width: 27px;
+        }
+
+        .ebDropdown-iconHolder {
+            display: inline-block;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    }
+
+    // TODO: &-Header, &-list are deprecated! Should be removed.
+    .ebDropdown-Header:focus + .ebDropdown-list,
+    .ebDropdown-header:focus + .ebDropdown-body,
+    .ebDropdown-Header:active + .ebDropdown-list,
+    .ebDropdown-header:active + .ebDropdown-body,
+    &:focus > .ebDropdown-list,
+    &:focus > .ebDropdown-body,
+    &:active > .ebDropdown-list,
+    &:active > .ebDropdown-body {
+        display: block;
+    }
+
+    &_disabled {
+        // TODO: &-Header is deprecated! Should be removed.
+        .ebDropdown-Header, .ebDropdown-header {
+            background: rgba(0, 0, 0, 0.1);
+            color: #B2B2B2;
+
+            &, &:hover, &:active, .ebDropdown-iconHolder:hover {
+                .applyDisabledFormAction();
+            }
+
+            &:hover, &:active {
+                background: rgba(0, 0, 0, 0.1);
+                color: #B2B2B2;
+            }
+
+            .ebDropdown-iconHolder,
+            .ebDropdown-iconHolder:hover,
+            .ebDropdown-iconHolder:active {
+                opacity: 0.3;
+            }
+        }
+
+        // TODO: &-Header, &-list are deprecated! Should be removed.
+        .ebDropdown-Header:focus + .ebDropdown-list,
+        .ebDropdown-header:focus + .ebDropdown-body,
+        .ebDropdown-Header:active + .ebDropdown-list,
+        .ebDropdown-header:active + .ebDropdown-body,
+        &:focus > .ebDropdown-list,
+        &:focus > .ebDropdown-body,
+        &:active > .ebDropdown-list,
+        &:active > .ebDropdown-body {
+            display: none;
+        }
+    }
+
+}

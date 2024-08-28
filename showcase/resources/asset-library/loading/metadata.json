@@ -1,0 +1,31 @@
+{
+    "title": "Loading Animation",
+    "assetId": "loading",
+    "status": "none",
+    "items": [
+        {
+            "file": "loading/simpleLoading.html",
+            "anchorName": "simpleLoading",
+            "anchorTitle": "Loading",
+            "status": "baselined"
+        },
+        {
+            "file": "loading/inlineLoading.html",
+            "anchorName": "inlineLoading",
+            "anchorTitle": "Inline Loading",
+            "status": "baselined"
+        },
+        {
+            "file": "loading/loadingColors.html",
+            "anchorName": "loadingColors",
+            "anchorTitle": "Loading Colors",
+            "status": "baselined"
+        },
+        {
+            "file": "loading/loadingSizes.html",
+            "anchorName": "loadingSizes",
+            "anchorTitle": "Loading Sizes",
+            "status": "baselined"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Typography",
+    "assetId": "typography",
+    "status": "none",
+    "items": [
+        {
+            "file": "baseStyles.html" ,
+            "anchorName": "baseStyles",
+            "anchorTitle": "Basic Element Styles",
+            "status": "baselined"
+        },
+        {
+            "file": "textModifiers.html",
+            "anchorName": "textModifiers",
+            "anchorTitle": "Text Modifiers",
+            "status": "baselined"
+        }
+    ]
+}

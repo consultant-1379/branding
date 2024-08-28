@@ -1,0 +1,98 @@
+{
+    "defaultPhase": "package",
+    "properties": {
+        "buildDir": "target",
+        "optimizeDir": "$(buildDir)/optimized",
+        "packageDir": "$(buildDir)/package",
+        "udtModules": "$(udtBuild)/node_modules",
+        "package": "asset-library",
+        "name": "AssetLibrary",
+        "version": "1.0.0",
+        "skeleton": "2.0.16",
+        "skeletonType": "app"
+    },
+    "phases": {
+        "clean": {
+            "delete": {
+                "target": "$(buildDir)"
+            },
+            "install-dependencies": {}
+        },
+        "copy-files": {
+            "copy": {
+                "from": [
+                    "resources",
+                    ".cdt",
+                    "build.json"
+                ],
+                "to": "$(buildDir)/"
+            }
+        },
+        "optimize": {
+            "lmd": {
+                "config": {
+                    "resources": "resources",
+                    "localePostfix": "$(package)",
+                    "baseUrl": "src",
+                    "dir": "$(optimizeDir)",
+                    "packageDir": "$(packageDir)",
+                    "modules": [
+                        {
+                            "name": "$(package)/$(name)",
+                            "location": "$(package)/$(name)"
+                        }
+                    ]
+                }
+            }
+        },
+        "generate-cdt-json": {
+            "generate-cdt-json": {
+                "to": "$(packageDir)/$(package)/cdt.json",
+                "type": "app"
+            }
+        },
+        "copy-index": {
+            "copy": {
+                "from": "index-prod.html",
+                "to": "$(packageDir)/index.html"
+            }
+        },
+        "copy-resource": {
+            "copy": {
+                "from": "resources",
+                "to": "$(packageDir)/"
+            }
+        },
+        "compile": {
+            "depends": [
+                "copy-files",
+                "optimize",
+                "copy-resource",
+                "copy-index",
+                "generate-cdt-json"
+            ]
+        },
+        "compress": {
+            "compress": {
+                "root": "$(packageDir)",
+                "files": [
+                    "*"
+                ],
+                "target": "$(buildDir)/$(package)-$(version).tar.gz"
+            }
+        },
+        "package": {
+            "depends": [
+                "clean",
+                "compile",
+                "compress"
+            ]
+        }
+    },
+    "dependencies": {
+        "jscore": "1.2.6",
+        "widgets": "1.1.17",
+        "container": "1.7.0",
+        "assets": "1.3.2"
+    }
+}

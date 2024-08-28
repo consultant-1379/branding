@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -e
+
+VERSION=`script/next_version`
+
+# Update version
+mvn versions:set -DnewVersion=$VERSION
+
+# Update revision history
+if [ "$UPDATE_DOCS" = "true" ]; then
+  if pcregrep -qM "### \*\*Latest\*\*([\s\n])*###" docs/markdown/revisions.md; then
+    echo "No revision history entered for this build"
+    exit 1
+  fi
+
+  echo "Updating dependencies in revision history"
+
+  DATE=`date +%d\\\\/%m\\\\/%y`
+  sed -i -e '
+  s/### \*\*Latest\*\*/### \*\*'"$VERSION"' ('"$DATE"')\*\*/g
+  ' docs/markdown/revisions.md
+fi
+
+. script/build
+
+# Deploying documentation
+mvn -B site:deploy
+
+# Deplying to CDT registry
+echo "Publishing CDT package information"
+node node_modules/cdt-package publish target/*.tar.gz
+
+# Update docs
+if [ "$UPDATE_DOCS" = "true" ]; then
+  echo "Updating revision history"
+
+  sed -i -e '0,/### \*\*/{s//### \*\*Latest\*\*\n\n### \*\*/}' docs/markdown/revisions.md
+  git add docs/markdown/revisions.md
+fi
+
+# Commit
+git add pom.xml
+git add package.json
+git commit -m "Releasing $VERSION"
+git tag "${VERSION}" --force
+
+# Push
+git push origin HEAD:master --tags

@@ -1,0 +1,115 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebComponentList {
+    position: relative;
+    z-index: 1500;
+
+    padding: 4px 0;
+    margin: 0px;
+
+    color: #333333;
+    list-style: none;
+    background-color: @white;
+    border: lighten(@black, 75%) solid 1px;
+
+    .applyBoxShadow(~'0 0 5px 0', fade(@black, 20%));
+    .applyBorderRadius(3px);
+    .applyBoxSizing(~'border-box');
+
+    &-group,
+    &-item {
+        padding: 0px 0.8rem;
+        line-height: 2.4rem;
+        font-size: 1.2rem;
+        background-color: @white;
+    }
+
+    &-item,
+    &-item > *,
+    &-group-header {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &-group {
+        display: block;
+
+        &-header {
+            padding: 0 0.8rem 0 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 2.4rem;
+            border-bottom: 1px solid #999;
+            background-color: @white;
+        }
+    }
+
+    &-inner {
+        margin: 0 -0.8rem;
+        padding: 4px 0 0 0;
+    }
+
+    &-link {
+        display: block;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &-separator {
+        height: 1px;
+        margin: 0.4rem;
+        background-color: #E6E6E6;
+    }
+
+    &-item {
+        cursor: pointer;
+
+        &:hover {
+            .applyTintBg(@textLinkBlue, 0.1);
+        }
+        &:active {
+            .applyTintBg(@textLinkBlue, 0.2);
+        }
+        &:last-child{
+            margin-bottom: 0.6rem;
+        }
+
+        &_selected {
+            position: relative;
+            cursor: default;
+
+            > .ebComponentList-link {
+                cursor: default;
+                color: lighten(@black, 20%); // #333333
+
+                .applyDisabledAction();
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 0.3rem;
+                background-color: #00A9D4; // pale blue
+            }
+        }
+
+        /* Fixes MultiSelectBox ellipsis bug in Firefox */
+        & > label {
+            overflow: visible;
+
+            & > .ebCheckbox-label {
+                overflow: hidden;
+                width: calc(~"100% - 25px");
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

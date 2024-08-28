@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabs :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+    <!--<link href="../src/assets.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="../src/tabs.css" rel="stylesheet" type="text/css"/>-->
+
+    <style>
+        body {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="ebBreadcrumbs">
+    <div class="ebBreadcrumbs-item"><a href="index.html" class="ebBreadcrumbs-link">Brand Assets</a></div>
+    <div class="ebBreadcrumbs-item"><a href="tabs.html" class="ebBreadcrumbs-link">Tabs</a></div>
+</div>
+
+<h1>Tabs</h1>
+
+<h2>Tabs, full screen</h2>
+
+<div class="ebTabs">
+    <div class="ebTabs-top ebTabs-top_enabled_true">
+        <div class="ebTabs-tabArea">
+            <div class="ebTabs-tabItem ebTabs-tabItem_selected_true" title="Tab 1">Tab 1</div>
+            <div class="ebTabs-tabItem" title="Tab 2">Tab 2</div>
+            <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+            <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+            <div class="ebTabs-tabItem" title="Tab 5">Tab 5</div>
+            <div class="ebTabs-tabItem" title="Tab 6">Tab 6</div>
+            <div class="ebTabs-tabItem" title="Tab 7">Tab 7</div>
+            <div class="ebTabs-tabItem" title="Tab 8">Tab 8</div>
+        </div>
+    </div>
+    <div class="ebTabs-contentDiv">
+        <div class="ebTabContent"><p>Tab 1 Content</p></div>
+    </div>
+</div>
+
+<h2>Tabs, responsive view (first tab selected)</h2>
+
+<div style="max-width: 320px; border: 1px grey dashed">
+    <div class="ebTabs">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_false">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItem ebTabs-tabItem_selected_true" title="Tab 1">Tab 1</div>
+                <div class="ebTabs-tabItem ebTabs-tabItem_enabled_false" title="Tab 2">Tab 2</div>
+                <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                <div class="ebTabs-tabItem" title="Tab 5">Tab 5</div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>This is the content for Tab 1</p></div>
+        </div>
+    </div>
+</div>
+
+<div style="max-width: 320px; border: 1px grey dashed">
+    <div class="ebTabs">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_false">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_leftArrow_10px"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItem ebTabs-tabItem_responsive ebTabs-tabItem_selected_true" title="Tab 1">Tab 1</div>
+                <div class="ebTabs-tabItem" title="Tab 2">Tab 2</div>
+                <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                <div class="ebTabs-tabItem ebTabs-tabItem_responsive" title="Tab 5">Tab 5</div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_rightArrow_10px"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>This is the content for Tab 1</p></div>
+        </div>
+    </div>
+</div>
+
+<h3>Add / Close Tabs</h3>
+
+<div style="max-width: 500px; border: 1px grey dashed">
+    <div class="ebTabs ebTabs_addClose">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_false">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_selected_true" title="Tab 1">Tab 1</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 2">Tab 2 long</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_enabled_false" title="Tab 5">Tab 5</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 6">Tab 6</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 7">Tab 7</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-addBtn ebTabs-addBtn_enabled_true">
+                <div class="ebTabs-addBtnIcon">
+                    <i class="ebIcon ebIcon_plus ebTabs-addIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>Tab with disabled left and add</p></div>
+        </div>
+    </div>
+</div>
+
+<div style="max-width: 500px; border: 1px grey dashed">
+    <div class="ebTabs ebTabs_addClose">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_true">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 1">Tab 1</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_selected_true" title="Tab 2">Tab 2 long</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_enabled_false" title="Tab 5">Tab 5</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 6">Tab 6</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 7">Tab 7</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 8">Tab 8</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-addBtn ebTabs-addBtn_enabled_false">
+                <div class="ebTabs-addBtnIcon">
+                    <i class="ebIcon ebIcon_plus ebTabs-addIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>Tab with disabled add, left enabled</p></div>
+        </div>
+    </div>
+</div>
+
+<h4>Check without the modifier</h4>
+
+<div style="max-width: 500px; border: 1px grey dashed">
+    <div class="ebTabs">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_false">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_selected_true" title="Tab 1">Tab 1</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 2">Tab 2 long</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem ebTabs-tabItem_enabled_false" title="Tab 5">Tab 5</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 6">Tab 6</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 7">Tab 7</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+                <div class="ebTabs-tabItemWrapper">
+                    <div class="ebTabs-tabItem" title="Tab 8">Tab 8</div>
+                    <span class="ebTabs-closeBtn"><i class="ebTabs-closeBtnIcon ebIcon ebIcon_close ebIcon_interactive"></i></span>
+                </div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon_small ebIcon ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-addBtn ebTabs-addBtn_enabled_true">
+                <div class="ebTabs-addBtnIcon">
+                    <i class="ebIcon ebIcon_plus ebTabs-addIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>Tab with disabled left and add</p></div>
+        </div>
+    </div>
+</div>
+
+<h2>Tabs, responsive view (fifth tab selected)</h2>
+
+<div style="max-width: 320px; border: 1px grey dashed">
+    <div class="ebTabs">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_true">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon ebIcon_small ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItem" title="Tab 3">Tab 3</div>
+                <div class="ebTabs-tabItem">Tab 4</div>
+                <div class="ebTabs-tabItem ebTabs-tabItem_selected_true">Tab 5</div>
+                <div class="ebTabs-tabItem">Tab 6</div>
+                <div class="ebTabs-tabItem">Tab 7</div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon ebIcon_small ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>This is the content for Tab 1</p></div>
+        </div>
+    </div>
+</div>
+
+<h2>Tabs, responsive view (last tab selected)</h2>
+
+<div style="max-width: 320px; border: 1px grey dashed">
+    <div class="ebTabs">
+        <div class="ebTabs-top">
+            <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_true">
+                <div class="ebTabs-leftBtnIcon">
+                    <i class="ebIcon ebIcon_small ebIcon_leftArrow_10px ebTabs-leftIcon"></i>
+                </div>
+            </div>
+            <div class="ebTabs-tabArea ebTabs-tabArea_responsive">
+                <div class="ebTabs-tabItem" title="Tab 4">Tab 4</div>
+                <div class="ebTabs-tabItem">Tab 5</div>
+                <div class="ebTabs-tabItem">Tab 6</div>
+                <div class="ebTabs-tabItem">Tab 7</div>
+                <div class="ebTabs-tabItem ebTabs-tabItem_selected_true">Tab 8</div>
+            </div>
+            <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_false">
+                <div class="ebTabs-rightBtnIcon">
+                    <i class="ebIcon ebIcon_small ebIcon_rightArrow_10px ebTabs-rightIcon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ebTabs-contentDiv">
+            <div class="ebTabContent"><p>This is the content for Tab 8</p></div>
+        </div>
+    </div>
+</div>
+
+<h2>Tabs, deprecated</h2>
+
+<div class="ebTabs">
+    <div class="ebTabs-top">
+        <div class="ebTabs-leftBtn ebTabs-leftBtn_enabled_true">
+            <div class="ebTabs-leftBtn-icon ebIcon ebIcon_small ebIcon_leftArrow_10px"></div>
+        </div>
+        <div class="ebTabs-tabArea">
+            <div class="ebTabItem">Tab 1</div>
+            <div class="ebTabItem ebTabItem_selected_true">Tab 2</div>
+            <div class="ebTabItem">Tab 3</div>
+            <div class="ebTabItem">Tab 4</div>
+        </div>
+        <div class="ebTabs-rightBtn ebTabs-rightBtn_enabled_true">
+            <div class="ebTabs-rightBtn-icon ebIcon ebIcon_small ebIcon_rightArrow_10px"></div>
+        </div>
+    </div>
+    <div class="ebTabs-contentDiv">
+        <div class="ebTabContent"><p>This is the content for Tab 1</p></div>
+    </div>
+</div>
+
+<div class="ebTabs">
+    <div class="ebTabs-top">
+        <div class="ebTabs-tabArea">
+            <div class="ebTabItem">Tab 1</div>
+            <div class="ebTabItem">Tab 2</div>
+            <div class="ebTabItem ebTabItem_selected_true">Tab 3</div>
+            <div class="ebTabItem">Tab 4</div>
+        </div>
+    </div>
+    <div class="ebTabs-contentDiv">
+        <div class="ebTabContent"><p>This is the content for Tab 1</p></div>
+    </div>
+</div>
+<br><br>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+    "title": "Common Styles",
+    "assetId": "commonStyles",
+    "status": "none",
+    "items": [
+        {
+            "file": "scrollbar/vertical_scrollbar.html",
+            "anchorName": "scrollbar",
+            "anchorTitle": "Scrollbars",
+            "status": "baselined"
+        },
+        {
+            "file": "scrollbar/horizontal_scrollbar.html",
+            "status": "baselined"
+        },
+        {
+            "file": "scrollbar/horiz_vert_scrollbar.html",
+            "status": "baselined"
+        },
+
+        {
+            "file": "classNames/classNames.html",
+            "anchorName": "classNames",
+            "anchorTitle": "Class Names",
+            "status": "baselined"
+        },
+
+        {
+            "file": "color/primary.html",
+            "anchorName": "primaryColors",
+            "anchorTitle": "Primary Colours",
+            "status": "baselined"
+        },
+        {
+            "file": "color/secondary.html",
+            "anchorName": "secondaryColors",
+            "anchorTitle": "Secondary Colours",
+            "status": "baselined"
+        },
+        {
+            "file": "color/textColors.html",
+            "anchorName": "textColors",
+            "anchorTitle": "Text Colours",
+            "status": "baselined"
+        },
+
+        {
+            "file": "color/tint/title.html",
+            "anchorName": "tints",
+            "anchorTitle": "Tints",
+            "status": "baselined"
+        },
+        {
+            "file": "color/tint/purple.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/red.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/orange.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/yellow.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/green.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/darkGreen.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/paleBlue.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/black.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/grey.html",
+            "status": "none"
+        },
+        {
+            "file": "color/tint/textLinkBlue.html",
+            "status": "none"
+        }
+    ]
+}

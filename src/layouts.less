@@ -1,0 +1,123 @@
+.ebLayout {
+    margin: 0 40px;
+
+    &-clear {
+        clear: both;
+        font-size: 0rem;
+        line-height: 0rem;
+        height: 0;
+    }
+    &-clearFix {
+        zoom: 1;
+        &:before, &:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            overflow: hidden;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+
+    &-Navigation {
+        margin-top: 1.2rem;
+    }
+
+    &-AppHeading {
+        position: relative;
+
+        h1 {
+            padding: 0;
+        }
+    }
+    &-SectionHeading {
+        position: relative;
+        display: inline-block;
+        border-bottom: #666666 solid 1px;
+        margin-bottom: 0.4rem;
+        width: 100%;
+
+        h2 {
+            float: left;
+            padding: 0;
+            margin: 1.2rem 0 0.7rem 0;
+            border-bottom: none;
+        }
+    }
+    &-SectionSubheading {
+        position: relative;
+        display: inline-block;
+        border-bottom: #CCCCCC solid 1px;
+        margin-bottom: 0.4rem;
+        width: 100%;
+
+        h3 {
+            float: left;
+            padding: 0;
+            margin: 1.2rem 0 0.7rem 0;
+            border-bottom: none;
+        }
+
+        .ebLayout-HeadingCommands {
+            padding: 0.4rem 0;
+        }
+    }
+    &-HeadingCommands {
+        float: right;
+        white-space: nowrap;
+        margin-top: 0.3rem;
+        padding: 0.6rem 0;
+        font-size: 0;
+        line-height: 2.4rem;
+
+        &-iconHolder {
+            display: inline-block;
+        }
+        &-separator {
+            display: inline-block;
+            vertical-align: middle;
+            border-left: 1px solid #CCCCCC;
+            margin: 0 8px;
+            height: 2.4rem;
+        }
+
+        > * {
+            vertical-align: middle;
+        }
+
+        &-block {
+            > * {
+                margin-left: 0.4rem;
+                margin-right: 0.4rem;
+                vertical-align: middle;
+            }
+            :last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &-Content {
+        text-align: left;
+        margin-bottom: 2.4rem;
+    }
+
+    // responsive
+    @media screen and (max-width: 768px) {
+        margin: 0 2.4rem;
+
+        &-Content {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        margin: 0 1.2rem;
+
+        &-Content {
+            margin-bottom: 0;
+        }
+    }
+
+}

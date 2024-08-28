@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdowns :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+
+    <style>
+        body {
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="ebBreadcrumbs">
+    <div class="ebBreadcrumbs-item"><a href="index.html" class="ebBreadcrumbs-link">Brand Assets</a></div>
+    <div class="ebBreadcrumbs-item"><a href="dropdowns.html" class="ebBreadcrumbs-link">Dropdowns</a></div>
+</div>
+
+<h1>Dropdowns</h1>
+
+<h2>Dropdowns - CSS only</h2>
+
+<h3>Simple dropdown</h3>
+
+<div class="ebDropdown">
+    <button class="ebDropdown-header">
+        <span class="ebDropdown-caption">Actions</span>
+        <span class="ebDropdown-iconHolder">
+            <i class="ebIcon ebIcon_small ebIcon_downArrow_10px"></i>
+        </span>
+    </button>
+    <div class="ebDropdown-body">
+        <ul class="ebComponentList">
+            <li class="ebComponentList-item">Act 1</li>
+            <li class="ebComponentList-item">Act 2</li>
+            <li class="ebComponentList-item">Act 3</li>
+            <li class="ebComponentList-item">Act 4</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Inline elements</h3>
+
+<div>
+    <button class="ebBtn">Simple button</button>
+    <div class="ebDropdown">
+        <button class="ebDropdown-header">
+            <span class="ebDropdown-caption">Actions</span>
+            <span class="ebDropdown-iconHolder">
+                <i class="ebIcon ebIcon_small ebIcon_downArrow_10px"></i>
+            </span>
+        </button>
+        <div class="ebDropdown-body" style="display: block">
+            <ul class="ebComponentList">
+                <li class="ebComponentList-item" title="Action 1">Action 1</li>
+                <li class="ebComponentList-item" title="Action 2 Very long">Action 2 Very long</li>
+                <li class="ebComponentList-item" title="Act 3">Act 3</li>
+                <li class="ebComponentList-item" title="4">4</li>
+                <li class="ebComponentList-item"
+                    title="Action 5 Very very very very long very very very long prelong Action 5">
+                    Action 5 Very very very very long very very very long prelong Action 5
+                </li>
+                <li class="ebComponentList-item" title="Action 6">Action 6</li>
+            </ul>
+        </div>
+    </div>
+    <button class="ebBtn">OK</button>
+    <div class="ebDropdown ebDropdown_disabled">
+        <button class="ebDropdown-header" disabled>
+            <span class="ebDropdown-caption">Actions</span>
+            <span class="ebDropdown-iconHolder"><i class="ebIcon ebIcon_small ebIcon_downArrow_10px"></i></span>
+        </button>
+        <div class="ebDropdown-body">
+            <ul class="ebComponentList">
+                <li class="ebComponentList-item" title="Action 1">Action 1</li>
+            </ul>
+        </div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget ante mauris. Suspendisse potenti. Aenean
+        ornare magna ut nulla malesuada eu feugiat odio pulvinar. Proin eget neque sit amet velit accumsan varius
+        dignissim non lorem. Vivamus viverra augue vel quam tempus porttitor. Aenean pharetra, urna blandit iaculis
+        blandit, sapien mauris facilisis eros, vel dictum metus turpis nec dui. Nulla eget elit vel libero molestie
+        consectetur. Fusce tempor consequat urna at bibendum. Nulla tempor, nulla vel commodo placerat, ligula tortor
+        faucibus velit, vel sodales mi felis a velit. Nam convallis arcu a nibh tempus auctor dictum augue adipiscing.
+        Proin interdum ultrices tortor sit amet malesuada. Vivamus in ornare mi. Aenean scelerisque velit eget lectus
+        aliquet ac suscipit quam luctus. In egestas consequat commodo. Aenean vitae elit non mauris rutrum mattis. Donec
+        id ipsum purus.
+    </p>
+
+    <p>
+        Cras ullamcorper felis sed odio tristique pharetra. Nam nunc nibh, placerat non blandit sit amet, rutrum a leo.
+        Donec vestibulum turpis quis dolor suscipit iaculis pellentesque tellus faucibus. Suspendisse potenti. Fusce
+        feugiat quam nec leo feugiat at tincidunt enim sollicitudin. Phasellus iaculis commodo nibh. Vivamus sem mauris,
+        tincidunt vitae lacinia quis, elementum fringilla erat. Nunc pharetra mauris sit amet purus ullamcorper rutrum.
+        Pellentesque laoreet magna quis diam vulputate a scelerisque odio consectetur. Aliquam eleifend est risus, vitae
+        accumsan orci. Sed libero sem, volutpat ut pellentesque sit amet, sodales ac orci. In hac habitasse platea
+        dictumst. Suspendisse ac purus vel magna sollicitudin euismod ut at sapien.
+    </p>
+</div>
+
+<h2>Disabled state</h2>
+
+<div class="ebDropdown ebDropdown_disabled">
+    <button class="ebDropdown-header" disabled>
+        <span class="ebDropdown-caption">Actions</span>
+        <span class="ebDropdown-iconHolder"><i class="ebIcon ebIcon_small ebIcon_downArrow_10px"></i></span>
+    </button>
+    <div class="ebDropdown-body">
+        <ul class="ebComponentList">
+            <li class="ebComponentList-item" title="Action 1">Action 1</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

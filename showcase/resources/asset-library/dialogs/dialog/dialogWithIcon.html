@@ -1,0 +1,81 @@
+<!--====================================================-->
+<h3 class="eaAssetLibrary-Heading">Dialog With Icon</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body_noside ebText">
+        The dialog box can have icon in the left top corner. This icon help better to introduce type of information.
+    </div>
+    <div class="eaAssetLibrary-Block-body_noside ebText">
+        There are four main types of icons:
+    </div>
+
+    <table>
+        <tr>
+            <td><i class="ebIcon ebIcon_large ebIcon_dialogInfo"></i> </td>
+            <td>Information icon is used for Information Message Dialog boxes.</td>
+        </tr>
+        <tr>
+            <td><i class="ebIcon ebIcon_large ebIcon_warning"></i> </td>
+            <td>Warning icon is used for Warning Dialog boxes.</td>
+        </tr>
+        <tr>
+            <td><i class="ebIcon ebIcon_large ebIcon_tick"></i> </td>
+            <td>Confirmation icon is used for Question/Confirmation Dialog boxes.</td>
+        </tr>
+        <tr>
+            <td><i class="ebIcon ebIcon_large ebIcon_error"></i> </td>
+            <td>Error icon is used for Error Dialog boxes.</td>
+        </tr>
+    </table>
+
+    <br><br>
+    <div class="eaAssetLibrary-Block-body_noside ebText">
+        To change icon the "type" modifier for "ebDialogBox-contentBlock" should be used. There are four defined values
+        for this modifier: "information", "warning", "confirmation" and "error".
+    </div>
+</div>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-DialogHolder">
+        <div class="ebDialogBox">
+            <div class="ebDialogBox-contentBlock ebDialogBox-contentBlock_type_warning">
+                <div class="ebDialogBox-primaryText">Save changes</div>
+                <div class="ebDialogBox-secondaryText">
+                    <p>There are unsaved changes.</p>
+                </div>
+                <div class="ebDialogBox-thirdText">
+                    <p>Do you want to save changes before logging out?</p>
+                </div>
+            </div>
+            <div class="ebDialogBox-actionBlock">
+                <button class="ebBtn ebBtn_color_darkBlue">Save</button>
+                <button class="ebBtn">Discard</button>
+                <button class="ebBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--====================================================-->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;div class="ebDialogBox"&gt; <br>
+        &nbsp;&nbsp;&lt;div class="ebDialogBox-contentBlock ebDialogBox-contentBlock_type_warning"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebDialogBox-primaryText"&gt;Save changes&lt;/div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebDialogBox-secondaryText ebText_alternative"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;There are unsaved changes.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebDialogBox-thirdText"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Do you want to save changes before logging out?&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt; <br>
+        &nbsp;&nbsp;&lt;/div&gt; <br>
+        &nbsp;&nbsp;&lt;div class="ebDialogBox-actionBlock"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ebBtn ebBtn_color_darkBlue"&gt;Save&lt;/button&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ebBtn"&gt;Discard&lt;/button&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ebBtn"&gt;Cancel&lt;/button&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt; <br>
+        &lt;/div&gt; <br>
+    </code>
+</div>

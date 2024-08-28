@@ -1,0 +1,92 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebBreadcrumbs {
+    position: relative;
+    display: block;
+    font-size: 0;
+    margin-top: 0;
+
+    &-link {
+        font-size: 1.2rem;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    &-list {
+        position: absolute;
+        left: 0;
+        margin-top: 6px;
+        display: none;
+        min-width: 90%; // for older browsers
+        min-width: calc(~"100% - 16px");
+        max-width: 250px;
+        z-index: 10;
+
+        .applyTransition(~"opacity .3s ease-in-out");
+    }
+
+    &-arrow {
+        margin-left: 0.6rem;
+        vertical-align: middle;
+        outline: none;
+        display: inline-block;
+
+        &:focus > * {
+            opacity: 1.0;
+        }
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &-item:hover > &-list {
+        display: block;
+        opacity: 0;
+    }
+
+    &-arrow:focus + &-list {
+        display: block;
+        opacity: 1;
+    }
+
+    &-item {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+        display: inline-block;
+        margin-bottom: 0.8rem;
+
+        &:after {
+            vertical-align: middle;
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+
+            content: "/";
+            font-size: 1.6rem;
+            text-align: center;
+            color: lighten(@black, 60%); // #999999
+
+            .applyDisabledAction();
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            > .ebBreadcrumbs-link {
+                cursor: default;
+                color: lighten(@black, 20%); // #333333
+
+                .applyDisabledAction();
+            }
+
+            &:after {
+                content: "";
+                padding: 0;
+                font-size: 0;
+                width: 0;
+            }
+        }
+    }
+}

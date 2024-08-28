@@ -1,0 +1,27 @@
+@import "common/mixins";
+@import "common/colors";
+
+.ebSpinner {
+    display: inline-table;
+
+    tr td {
+        vertical-align: middle;
+    }
+
+    &-label {
+        text-align: left;
+    }
+    &-holder {
+        text-align: center;
+    }
+
+    &-iconUpHolder, &-iconDownHolder {
+        display: block;
+        margin: 4px auto;
+    }
+
+    &-value {
+        color: #666666;
+        min-width: 11px; //fix for spacing between spinners on time picker
+    }
+}

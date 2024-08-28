@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Component List :: Brand Assets</title>
+
+    <link href="../src/assets.less" rel="stylesheet" type="text/less"/>
+    <link href="../css/assets.css" rel="stylesheet" type="text/css"/>
+    <script src="../node_modules/less/dist/less-1.7.1.js" type="text/javascript"></script>
+
+
+    <style>
+        body {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="ebBreadcrumbs">
+    <div class="ebBreadcrumbs-item"><a href="index.html" class="ebBreadcrumbs-link">Brand Assets</a></div>
+    <div class="ebBreadcrumbs-item"><a href="componentList.html" class="ebBreadcrumbs-link">Component List</a></div>
+</div>
+
+<h1>Component List</h1>
+
+<h2>Standard list and separator</h2>
+<ul class="ebComponentList">
+    <li class="ebComponentList-item">Item 1</li>
+    <li class="ebComponentList-item">Item 2</li>
+    <li class="ebComponentList-separator"></li>
+    <li class="ebComponentList-item">Item 3</li>
+    <li class="ebComponentList-item">Item 4</li>
+</ul>
+
+<h2>List with links and separator</h2>
+<ul class="ebComponentList">
+    <li class="ebComponentList-item"><a href="#" class="ebComponentList-link">Item 1</a></li>
+    <li class="ebComponentList-item"><a href="#" class="ebComponentList-link">Item 2</a></li>
+    <li class="ebComponentList-separator"></li>
+    <li class="ebComponentList-item"><a href="#" class="ebComponentList-link">Item 3</a></li>
+    <li class="ebComponentList-item"><a href="#" class="ebComponentList-link">Item 4</a></li>
+</ul>
+
+<h2>List with max-width: 100px</h2>
+<ul class="ebComponentList" style="max-width: 100px">
+    <li class="ebComponentList-item" title="Item 1">Item 1</li>
+    <li class="ebComponentList-item" title="Item 2"><a href="#" class="ebComponentList-link">Item 2</a></li>
+    <li class="ebComponentList-item" title="Text item with very long name">Text item with very long name</li>
+    <li class="ebComponentList-item" title="Link item with very long name"><a href="#" class="ebComponentList-link">Link item with very long name</a></li>
+</ul>
+
+
+
+<h2>List with sub components</h2>
+
+<ul class="ebComponentList" >
+    <li class="ebComponentList-group">
+        <div class="ebComponentList-group-header">Group 1</div>
+        <ul class="ebComponentList-inner">
+            <li class="ebComponentList-item"><a class="ebComponentList-link" href="">Options one long</a></li>
+            <li class="ebComponentList-item">
+                <a class="ebComponentList-link" href="">Option 2 shorter</a>
+            </li>
+        </ul>
+    </li>
+    <li class="ebComponentList-group">
+        <div class="ebComponentList-group-header">Group 2</div>
+        <ul class="ebComponentList-inner">
+            <li class="ebComponentList-item"><a class="ebComponentList-link" href="">Options one long</a></li>
+            <li class="ebComponentList-item">
+                <a class="ebComponentList-link" href="">Option 2 shorter</a>
+            </li>
+        </ul>
+    </li>
+    <li class="ebComponentList-group">
+        <div class="ebComponentList-group-header">Group 3</div>
+        <ul class="ebComponentList-inner">
+            <li class="ebComponentList-item"><a class="ebComponentList-link" href="">Options one long long long long long long long long long</a></li>
+            <li class="ebComponentList-item ebComponentList-item_selected">
+                <a class="ebComponentList-link" href="">Option 2 shorter</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<h2>List in container with max-width: 125px</h2>
+<div style="max-width: 125px">
+    <ul class="ebComponentList">
+        <li class="ebComponentList-group">
+            <div class="ebComponentList-group-header">Group 1</div>
+            <ul class="ebComponentList-inner">
+                <li class="ebComponentList-item"><a class="ebComponentList-link" href="">Options one long</a></li>
+                <li class="ebComponentList-item">Option 2 text long long</li>
+            </ul>
+        </li>
+        <li class="ebComponentList-group">
+            <div class="ebComponentList-group-header">Group 2 long name</div>
+            <ul class="ebComponentList-inner">
+                <li class="ebComponentList-item"><a class="ebComponentList-link" href="">Options one link long long long long</a></li>
+                <li class="ebComponentList-item ebComponentList-item_selected">
+                    <a class="ebComponentList-link" href="">Option 2 shorter</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+</body>
+</html>

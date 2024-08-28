@@ -1,0 +1,80 @@
+{
+    "title": "Dialogs",
+    "assetId": "dialogs",
+    "status": "none",
+    "items": [
+        {
+            "file": "dialog/basicDialog1Button.html",
+            "anchorName": "basicDialog1",
+            "anchorTitle": "Basic Dialog (1 Button)",
+            "status": "baselined"
+        },
+        {
+            "file": "dialog/basicDialog2Buttons.html",
+            "anchorName": "basicDialog2",
+            "anchorTitle": "Basic Dialog (2 Buttons)",
+            "status": "baselined"
+        },
+        {
+            "file": "dialog/basicDialog3Buttons.html",
+            "anchorName": "basicDialog3",
+            "anchorTitle": "Basic Dialog (3 Buttons)",
+            "status": "beta"
+        },
+        {
+            "file": "dialog/dialogWithOptionalBlock.html",
+            "anchorName": "dialogWithOptionalBlock",
+            "anchorTitle": "Dialog With Optional Block",
+            "status": "beta"
+        },
+        {
+            "file": "dialog/dialogWithCloseX.html",
+            "anchorName": "dialogWithCloseX",
+            "anchorTitle": "Dialog With Close X",
+            "status": "beta"
+        },
+
+        {
+            "file": "dialog/dialogWithIcon.html",
+            "anchorName": "dialogWithIcon",
+            "anchorTitle": "Dialog With Icon",
+            "status": "beta"
+        },
+        {
+            "file": "dialog/dialogWithRedButton.html",
+            "anchorName": "dialogWithRedButton",
+            "anchorTitle": "Dialog With Red Button",
+            "status": "beta"
+        },
+        {
+            "file": "dialog/guideline.html",
+            "status": "none"
+        },
+
+        {
+            "file": "tooltip/tooltip.html",
+            "anchorName": "tooltip",
+            "anchorTitle": "Tooltip",
+            "status": "baselined"
+        },
+        {
+            "file": "tooltip/guideline.html",
+            "status": "none"
+        },
+
+        {
+            "file": "infoPopup/infoPopup.html",
+            "anchorName": "infoPopup",
+            "anchorTitle": "Info Popup",
+            "status": "baselined"
+        },
+        {
+            "file": "infoPopup/variations.html",
+            "status": "baselined"
+        },
+        {
+            "file": "infoPopup/guideline.html",
+            "status": "none"
+        }
+    ]
+}

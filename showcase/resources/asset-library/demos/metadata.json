@@ -1,0 +1,13 @@
+{
+    "title": "Demo Apps",
+    "assetId": "demoApps",
+    "status": "none",
+    "items": [
+        {
+            "file": "networkExplorer.html",
+            "anchorName": "networkExplorer",
+            "anchorTitle": "Network Explorer",
+            "status": "baselined"
+        }
+    ]
+}

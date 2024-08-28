@@ -1,0 +1,119 @@
+<!--====================================================-->
+<h3 class="eaAssetLibrary-Heading">Resizable Table</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body">
+        If you need a column resizable table, insert the ebTable-headerResize element inside the header and set the class "ebTable-th_resizable" on the corresponding th.
+        <br>
+        <br>
+
+        <table class="ebTable">
+            <thead>
+            <tr>
+                <th class="ebTable-th_resizable" style="width: 25%">
+                    <div class="ebTable-header">
+                        <span class="ebTable-headerText">Header 1</span>
+                        <div class="ebTable-headerResize"></div>
+                    </div>
+                </th>
+                <th class="ebTable-th_resizable ebTable-th_sortable" style="width: 25%">
+                    <div class="ebTable-header">
+                        <span class="ebTable-headerText">Header 2</span>
+                        <span class="ebTable-headerSort ebSort">
+                            <i class="ebSort-arrow_up"></i>
+                            <i class="ebSort-arrow_down ebSort-arrow_active"></i>
+                        </span>
+                        <div class="ebTable-headerResize"></div>
+                    </div>
+                </th>
+                <th class="ebTable-th_resizable ebTable-th_sortable" style="width: 20%">
+                    <div class="ebTable-header">
+                        <span class="ebTable-headerText">Header 3 Second line</span>
+                        <span class="ebTable-headerSort ebSort">
+                            <i class="ebSort-arrow_up"></i>
+                            <i class="ebSort-arrow_down"></i>
+                        </span>
+                        <div class="ebTable-headerResize"></div>
+                    </div>
+                </th>
+                <th style="width: 30%">Header 4</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>Entry 1</td>
+                <td>Entry 21</td>
+                <td>Entry 3</td>
+                <td>Entry 4</td>
+            </tr>
+            <tr>
+                <td>Entry 1</td>
+                <td>Entry 2</td>
+                <td>Entry 3</td>
+                <td>Entry 4</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--====================================================-->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;table class="ebTable"&gt;<br/>
+        &lt;thead&gt;<br/>
+        &lt;tr&gt;<br/>
+        &nbsp;&nbsp;&lt;th class="ebTable-th_resizable"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-header"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebTable-headerText"&gt;Header 1&lt;/span&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-headerResize"&gt;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;/th&gt;<br/>
+        &nbsp;&nbsp;&lt;th class="ebTable-th_resizable ebTable-th_sortable"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-header"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebTable-headerText"&gt;Header 2&lt;/span&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebTable-headerSort ebSort"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebSort-arrow_up"&gt;&lt;/i&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebSort-arrow_down ebSort-arrow_active"&gt;&lt;/i&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-headerResize"&gt;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;/th&gt;<br/>
+        &nbsp;&nbsp;&lt;th class="ebTable-th_resizable ebTable-th_sortable"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-header"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebTable-headerText"&gt;Header 3 Second line&lt;/span&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebTable-headerSort ebSort"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebSort-arrow_up"&gt;&lt;/i&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebSort-arrow_down"&gt;&lt;/i&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebTable-headerResize"&gt;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;/th&gt;<br/>
+        &nbsp;&nbsp;&lt;th&gt;Header 4&lt;/th&gt;<br/>
+        &lt;/tr&gt;<br/>
+        &lt;/thead&gt;<br/>
+        &lt;tr&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 1&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 21&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 3&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 4&lt;/td&gt;<br/>
+        &lt;/tr&gt;<br/>
+        &lt;tr&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 1&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 2&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 3&lt;/td&gt;<br/>
+        &nbsp;&nbsp;&lt;td&gt;Entry 4&lt;/td&gt;<br/>
+        &lt;/tr&gt;<br/>
+        &lt;/table&gt;
+    </code>
+</div>
+
+<!--====================================================-->
+
+<div class="eaAssetLibrary-Block-body eaAssetLibrary-AssetList-listItem-Guideline">
+    <h4 class="eaAssetLibrary-Heading">Implementation Guideline</h4>
+
+    <p class="ebText">
+        You need to add the class "ebTable-th_resizable" to the table headers row th that are resizable.
+    </p>
+</div>

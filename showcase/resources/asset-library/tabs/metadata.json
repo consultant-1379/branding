@@ -1,0 +1,39 @@
+{
+    "title": "Tabs",
+    "assetId": "tabs",
+    "status": "none",
+    "items": [
+        {
+            "file": "tabs.html",
+            "anchorName": "tabs",
+            "anchorTitle": "Tabs",
+            "status": "baselined"
+        },
+        {
+            "file": "tabs_responsive.html",
+            "anchorName": "tabsResponsive",
+            "anchorTitle": "Responsive Tabs",
+            "status": "beta"
+        },
+        {
+            "file": "tabs_addclose.html",
+            "anchorName": "tabsAddClose",
+            "anchorTitle": "Add Close Tabs",
+            "status": "beta"
+        },
+        {
+            "file": "tabs_disabled.html",
+            "anchorName": "tabsDisabled",
+            "anchorTitle": "Disabled Tabs",
+            "status": "beta"
+        },
+        {
+            "file": "modifiers.html",
+            "status": "none"
+        },
+        {
+            "file": "guideline.html",
+            "status": "none"
+        }
+    ]
+}

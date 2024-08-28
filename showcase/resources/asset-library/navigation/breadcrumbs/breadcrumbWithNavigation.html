@@ -1,0 +1,99 @@
+<!--====================================================-->
+<h3 class="eaAssetLibrary-Heading">Breadcrumbs with Navigation</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body-noside ebText">
+        A dropdown is included to any level if your application links to more than one screen on the same level.<br>
+        Current screen indicator is marked with pale blue colour in dropdown.<br><br>
+
+        <div class="ebBreadcrumbs">
+            <div class="ebBreadcrumbs-item">
+                <a href="#breadcrumbWithNav" class="ebBreadcrumbs-link">Level 1</a>
+                <span class="ebBreadcrumbs-arrow ebBreadcrumbs-arrow_hidden">
+                    <i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"></i>
+                </span>
+            </div>
+            <div class="ebBreadcrumbs-item">
+                <a href="#breadcrumbWithNav" class="ebBreadcrumbs-link">Level 2</a>
+                <span class="ebBreadcrumbs-arrow">
+                    <i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"></i>
+                </span>
+                <div class="ebBreadcrumbs-list">
+                    <ul class="ebComponentList">
+                        <li class="ebComponentList-item ebComponentList-item_selected"><a href="#breadcrumbWithNav" class="ebComponentList-link" title="Item 1">Item 1</a></li>
+                        <li class="ebComponentList-item"><a href="#breadcrumbWithNav" class="ebComponentList-link" title="Item 2">Item 2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ebBreadcrumbs-item">
+                <a href="#breadcrumbWithNav" class="ebBreadcrumbs-link">Item 1</a>
+                <span class="ebBreadcrumbs-arrow">
+                    <i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"></i>
+                </span>
+                <div class="ebBreadcrumbs-list" style="display: block">
+                    <ul class="ebComponentList">
+                        <li class="ebComponentList-item"><a href="#breadcrumbWithNav" class="ebComponentList-link" title="Item 11">Item 11</a></li>
+                        <li class="ebComponentList-item"><a href="#breadcrumbWithNav" class="ebComponentList-link" title="Item name with very long name and should be cut.">Item name with very long nameand should be cut.</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--====================================================-->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;div class="ebBreadcrumbs"&gt; <br>
+        &nbsp;&nbsp;&lt;div class="ebBreadcrumbs-item"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="ebBreadcrumbs-link"&gt;Level 1&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebBreadcrumbs-arrow ebBreadcrumbs-arrow_hidden"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"&gt;&lt;/i&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="ebBreadcrumbs-item"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="ebBreadcrumbs-link"&gt;Level 2&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebBreadcrumbs-arrow"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"&gt;&lt;/i&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebBreadcrumbs-list"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="ebComponentList"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebComponentList-item ebComponentList-item_selected"&gt;&lt;a href="#" class="ebComponentList-link" title="Item 1"&gt;Item 1&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebComponentList-item"&gt;&lt;a href="#" class="ebComponentList-link" title="Item 2"&gt;Item 2&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="ebBreadcrumbs-item"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="ebBreadcrumbs-link"&gt;Item 1&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="ebBreadcrumbs-arrow"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="ebIcon ebIcon_small ebIcon_interactive ebIcon_downArrow_10px"&gt;&lt;/i&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ebBreadcrumbs-list"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="ebComponentList"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebComponentList-item"&gt;&lt;a href="#" class="ebComponentList-link" title="Item 11"&gt;Item 11&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="ebComponentList-item"&gt;&lt;a href="#" class="ebComponentList-link" title="Item name with very long name and should be cut."&gt;Item name with very long name and should be cut.&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+    </code>
+</div>
+
+<div class="eaAssetLibrary-Block-body eaAssetLibrary-AssetList-listItem-Guideline">
+    <h4 class="eaAssetLibrary-Heading">Implementation Guideline</h4>
+
+    <div class="ebBreadcrumbs">
+        <div class="ebBreadcrumbs-item"><a href="#breadcrumbWithNavWithNav" class="ebBreadcrumbs-link">Level 1</a></div>
+        <div class="ebBreadcrumbs-item"><a href="#breadcrumbWithNavWithNav" class="ebBreadcrumbs-link">...</a></div>
+        <div class="ebBreadcrumbs-item"><a href="#breadcrumbWithNavWithNav" class="ebBreadcrumbs-link">Item 1</a></div>
+        <div class="ebBreadcrumbs-item"><a href="#breadcrumbWithNavWithNav" class="ebBreadcrumbs-link">Item 11</a></div>
+    </div>
+    <div class="ebText">Responsive breadcrumbs require javascript.</div>
+
+    <p class="ebText">
+        If you are using JSCore, the breadcrumb exists as Widget in the
+        <a href="../../../../widgets/latest/showcase/index.html#breadcrumb">Widget Library #breadcrumb</a>
+    </p>
+</div>

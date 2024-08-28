@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+    <properties>
+        <title>Default Layout</title>
+    </properties>
+
+    <body>
+        <h1>Default Layout</h1>
+
+        <p class="exampleButtons">
+            <a href="../showcase/layouts/default.html" target="_blank">
+                <button class="ebBtn ebBtn_color_green ebBtn-coloured">Live Example</button>
+            </a>
+        </p>
+
+        <p>
+            <strong>Goal:</strong>
+            Show how to get started with a Default layout in your apps.
+        </p>
+
+        <p>
+            <strong>Prerequisites:</strong>
+            <a href="../css.html">CSS Code Style</a>,
+            <a href="../showcase/library/index.html">Asset Library</a>
+        </p>
+
+        <p>
+            <strong>Step 1:</strong>
+            To start using layouts you should install assets library and add necessary css files for your app.
+        </p>
+
+        <p>
+            The <code>default.html</code> head should have the following content:
+        </p>
+
+        <source><![CDATA[<!DOCTYPE html>
+<html>
+<head>
+    <title>Your App Name</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Brand Assets styles -->
+    <link href="../css/systemBar.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/_assetsDev.css" rel="stylesheet" type="text/css"/>
+
+    <!-- App specific styles -->
+    <link href="css/default.css" rel="stylesheet" type="text/css"/>
+</head>
+]]></source>
+        <p>
+            The four meta tags are needed to make this web-page working correctly on other devices like mobiles, tablets
+            etc. The two lines referring to the Brand Assets are also needed. App specific styles are needed for
+            responsive design. Developers can change settings for <code>@media</code> queries depending on their app.
+        </p>
+
+        <p>
+            The <code>default.html</code> body has the following content:
+        </p>
+
+        <source><![CDATA[<div id="TopMenu">
+    <div class="ebSystemBar">
+        <div class="ebSystemBar-logo"></div>
+        <div class="ebSystemBar-topMenuName">Default Layout</div>
+    </div>
+</div>
+<div id="Container">
+    <div class="ebLayout">
+        <div class="ebLayout-Navigation">
+            <div class="ebBreadcrumbs">
+                <div class="ebBreadcrumbs-item"><a href="#" class="ebBreadcrumbs-link">Breadcrumbs</a></div>
+                <div class="ebBreadcrumbs-item"><a href="#" class="ebBreadcrumbs-link">Level 1</a></div>
+            </div>
+        </div>
+        <div class="ebLayout-AppHeading">
+            <h1>App Heading</h1>
+        </div>
+        <div class="ebQuickActionBar">
+            <input type="text" class="ebInput" placeholder="Type"/>
+            <button class="eaMyApp-searchBtn ebBtn ebBtn_noMargin ebBtn_color_darkBlue">
+                <i class="ebIcon ebIcon_medium ebIcon_left ebIcon_searchWhite"></i>
+                <span>Search</span>
+            </button>
+            <div class="ebQuickActionBar-Commands">
+                <div class="eaMyApp-narrowView">
+                    <!-- This block is used to show quick bar commands in narrow view -->
+                </div>
+                <div class="ebQuickActionBar-Commands-block eaMyApp-fullView">
+                    <!-- This block is used to show quick bar commands in full view -->
+                </div>
+            </div>
+            <div class="ebLayout-clearFix"></div>
+        </div>
+        <div class="ebLayout-SectionHeading">
+            <h2>Section Heading</h2>
+            <div class="ebLayout-HeadingCommands">
+                <div class="eaMyApp-narrowView">
+                    <!-- This block is used to show heading commands in narrow view -->
+                </div>
+                <div class="ebLayout-HeadingCommands-block eaMyApp-fullView">
+                    <!-- This block is used to show heading commands in full view -->
+                </div>
+            </div>
+            <div class="ebLayout-clearFix"></div>
+        </div>
+        <div class="ebLayout-SectionSubheading">
+            <h3>Section Subheading</h3>
+            <div class="ebLayout-HeadingCommands">
+                <div class="eaMyApp-narrowView">
+                    <!-- This block is used to show heading commands in narrow view -->
+                </div>
+                <div class="ebLayout-HeadingCommands-block eaMyApp-fullView">
+                    <!-- This block is used to show heading commands in full view -->
+                </div>
+            </div>
+            <div class="ebLayout-clearFix"></div>
+        </div>
+        <div class="ebLayout-Content eaMyApp-Content">
+            <!-- This block is used for content -->
+        </div>
+        <div class="ebLayout-SectionSubheading">
+            <h3>Section Subheading</h3>
+            <div class="ebLayout-HeadingCommands">
+                <div class="eaMyApp-narrowView">
+                    <!-- This block is used to show heading commands in narrow view -->
+                </div>
+                <div class="ebLayout-HeadingCommands-block eaMyApp-fullView">
+                    <!-- This block is used to show heading commands in full view -->
+                </div>
+            </div>
+            <div class="ebLayout-clearFix"></div>
+        </div>
+        <div class="ebLayout-Content eaMyApp-Content">
+            <!-- This block is used for content -->
+        </div>
+    </div>
+</div>
+]]></source>
+
+        <p>
+            Here we have separation for two blocks: <code>#TopMenu</code> and <code>#Container</code>.
+            The <code>#TopMenu</code> block has the System Bar inside. The <code>#Container</code> block has the app
+            layout inside.
+        </p>
+        <p>
+            All class names which start with <code>eaMyApp</code> should be changed to your app name. Developers take
+            care of the class names in their apps.
+        </p>
+
+        <p>
+            <strong>Step 2:</strong>
+            Get styles from <code>default.less</code> and change them to what you need in your app.
+        </p>
+
+        <source><![CDATA[.ebContextMenu {
+    &-ExpandBtn:active {
+        & + .ebContextMenu-Dropdown {
+            display: block;
+            visibility: visible;
+        }
+    }
+}
+
+#TopMenu {
+    position: absolute;
+    top: 0;
+    height: 40px;
+    left: 0;
+    right: 0;
+}
+#Container {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+}
+
+.eaMyApp {
+    &-Content {
+        display: table;
+        width: 100%;
+
+        &-block {
+            text-align: center;
+            vertical-align: middle;
+            background: url('../content_icon.svg') transparent;
+            font-size: 1.8rem;
+            color: #8d8d8d;
+            line-height: 2.4rem;
+            font-weight: bold;
+            display: table-cell;
+        }
+    }
+
+    &-narrowView {
+        display: none;
+    }
+    &-fullView {
+        display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+        &-narrowView {
+            display: block;
+        }
+        &-fullView {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        &-searchBtn {
+            min-width: 40px;
+
+            span {
+                display: none;
+            }
+        }
+    }
+}
+]]></source>
+
+        <p>
+            First three style blocks (<code>.ebContextMenu</code>, <code>#TopMenu</code>, <code>#Container</code>) are
+            used only for demo purposes. In the real app they are not needed.
+        </p>
+        <p>
+            The <code>.eaMyApp</code> should be change to your app name. Others styles could be changed as necessary for
+            your app.
+        </p>
+
+        <p>
+            <strong>Result:</strong>
+            You should get an app with the Default layout which can be modified for your needs.
+        </p>
+
+    </body>
+</document>

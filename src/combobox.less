@@ -1,0 +1,123 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+.ebCombobox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    height: @defaultHeightRem;
+
+    // TODO: &-list is deprecated! Should be removed.
+    &-list, &-body {
+        position: absolute;
+        margin-top: 6px;
+        display: none;
+        width: 100%;
+
+        &_rightAlign {
+            right: 0;
+        }
+    }
+
+    // TODO: &-Helper is deprecated! Should be removed.
+    &-Helper, &-helper {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        width: 30px;
+        height: 100%;
+
+        cursor: pointer;
+        border: 1px solid #999999;
+        background-color: @white;
+
+        .applyBoxSizing(~"border-box");
+        .applyBorderRadius(~"0 3px 3px 0");
+        .applyAppearance(none);
+
+        .applyButtonDefaultVGradient();
+
+        &:hover {
+            .applyButtonHoverVGradient();
+        }
+        &:active {
+            .applyButtonActiveVGradient();
+        }
+
+        &:disabled {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: #b2b2b2; // 30%
+            color: #B2B2B2;
+
+            &:hover, &:active {
+                background: rgba(0, 0, 0, 0.1);
+                color: #B2B2B2;
+                cursor: not-allowed;
+            }
+        }
+
+        .ebCombobox-iconHolder {
+            display: inline-block;
+            opacity: 0.7;
+            cursor: pointer;
+            line-height: 2.2rem;
+        }
+    }
+
+    // TODO: .ebCombobox-Helper is deprecated! Should be removed.
+    &:hover > .ebCombobox-Helper, &:hover > .ebCombobox-helper {
+        border-color: lighten(@black, 40%); // #666666
+    }
+
+    // TODO: .ebCombobox-list is deprecated! Should be removed.
+    .ebInput:focus ~ .ebCombobox-list,
+    .ebInput:focus ~ .ebCombobox-body,
+    &:active > .ebCombobox-list,
+    &:active > .ebCombobox-body {
+        display: block;
+    }
+
+    // TODO: .ebCombobox-list is deprecated! Should be removed.
+    & > .ebCombobox-list, & > .ebCombobox-body {
+        display: none;
+    }
+
+    // TODO: &_noMargin is deprecated! Should be removed.
+    &_noMargin {
+        margin: 0;
+    }
+
+    &_disabled {
+        // TODO: .ebCombobox-Helper is deprecated! Should be removed.
+        &, &:hover, .ebCombobox-Helper:hover, .ebCombobox-helper:hover, .ebCombobox-iconHolder:hover {
+            .applyDisabledFormAction();
+        }
+
+        .ebCombobox-iconHolder,
+        .ebCombobox-iconHolder:hover,
+        .ebCombobox-iconHolder:active {
+            opacity: 0.3;
+        }
+        &:hover {
+            // TODO: .ebCombobox-Helper is deprecated! Should be removed.
+            & > .ebCombobox-Helper, & > .ebCombobox-helper {
+                border-color: #b2b2b2; // 30%
+            }
+        }
+        // TODO: .ebCombobox-list is deprecated! Should be removed.
+        &:active > .ebCombobox-list, &:active > .ebCombobox-body {
+            display: none;
+        }
+        // TODO: .ebCombobox-list is deprecated! Should be removed.
+        .ebInput:focus ~ .ebCombobox-list, .ebInput:focus ~ .ebCombobox-body {
+            display: none;
+        }
+    }
+}

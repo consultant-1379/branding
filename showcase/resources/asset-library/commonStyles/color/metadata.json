@@ -1,0 +1,51 @@
+{
+    "title": "Ericsson Colour Palette",
+    "assetId": "color",
+    "items": [
+        {
+            "file": "primary.html",
+            "anchorName": "primaryColor",
+            "anchorTitle": "Primary Colors"
+        },
+        {
+            "file": "secondary.html",
+            "anchorName": "secondaryColor",
+            "anchorTitle": "Secondary Colors"
+        },
+        {
+            "file": "tint/title.html",
+            "anchorName": "tints",
+            "anchorTitle": "Tints"
+        },
+        {
+            "file": "tint/purple.html"
+        },
+        {
+            "file": "tint/red.html"
+        },
+        {
+            "file": "tint/orange.html"
+        },
+        {
+            "file": "tint/yellow.html"
+        },
+        {
+            "file": "tint/green.html"
+        },
+        {
+            "file": "tint/darkGreen.html"
+        },
+        {
+            "file": "tint/paleBlue.html"
+        },
+        {
+            "file": "tint/black.html"
+        },
+        {
+            "file": "tint/grey.html"
+        },
+        {
+            "file": "tint/textLinkBlue.html"
+        }
+    ]
+}

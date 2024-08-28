@@ -1,0 +1,64 @@
+@import "common/variables";
+@import "common/colors";
+
+.ebLabel {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0;
+    color: #333333;
+
+    // TODO: &_wMargin is deprecated! Should be removed.
+    &_wMargin {
+        margin: @defaultMargin;
+    }
+
+    .ebInput_labeled, .ebCombobox_labeled, .ebDropdown_labeled, .ebSelectComponent_labeled {
+        display: inline-block;
+
+        &_top {
+            display: block;
+            margin: 3px 6px 3px 0px;
+        }
+    }
+
+    &-text {
+        display: inline-block;
+        width: 140px;
+        padding: 6px 0;
+
+        &_required:after {
+            display: inline-block;
+            width: 0.5rem;
+            height: 1.8rem;
+            line-height: 1.2rem;
+            margin: 0 0.6rem 0 0.1rem;
+            vertical-align: top;
+            color: @red;
+            content: '*';
+        }
+
+        &_width_auto {
+            width: auto;
+        }
+        &_width_mini {
+            width: 60px;
+        }
+        &_width_long {
+            width: 100px;
+        }
+        &_width_xLong {
+            width: 200px;
+        }
+    }
+
+    &-text + &-field {
+        vertical-align: top;
+    }
+
+    &-field {
+        position: relative;
+        display: inline-block;
+        min-height: 2.4rem;
+    }
+
+}

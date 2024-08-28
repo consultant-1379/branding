@@ -1,0 +1,779 @@
+@import "common/mixins";
+
+/* DEPRECATED */
+.ebIconBtn {
+    display: inline-block;
+    border: none;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    padding: 6px 10px;
+    background-size: 100%;
+
+    background: no-repeat center center transparent;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 0.4;
+        cursor: pointer;
+        //        .applyBoxShadow(~'inset 0 0 0 1px', rgba(0, 0, 0, 0.6));
+    }
+    &:active {
+        opacity: 1;
+    }
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+}
+
+//disable user select
+.applyUserSelect(@params) {
+    -moz-user-select: @params;
+    -khtml-user-select: @params;
+    -webkit-user-select: @params;
+    -o-user-select: @params;
+}
+
+.ebIcon {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    height: 16px;
+    width: 16px;
+    line-height: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 100%;
+
+    .applyUserSelect(none);
+
+    &_interactive {
+        opacity: 0.7;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1.0;
+        }
+
+        &:active {
+            opacity: 0.4;
+        }
+    }
+
+    &_button {
+        margin: 10px;
+    }
+
+    // TODO: &_noVertAlign is deprecated! Should be removed.
+    &_noVertAlign {
+        vertical-align: inherit;
+    }
+
+    &_disabled {
+        cursor: not-allowed;
+
+        &, &:hover, &:active {
+            opacity: 0.3;
+        }
+    }
+
+    .ebIcon_small, // register mixin
+    &_small {
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+    }
+
+    &_medium {
+        // default
+    }
+
+    &_large {
+        height: 2.8rem;
+        width: 2.8rem;
+        line-height: 2.8rem;
+    }
+
+    // TODO: &_wMargin is deprecated! Should be removed.
+    &_wMargin {
+        margin: 4px;
+    }
+
+    /*small icons  */
+    //arrows
+    &_upArrow {
+        background-image: ~"url('../resources/16px/ArrowUpSmall_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/arrowUpSmall_white_16px.svg')";
+        }
+    }
+    &_downArrow {
+        background-image: ~"url('../resources/16px/ArrowDownSmall_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowDownSmall_white_16px.svg')";
+        }
+    }
+    &_leftArrow {
+        background-image: ~"url('../resources/16px/ArrowLeftSmall_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowLeftSmall_white_16px.svg')";
+        }
+    }
+    &_rightArrow {
+        background-image: ~"url('../resources/16px/ArrowRightSmall_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowRightSmall_white_16px.svg')";
+        }
+    }
+    &_prevArrow {
+        background-image: ~"url('../resources/16px/ArrowDoubleLeftSmall_black_16px.svg')";
+    }
+    &_nextArrow {
+        background-image: ~"url('../resources/16px/ArrowDoubleRightSmall_black_16px.svg')";
+    }
+    // small arrows of 10x10px
+    .ebIcon_upArrow_10px, // register mixin
+    &_upArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowUpSmall_black_10px.svg')";
+    }
+    .ebIcon_downArrow_10px, // register mixin
+    &_downArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowDownSmall_black_10px.svg')";
+    }
+    &_leftArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowLeftSmall_black_10px.svg')";
+    }
+    &_rightArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowRightSmall_black_10px.svg')";
+    }
+    &_prevArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowDoubleLeftSmall_black_10px.svg')";
+    }
+    &_nextArrow_10px {
+        background-image: ~"url('../resources/10px/ArrowDoubleRightSmall_black_10px.svg')";
+    }
+
+    //others
+    &_errorSmall {
+        background-image: ~"url('../resources/other/errorSmall_red_10px.svg')";
+    }
+    &_tickSmallBlack {
+        background-image: ~"url('../resources/other/tick_black_10x8px.svg')";
+    }
+    &_tickSmallGreen {
+        background-image: ~"url('../resources/other/tick_green_10x8px.svg')";
+    }
+
+    /*16px icons*/
+
+    //big arrows
+    &_upArrowLarge {
+        background-image: ~"url('../resources/16px/ArrowUp_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowUp_white_16px.svg')";
+        }
+    }
+    &_downArrowLarge {
+        background-image: ~"url('../resources/16px/ArrowDown_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowDown_white_16px.svg')";
+        }
+        &_blue {
+            background-image: ~"url('../resources/16px/ArrowDown_blue_16px.svg')";
+        }
+    }
+    &_leftArrowLarge {
+        background-image: ~"url('../resources/16px/ArrowLeft_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowLeft_white_16px.svg')";
+        }
+    }
+    &_rightArrowLarge {
+        background-image: ~"url('../resources/16px/ArrowRight_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/ArrowRight_white_16px.svg')";
+        }
+    }
+    &_circle {
+        &ArrowDown {
+            background-image: ~"url('../resources/16px/circleArrowDown_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleArrowDown_white_16px.svg')";
+            }
+        }
+        &ArrowLeft {
+            background-image: ~"url('../resources/16px/circleArrowLeft_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleArrowLeft_white_16px.svg')";
+            }
+        }
+        &ArrowRight {
+            background-image: ~"url('../resources/16px/circleArrowRight_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleArrowRight_white_16px.svg')";
+            }
+        }
+        &ArrowUp {
+            background-image: ~"url('../resources/16px/circleArrowUp_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleArrowUp_white_16px.svg')";
+            }
+        }
+        &CaretDown {
+            background-image: ~"url('../resources/16px/circleCaretDown_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleCaretDown_white_16px.svg')";
+            }
+        }
+        &CaretLeft {
+            background-image: ~"url('../resources/16px/circleCaretLeft_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleCaretLeft_white_16px.svg')";
+            }
+        }
+        &CaretRight {
+            background-image: ~"url('../resources/16px/circleCaretRight_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleCaretRight_white_16px.svg')";
+            }
+        }
+        &CaretUp {
+            background-image: ~"url('../resources/16px/circleCaretUp_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/circleCaretUp_white_16px.svg')";
+            }
+        }
+    }
+    &_eLogo {
+        background-image: ~"url('../resources/systemBar/econ01.svg')";
+    }
+    &_copy {
+        background-image: ~"url('../resources/16px/copy_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/copy_white_16px.svg')";
+        }
+    }
+    &_cut {
+        background-image: ~"url('../resources/16px/cut_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/cut_white_16px.svg')";
+        }
+    }
+    &_delete {
+        background-image: ~"url('../resources/16px/delete_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/delete_white_16px.svg')";
+        }
+    }
+    &_duplicate {
+        background-image: ~"url('../resources/16px/duplicate_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/duplicate_white_16px.svg')";
+        }
+    }
+    &_edit {
+        background-image: ~"url('../resources/16px/edit_black_16px.svg')";
+    }
+    &_editWhite {
+        background-image: ~"url('../resources/16px/edit_white_16px.svg')";
+    }
+    &_newFile {
+        background-image: ~"url('../resources/16px/newFile_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/newFile_white_16px.svg')";
+        }
+    }
+    &_save {
+        background-image: ~"url('../resources/16px/save_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/save_white_16px.svg')";
+        }
+    }
+    &_filter {
+        background-image: ~"url('../resources/16px/filter_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/filter_white_16px.svg')";
+        }
+    }
+    &_folder {
+        background-image: ~"url('../resources/16px/folder_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/folder_white_16px.svg')";
+        }
+        &Closed {
+            background-image: ~"url('../resources/16px/folderClosed_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/folder_white_16px.svg')";
+            }
+        }
+    }
+    &_detach {
+        background-image: ~"url('../resources/16px/detach_black_16px.svg')";
+    }
+    &_import {
+        background-image: ~"url('../resources/16px/import_black_16px.svg')";
+    }
+    &_export {
+        background-image: ~"url('../resources/16px/export_black_16px.svg')";
+    }
+    &_undo {
+        background-image: ~"url('../resources/16px/undo_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/undo_white_16px.svg')";
+        }
+    }
+
+    &_valid {
+        background-image: ~"url('../resources/16px/valid_icon.svg')";
+    }
+    &_invalid {
+        background-image: ~"url('../resources/16px/invalid_icon.svg')";
+    }
+    &_error {
+        background-image: ~"url('../resources/16px/error_red_16px.svg')";
+    }
+    &_warning {
+        background-image: ~"url('../resources/16px/warning_yellow_16px.svg')";
+        &Orange {
+            background-image: ~"url('../resources/16px/warning_orange_16px.svg')";
+        }
+        &Shield {
+            background-image: ~"url('../resources/16px/warningShield_black_16px.svg')";
+        }
+        &_white {
+            background-image: ~"url('../resources/16px/warning_white_16px.svg')";
+        }
+    }
+    &_mail {
+        background-image: ~"url('../resources/16px/mail_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/mail_white_16px.svg')";
+        }
+    }
+    &_mailRead {
+        background-image: ~"url('../resources/16px/mailRead_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/mailRead_white_16px.svg')";
+        }
+    }
+
+    &_lock {
+        background-image: ~"url('../resources/16px/lock_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/lock_white_16px.svg')";
+        }
+    }
+    &_unlock {
+        background-image: ~"url('../resources/16px/unlock_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/unlock_white_16px.svg')";
+        }
+    }
+    &_logout {
+        background-image: ~"url('../resources/16px/logout_black_16px.svg')";
+    }
+    &_menu {
+        background-image: ~"url('../resources/16px/menu_black_16px.svg')";
+    }
+    &_search {
+        background-image: ~"url('../resources/16px/search_black_16px.svg')";
+    }
+    &_searchWhite {
+        background-image: ~"url('../resources/16px/search_white_16px.svg')";
+    }
+    &_advancedSearch {
+        background-image: ~"url('../resources/16px/advanced_search_black_16px.svg')";
+    }
+    &_advancedSearchWhite {
+        background-image: ~"url('../resources/16px/advanced_search_white_16px.svg')";
+    }
+    &_share {
+        background-image: ~"url('../resources/16px/share_black_16px.svg')";
+    }
+    &_star {
+        background-image: ~"url('../resources/16px/star_black_16px.svg')";
+        &_yellow{
+            background-image: ~"url('../resources/16px/star_yellow_16px.svg')";
+        }
+    }
+    &_tick {
+        background-image: ~"url('../resources/16px/tick_green_16px.svg')";
+    }
+    &_simpleGreenTick {
+        background-image: ~"url('../resources/16px/simple_green_tick.svg')";
+    }
+    &_download {
+        background-image: ~"url('../resources/16px/download_black_16px.svg')";
+    }
+    &_downloadWhite {
+        background-image: ~"url('../resources/16px/download_white_16px.svg')";
+    }
+
+    &_documentWhite {
+        background-image: ~"url('../resources/16px/document_white_16px.svg')";
+    }
+
+    &_expand {
+        background-image: ~"url('../resources/16px/expand_black_16px.svg')";
+    }
+    &_row {
+        &Collapsed {
+            background-image: ~"url('../resources/16px/rowCollapsed_black_16px.svg')";
+        }
+        &Expanded {
+            background-image: ~"url('../resources/16px/rowExpanded_black_16px.svg')";
+        }
+        &View {
+            background-image: ~"url('../resources/16px/rowView_black_16px.svg')";
+        }
+    }
+    &_externalApp {
+        background-image: ~"url('../resources/16px/externalApp_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/externalApp_white_16px.svg')";
+        }
+    }
+    &_fullscreen {
+        background-image: ~"url('../resources/16px/fullscreen_black_16px.svg')";
+        &Minimize {
+            background-image: ~"url('../resources/16px/fullscreenMinimise_black_16px.svg')";
+        }
+    }
+    &_help {
+        background-image: ~"url('../resources/16px/help_black_16px.svg')";
+    }
+    &_info {
+        background-image: ~"url('../resources/16px/information_black_16px.svg')";
+    }
+    &_dialogInfo {
+        background-image: ~"url('../resources/16px/information_blue_16px.svg')";
+    }
+    &_exitFullscreen {
+        background-image: ~"url('../resources/16px/minimiseFullscreen_black_16px.svg')";
+    }
+    &_refresh {
+        background-image: ~"url('../resources/16px/refresh_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/refresh_white_16px.svg')";
+        }
+    }
+    &_settings {
+        background-image: ~"url('../resources/16px/settings_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/settings_white_16px.svg')";
+        }
+    }
+    &_user {
+        background-image: ~"url('../resources/16px/user_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/user_white_16px.svg')";
+        }
+    }
+    &_close {
+        background-image: ~"url('../resources/16px/X_black_16px.svg')";
+        &_blue {
+            background-image: ~"url('../resources/16px/X_blue_16px.svg')";
+        }
+        &_paleBlue {
+            background-image: ~"url('../resources/16px/X_paleBlue_16px.svg')";
+        }
+        &_green {
+            background-image: ~"url('../resources/16px/X_green_16px.svg')";
+        }
+        &_orange {
+            background-image: ~"url('../resources/16px/X_orange_16px.svg')";
+        }
+        &_red {
+            background-image: ~"url('../resources/16px/X_red_16px.svg')";
+        }
+        &_yellow {
+            background-image: ~"url('../resources/16px/X_yellow_16px.svg')";
+        }
+    }
+    &_minus {
+        background-image: ~"url('../resources/16px/minus_black_16px.svg')";
+    }
+    &_plus {
+        background-image: ~"url('../resources/16px/plus_black_16px.svg')";
+    }
+    &_multiSelect {
+        background-image: ~"url('../resources/16px/multiSelect_black_16px.svg')";
+    }
+
+    &_stop {
+        background-image: ~"url('../resources/16px/stop_black_16px.svg')";
+    }
+    &_pause {
+        background-image: ~"url('../resources/16px/pause_black_16px.svg')";
+    }
+    &_play {
+        background-image: ~"url('../resources/16px/play_black_16px.svg')";
+    }
+    &_fastForward {
+        background-image: ~"url('../resources/16px/fastForward_black_16px.svg')";
+    }
+    &_fastRewind {
+        background-image: ~"url('../resources/16px/fastRewind_black_16px.svg')";
+    }
+    &_print {
+        background-image: ~"url('../resources/16px/print_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/print_white_16px.svg')";
+        }
+    }
+    &_list_white{
+        background-image: ~"url('../resources/16px/list_white_16px.svg')";
+    }
+    &_calendar {
+        background-image: ~"url('../resources/16px/calendar_black_16px.svg')";
+        &_white{
+            background-image: ~"url('../resources/16px/calendar_white_16px.svg')";
+        }
+    }
+
+    //    ==========================================================================
+    //    ==========================================================================
+
+    &_alarm {
+        &Cleared {
+            background-image: ~"url('../resources/16px/alarmCleared_16px.svg')";
+        }
+        &Critical {
+            background-image: ~"url('../resources/16px/alarmCritical_16px.svg')";
+        }
+        &Heartbeat {
+            background-image: ~"url('../resources/16px/alarmHeartbeat_16px.svg')";
+        }
+        &Indeterminate {
+            background-image: ~"url('../resources/16px/alarmIndeterminate_16px.svg')";
+        }
+        &Major {
+            background-image: ~"url('../resources/16px/alarmMajor_16px.svg')";
+        }
+        &Minor {
+            background-image: ~"url('../resources/16px/alarmMinor_16px.svg')";
+        }
+        &Warning {
+            background-image: ~"url('../resources/16px/alarmWarning_16px.svg')";
+        }
+    }
+    &_bsc {
+        background-image: ~"url('../resources/16px/BSC_black_16px.svg')";
+        &Yellow {
+            background-image: ~"url('../resources/16px/BSC_Yellow_16px.svg')";
+        }
+        &Function {
+            background-image: ~"url('../resources/16px/BSCFunction_black_16px.svg')";
+            &Yellow {
+                background-image: ~"url('../resources/16px/BSCFunction_Yellow_16px.svg')";
+            }
+        }
+    }
+    &_cabinet {
+        background-image: ~"url('../resources/16px/cabinet_black_16px.svg')";
+    }
+    &_cell {
+        &Gray {
+            background-image: ~"url('../resources/16px/cell_gray_16px.svg')";
+        }
+        &Green {
+            background-image: ~"url('../resources/16px/cell_green_16px.svg')";
+        }
+        &Red {
+            background-image: ~"url('../resources/16px/cell_red_16px.svg')";
+        }
+        &Adjacent {
+            background-image: ~"url('../resources/16px/cellAdjacent_16px.svg')";
+        }
+        &External {
+            background-image: ~"url('../resources/16px/cellExternal_16px.svg')";
+        }
+    }
+    &_charging {
+        background-image: ~"url('../resources/16px/charging_black_16px.svg')";
+    }
+    &_connected {
+        background-image: ~"url('../resources/16px/connected_black_16px.svg')";
+    }
+    &_disconnected {
+        background-image: ~"url('../resources/16px/disconnected_black_16px.svg')";
+    }
+    &_connectionError {
+        background-image: ~"url('../resources/16px/connectionError_black_16px.svg')";
+    }
+    &_core {
+        background-image: ~"url('../resources/16px/core_black_16px.svg')";
+        &Subscriber {
+            background-image: ~"url('../resources/16px/coreSubscriber_black_16px.svg')";
+        }
+    }
+    &_database {
+        background-image: ~"url('../resources/16px/database_black_16px.svg')";
+    }
+    &_ftpServer {
+        background-image: ~"url('../resources/16px/ftpServer_black_16px.svg')";
+        &Function {
+            background-image: ~"url('../resources/16px/ftpServerFunction_black_16px.svg')";
+        }
+    }
+    &_gateway {
+        background-image: ~"url('../resources/16px/gateway_black_16px.svg')";
+        &Function {
+            background-image: ~"url('../resources/16px/gatewayFunction_black_16px.svg')";
+        }
+    }
+    &_managed {
+        &Function {
+            background-image: ~"url('../resources/16px/managedFunction_black_16px.svg')";
+        }
+        &Group {
+            background-image: ~"url('../resources/16px/managedGroup_black_16px.svg')";
+        }
+    }
+    &_managementNode {
+        background-image: ~"url('../resources/16px/managementNode_black_16px.svg')";
+    }
+    &_network {
+        background-image: ~"url('../resources/16px/network_black_16px.svg')";
+        &Element {
+            background-image: ~"url('../resources/16px/networkElement_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/networkElement_white_16px.svg')";
+            }
+        }
+    }
+    &_rbs {
+        background-image: ~"url('../resources/16px/RBS_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/RBS_white_16px.svg')";
+        }
+    }
+    &_routeSwitch {
+        background-image: ~"url('../resources/16px/routeSwitch.svg')";
+    }
+    &_rxi {
+        background-image: ~"url('../resources/16px/rxi_black_16px.svg')";
+    }
+    &_switchFunction {
+        background-image: ~"url('../resources/16px/switchFunction_black_16px.svg')";
+    }
+    &_technicianPresent {
+        background-image: ~"url('../resources/16px/technicianPresent_16px.svg')";
+    }
+    &_terminal {
+        background-image: ~"url('../resources/16px/terminal_black_16px.svg')";
+    }
+    &_topology {
+        background-image: ~"url('../resources/16px/topology_black_16px.svg')";
+    }
+    &_access {
+        background-image: ~"url('../resources/16px/access_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/access_white_16px.svg')";
+        }
+
+        &Settings {
+            background-image: ~"url('../resources/16px/accessSettings_black_16px.svg')";
+            &_white {
+                background-image: ~"url('../resources/16px/accessSettings_white_16px.svg')";
+            }
+        }
+    }
+    &_align {
+        &Center {
+            background-image: ~"url('../resources/16px/alignCenter_black_16px.svg')";
+        }
+        &Left {
+            background-image: ~"url('../resources/16px/alignLeft_black_16px.svg')";
+        }
+        &Right {
+            background-image: ~"url('../resources/16px/alignRight_black_16px.svg')";
+        }
+    }
+    &_cli {
+        background-image: ~"url('../resources/16px/CommandLineInterface_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/CommandLineInterface_white_16px.svg')";
+        }
+    }
+    &_grid3x3 {
+        background-image: ~"url('../resources/16px/grid3X3_black_16px.svg')";
+    }
+    &_grid4x4 {
+        background-image: ~"url('../resources/16px/grid4X4_black_16px.svg')";
+    }
+    &_gridView {
+        background-image: ~"url('../resources/16px/gridView_black_16px.svg')";
+    }
+    &_jumpTo {
+        background-image: ~"url('../resources/16px/jumpTo_black_16px.svg')";
+    }
+    &_security {
+        background-image: ~"url('../resources/16px/security_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/security_white_16px.svg')";
+        }
+    }
+    &_site {
+        background-image: ~"url('../resources/16px/site_black_16px.svg')";
+        &Manager {
+            background-image: ~"url('../resources/16px/siteManager_black_16px.svg')";
+        }
+    }
+    &_tip {
+        background-image: ~"url('../resources/16px/tip_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/filter_white_16px.svg')";
+        }
+    }
+    &_attach {
+        background-image: ~"url('../resources/16px/attach_black_16px.svg')";
+    }
+    &_clock {
+        background-image: ~"url('../resources/16px/clock_black_16px.svg')";
+        &_white {
+            background-image: ~"url('../resources/16px/clock_white_16px.svg')";
+        }
+    }
+    &_window {
+        &Maximize {
+            background-image: ~"url('../resources/16px/WindowMaximize_black_16px.svg')";
+        }
+        &Minimize {
+            background-image: ~"url('../resources/16px/WindowMinimize_black_16px.svg')";
+        }
+    }
+    &_deprecated {
+        background-image: ~"url('../resources/16px/deprecated_16px.svg')";
+    }
+    &_obsolete {
+        background-image: ~"url('../resources/16px/obsolete_16px.svg')";
+    }
+    &_newStatus {
+        &_blue {
+            background-image: ~"url('../resources/16px/newStatus_blue_16px.svg')";
+        }
+        &_green{
+            background-image: ~"url('../resources/16px/newStatus_green_16px.svg')";
+        }
+    }
+    &_upload{
+        background-image: ~"url('../resources/16px/upload_black_16px.svg')";
+    }
+    //    REDUNDANT
+    //    //28px icons
+    //    &_errorLarge {
+    //        background-image: ~"url('../resources/28px/error_red_28px.svg')";
+    //    }
+    //    &_infoLargeBlue {
+    //        background-image: ~"url('../resources/28px/information_blue_28px.svg')";
+    //    }
+    //    &_tickLarge {
+    //        background-image: ~"url('../resources/28px/tick_green_28px.svg')";
+    //    }
+    //    &_warningLarge {
+    //        background-image: ~"url('../resources/28px/warning_yellow_28px.svg')";
+    //    }
+}

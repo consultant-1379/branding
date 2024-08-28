@@ -1,0 +1,51 @@
+{
+    "title": "Tables",
+    "assetId": "table",
+    "status": "none",
+    "items": [
+        {
+            "file": "intro.html",
+            "status": "none"
+        },
+        {
+            "file": "pinstripe.html",
+            "anchorName": "pinstripeTable",
+            "anchorTitle": "Pinstripe Table",
+            "status": "baselined"
+        },
+        {
+            "file": "sortable.html",
+            "anchorName": "sortableTables",
+            "anchorTitle": "Sortable Tables",
+            "status": "beta"
+        },
+        {
+            "file": "resizable.html",
+            "anchorName": "resizableTables",
+            "anchorTitle": "Resizable Tables",
+            "status": "beta"
+        },
+        {
+            "file": "zebra.html",
+            "anchorName": "zebraTable",
+            "anchorTitle": "Zebra Stripe Table",
+            "status": "baselined"
+        },
+        {
+            "file": "colorTables.html",
+            "anchorName": "colorTables",
+            "anchorTitle": "Color Tables",
+            "status": "beta"
+        },
+        {
+            "file": "modifiers.html",
+            "anchorName": "tableModifiers",
+            "anchorTitle": "Miscellaneous Modifiers",
+            "status": "beta"
+        },
+        {
+            "file": "guideline.html",
+            "status": "none"
+        }
+    ]
+}

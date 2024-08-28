@@ -1,0 +1,154 @@
+@import "common/mixins";
+@import "common/colors";
+
+.noSelect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@eDayWidth: 30px;
+@eDayHeight: 30px;
+
+@eDayPxOffset: 4;
+
+.ebDateTimePicker {
+    display: inline-block;
+
+    &-dateHolder {
+    }
+    &-timeHolder {
+        text-align: center;
+        border-top: 1px solid #B5B2B2;
+    }
+}
+
+.ebDatePicker {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    &-head {
+        position: relative;
+        width: @eDayWidth * 7;
+    }
+    &-tableHolder {
+        padding-top: 0.8rem;
+    }
+
+    &-prev {
+        position: absolute;
+        top: 6px;
+        left: 7px;
+    }
+
+    &-prevMonth {
+        float: left;
+        margin-left: 16px;
+    }
+
+    &-prevYear {
+        float: left;
+    }
+
+    &-monthYear {
+        font-weight: bold;
+        padding-top: 6px;
+        text-align: center;
+
+        text-transform: uppercase;
+    }
+
+    &-next {
+        position: absolute;
+        top: 6px;
+        right: 7px;
+    }
+
+    &-nextMonth {
+        float: right;
+        margin-right: 16px;
+    }
+
+    &-nextYear {
+        float: right;
+    }
+
+    &-body {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-top: 1px solid #B5B2B2;
+
+        table-layout: fixed;
+
+        tbody > tr > td, thead > tr > th {
+            .noSelect();
+
+            color: @black;
+            opacity: 0.8;
+
+            width: @eDayWidth;
+            height: @eDayHeight;
+
+            padding: 0;
+
+            table-layout: fixed;
+            text-align: center;
+        }
+
+        thead > tr > th {
+            font-weight: bold;
+            height: @eDayHeight - 3;
+        }
+
+        tbody > tr > td > span {
+            display: inline-block;
+            line-height: 2.2em;
+
+            height: @eDayWidth - @eDayPxOffset;
+            width: @eDayHeight - @eDayPxOffset;
+        }
+
+        tbody > tr:first-child > td {
+            padding-top: 4px;
+        }
+    }
+
+    &-day {
+        cursor: pointer;
+
+        &_selected {
+            .applyBorderRadius(2px);
+
+            background-color: fade(@eBlue, 20%);
+        }
+
+        &_today {
+            position: relative;
+
+            &:after {
+                @underLineWidth: 22px;
+
+                display: block;
+                position: absolute;
+
+                top: @eDayHeight - 9;
+                width: @underLineWidth;
+                margin: 0 ((@eDayWidth - @underLineWidth - @eDayPxOffset ) / 2 );
+
+                content: "";
+
+                border-bottom: 3px solid #00A9D4;
+            }
+        }
+
+        &_disabled {
+            color: @black;
+            opacity: 0.3;
+        }
+
+        &_disabled, &_other {
+            cursor: default;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+.ebInput {
+    display: inline-block;
+    vertical-align: middle;
+
+    text-align: left;
+    font-size: 1.2rem;
+
+    width: @defaultW;
+    height: @defaultHeightRem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid lighten(@black, 70%); // #999999
+
+    .applyBoxSizing(~"border-box");
+    .applyBorderRadius(3px);
+    .applyBoxShadow(~'inset 1px 1px 0 0', lighten(@black, 80%)); // #CCCCCC
+    .applyAppearance(none);
+
+    // TODO: &_wMargin is deprecated! Should be removed.
+    &_wMargin {
+        margin: 6px;
+    }
+    &_txtCenter {
+        text-align: center;
+    }
+
+    // TODO: &_miniW, &_smallW, &_longW, &_xLongW are deprecated! Should be removed.
+    &_miniW, &_width_mini {
+        width: @miniW;
+    }
+    &_smallW, &_width_small {
+        width: @smallW;
+    }
+    &_longW, &_width_long {
+        width: @longW;
+    }
+    &_xLongW, &_width_xLong {
+        width: @xLongW;
+    }
+
+    &_noRightSide {
+        border-width: 1px 0 1px 1px;
+        .applyBorderRadius(~"3px 0 0 3px");
+    }
+    &_noLeftSide {
+        border-width: 1px 1px 1px 0;
+        .applyBorderRadius(~"0 3px 3px 0");
+        .applyBoxShadow(~'inset 0 1px 0 0', lighten(@black, 80%)); // #CCCCCC
+    }
+
+    &:hover {
+        border-color: lighten(@black, 40%); // #666666
+    }
+    &[readonly] {
+        cursor: default; 
+        box-shadow: none; 
+        border: 1px solid #E3E3E3;
+    }
+    &[readonly]:hover {
+        border-color: 1px solid #E3E3E3;
+    }  
+    &_disabled, &:disabled {
+        color: #B2B2B2;
+        border-color: #b2b2b2; // 30%
+
+        background-color: rgba(0, 0, 0, 0.05); // 5%
+
+        .applyDisabledFormAction();
+        .applyBoxShadow(~'inset 1px 1px 0 0', lighten(@black, 80%)); // #CCCCCC
+    }
+
+    &_borderColor {
+        border: 1px solid inherit;
+
+        &_red {
+            border: 1px solid @red;
+        }
+    }
+
+    &.eb_wMargin + .ebInput-status {
+        margin: -0.2rem 0.8rem 0 0.6rem;
+    }
+
+    //    ===========================================
+    &-status {
+        display: block;
+        margin: 0.4rem 0 0 0;
+        line-height: 1.2rem;
+        min-height: 1.8rem;
+        font-size: 1.2rem;
+        font-weight: normal;
+
+        &Ok,
+        &Error {
+            vertical-align: middle;
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 0.6rem 0 0; // UX defined margin 12px left and 8px right
+                width: 1.2rem;
+                height: 1.2rem;
+                content: '';
+                background-repeat: no-repeat;
+            }
+        }
+
+        &Info {
+            vertical-align: middle;
+            color: #8d8d8d;
+        }
+        &Ok {
+            color: @green;
+            display: none;
+            &:before {
+                background-image: ~"url('../resources/form/valid_icon.svg')";
+            }
+        }
+        &Error {
+            color: @red;
+            display: none;
+            &:before {
+                background-image: ~"url('../resources/form/invalid_icon.svg')";
+            }
+        }
+
+        &_hide {
+            .ebInput-statusOk,
+            .ebInput-statusError,
+            .ebInput-statusInfo {
+                display: none;
+            }
+        }
+        &_info {
+            .ebInput-statusInfo {
+                display: inline-block;
+            }
+            .ebInput-statusOk,
+            .ebInput-statusError {
+                display: none;
+            }
+        }
+        &_ok {
+            .ebInput-statusOk {
+                display: inline-block;
+            }
+            .ebInput-statusError,
+            .ebInput-statusInfo {
+                display: none;
+            }
+        }
+        &_error {
+            .ebInput-statusError {
+                display: inline-block;
+            }
+            .ebInput-statusOk,
+            .ebInput-statusInfo {
+                display: none;
+            }
+        }
+    }
+
+    &:not(.ebInput_validation_focusLost) {
+        &:valid {
+            & + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) {
+                .ebInput-statusOk {
+                    display: inline-block;
+                }
+            }
+        }
+        &:invalid {
+            &:not(.ebInput_borderColor) {
+                border: 1px solid @red;
+            }
+            & + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) {
+                .ebInput-statusError {
+                    display: inline-block;
+                }
+                .ebInput-statusInfo {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.ebInput_validation_focusLost:not(:focus) {
+        &:valid {
+            & + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) {
+                .ebInput-statusOk {
+                    display: inline-block;
+                }
+            }
+        }
+        &:invalid {
+            &:not(.ebInput_borderColor) {
+                border: 1px solid @red;
+            }
+            & + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) {
+                .ebInput-statusError {
+                    display: inline-block;
+                }
+                .ebInput-statusInfo {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

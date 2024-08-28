@@ -1,0 +1,19 @@
+{
+    "baseUrl": "resources/asset-library/",
+    "listItem": [
+        "typography/",
+        "navigation/",
+        "table/",
+        "button/",
+        "form/",
+        "dialogs/",
+        "notification/",
+        "tabs/",
+        "accordion/",
+        "tree/",
+        "icons/",
+        "commonStyles/",
+        "layout/",
+        "loading/"
+    ]
+}

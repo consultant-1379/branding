@@ -1,0 +1,164 @@
+@import "common/mixins";
+@import "common/colors";
+
+.applyChildStyles(@iconFileName) {
+    padding-left: 37px;
+    background: ~"url('../resources/dialogs/@{iconFileName}') left top no-repeat";
+}
+
+.applyChildStylesOld(@iconFileName) {
+    padding-left: 37px;
+    background: ~"url('../resources/dialogs/@{iconFileName}') left center no-repeat";
+}
+
+.ebDialog {
+    position: fixed;
+    display: table;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-attachment: fixed;
+    z-index: 1500;
+
+    &-holder {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        text-align: center;
+    }
+}
+
+.ebDialogBox {
+    display: inline-block;
+    background: @white;
+    vertical-align: middle;
+    z-index: 1500;
+
+    margin: 30px 20%;
+    min-width: 300px;
+    max-width: 768px;
+    text-align: left;
+
+    border: 1px solid silver;
+
+    .applyBorderRadius(3px);
+    .applyBoxShadow(~'0 1px 3px', #999);
+
+    &-icon {
+        position:absolute;
+        width:16px;
+        height:16px;
+        top:-9px;
+        right:-9px;
+    }
+
+    &-contentBlock {
+        position:relative;
+        margin: 25px;
+
+        &_type_warning {
+            .applyChildStyles('warning_icon.svg');
+        }
+        &_type_error {
+            .applyChildStyles('error_icon.svg');
+        }
+        &_type_confirmation {
+            .applyChildStyles('confirmation_icon.svg');
+        }
+        &_type_information {
+            .applyChildStyles('information_icon.svg');
+        }
+    }
+    &-actionBlock {
+        text-align: center;
+        background-color: lighten(@black, 95%);
+        padding: 6px 0;
+
+        & > * {
+            margin: 0px 4px; //add margins to buttons in the action block
+        }
+    }
+
+    &-primaryText {
+        color: lighten(@black, 10%);
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 25px;
+
+        // TODO: deprecated styles
+        &_type_warning {
+            .applyChildStylesOld('warning_icon.svg');
+        }
+        &_type_error {
+            .applyChildStylesOld('error_icon.svg');
+        }
+        &_type_confirmation {
+            .applyChildStylesOld('confirmation_icon.svg');
+        }
+        &_type_information {
+            .applyChildStylesOld('information_icon.svg');
+        }
+    }
+
+    &-secondaryText {
+      color: @ebTextAlternative;
+    }
+
+    &-thirdText {
+        color: lighten(@black, 60%);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ebDialogBox {
+        margin: inherit 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ebDialogBox {
+        display: block;
+        position: relative;
+        margin: 0;
+        height: 100%;
+
+        &-icon {
+            position:absolute;
+            width:16px;
+            height:16px;
+            margin-top:20px;
+            margin-right:20px;
+        }
+
+        &-contentBlock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 37px;
+            margin: 25px;
+            padding: 15px;
+            overflow-y: auto;
+            box-sizing: border-box;
+
+            &_type_warning,
+            &_type_error,
+            &_type_confirmation,
+            &_type_information {
+                padding-top: 0;
+                padding-left: 37px;
+            }
+        }
+
+        &-actionBlock {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}

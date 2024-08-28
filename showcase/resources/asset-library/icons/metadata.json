@@ -1,0 +1,61 @@
+{
+    "title": "Icons",
+    "assetId": "icons",
+    "status": "none",
+    "items": [
+        {
+            "file": "eIcon.html",
+            "anchorName": "iconsEric",
+            "anchorTitle": "Ericsson Icon",
+            "status": "baselined"
+        },
+        {
+            "file": "interfaceIcons.html",
+            "anchorName": "iconsInterface",
+            "anchorTitle": "Interface Icons",
+            "status": "baselined"
+        },
+        {
+            "file": "telecomsIcons.html",
+            "anchorName": "iconsTelecoms",
+            "anchorTitle": "Telecoms Icons",
+            "status": "baselined"
+        },
+        {
+            "file": "arrows.html",
+            "anchorName": "iconsArrows",
+            "anchorTitle": "Arrow Icons",
+            "status": "baselined"
+        },
+        {
+            "file": "arrowsSmall.html",
+            "anchorName": "iconsArrowsSmall",
+            "anchorTitle": "Arrow Icons Small",
+            "status": "baselined"
+        },
+        {
+            "file": "iconSizes.html",
+            "anchorName": "iconsSizes",
+            "anchorTitle": "Icon Sizes",
+            "status": "beta"
+        },
+        {
+            "file": "iconWhite.html",
+            "anchorName": "iconWhite",
+            "anchorTitle": "White Icons",
+            "status": "beta"
+        },
+        {
+            "file": "hoverActive.html",
+            "anchorName": "iconsHoverActive",
+            "anchorTitle": "Hover & Active States",
+            "status": "baselined"
+        },
+        {
+            "file": "disabled.html",
+            "anchorName": "iconsDisabled",
+            "anchorTitle": "Disabled State",
+            "status": "baselined"
+        }
+    ]
+}

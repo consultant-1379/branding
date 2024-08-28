@@ -1,0 +1,167 @@
+<!--====================================================-->
+<h3 class="eaAssetLibrary-Heading">Input Validation</h3>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body eaAssetLibrary-Block-body-noside ebText">
+        <p class="ebText">
+            The HTML5 inputs support the validation feature.
+            It is based on attributes such as type, pattern or required.
+        </p>
+
+        <div>
+            <input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+"/>
+            <span class="ebInput-status">
+                <span class="ebInput-statusError"></span>
+            </span>
+        </div>
+
+    </div>
+</div>
+<!--==================================================== HTML -->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;input type="text" class="ebInput" placeholder="lowercase" pattern="[a-z]+"/&gt;<br>
+        &lt;span class="ebInput-status"&gt;<br>
+        &nbsp;&nbsp;&lt;span class="ebInput-statusError"&gt;&lt;/span&gt;<br>
+        &lt;/span&gt;
+    </code>
+</div>
+
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body eaAssetLibrary-Block-body-noside ebText">
+        <p class="ebText">
+            The tag "ebInput-status" can contain specific message for the information, valid or invalid status.
+        </p>
+
+        <div>
+            <input type="email" class="ebInput" placeholder="e-mail"/>
+            <span class="ebInput-status">
+                <span class="ebInput-statusInfo">email</span>
+                <span class="ebInput-statusError">Invalid email</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!--==================================================== HTML -->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;input type="email" class="ebInput" placeholder="e-mail"/&gt;<br>
+        &lt;span class="ebInput-status"&gt;<br>
+        &nbsp;&nbsp;&lt;span class="ebInput-statusInfo"&gt;email&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;span class="ebInput-statusError"&gt;Invalid email&lt;/span&gt;<br>
+        &lt;/span&gt;
+    </code>
+</div>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body eaAssetLibrary-Block-body-noside ebText">
+        <div>
+            <input type="email" class="ebInput" value="aaa@bbb.cc"/>
+            <span class="ebInput-status">
+                <span class="ebInput-statusOk">OK</span>
+                <span class="ebInput-statusError">Invalid email</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!--==================================================== HTML -->
+<h4 class="eaAssetLibrary-Heading">HTML</h4>
+
+<div class="eaAssetLibrary-Block">
+    <code class="eaAssetLibrary-Block-body eaAssetLibrary-Block-box eaAssetLibrary-AssetList-listItem-code ebText">
+        &lt;input type="email" class="ebInput" placeholder="e-mail"/&gt;<br>
+        &lt;span class="ebInput-status"&gt;<br>
+        &nbsp;&nbsp;&lt;span class="ebInput-statusOk"&gt;OK&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;span class="ebInput-statusError"&gt;Invalid email&lt;/span&gt;<br>
+        &lt;/span&gt;
+    </code>
+</div>
+
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body eaAssetLibrary-Block-body-noside ebText">
+        <p class="ebText">
+            There are situations where you need to hide the validity icon / message, use the modifier
+            "ebInput-status_hide".
+        </p>
+
+        <table>
+            <tr>
+                <td width="250">
+                    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+"
+                           value="AAA">
+                    <span class="ebInput-status ebInput-status_hide">
+                        <span class="ebInput-statusInfo">Lowercase</span>
+                        <span class="ebInput-statusOk">OK</span>
+                        <span class="ebInput-statusError">Error</span>
+                    </span>
+                </td>
+                <td>input: ebInput_borderColor<br>
+                    status: ebInput-status_hide
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<div class="eaAssetLibrary-Block">
+    <div class="eaAssetLibrary-Block-body eaAssetLibrary-Block-body-noside ebText">
+        <p class="ebText">
+            If you need to force one message to show, e.g. two passwords mismatch.
+            Use the border modifier "ebInput_borderColor" / "ebInput_borderColor_red" on the input field
+            and "ebInput-status_info" / "ebInput-status_ok" or "ebInput-status_error" on the status.
+        </p>
+
+        <table>
+            <tr>
+                <td width="250">
+                    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+"
+                           value="AAA">
+                    <span class="ebInput-status ebInput-status_info">
+                        <span class="ebInput-statusInfo">Lowercase</span>
+                        <span class="ebInput-statusOk">OK</span>
+                        <span class="ebInput-statusError">Error</span>
+                    </span>
+                </td>
+                <td>input: ebInput_borderColor<br>
+                    status: ebInput-status_info
+                </td>
+            </tr>
+            <tr>
+                <td width="250">
+                    <input type="text" class="ebInput ebInput_borderColor" placeholder="lowercase" pattern="[a-z]+"
+                           value="AAA">
+                    <span class="ebInput-status ebInput-status_ok">
+                        <span class="ebInput-statusInfo">Lowercase</span>
+                        <span class="ebInput-statusOk">OK</span>
+                        <span class="ebInput-statusError">Error</span>
+                    </span>
+                </td>
+                <td>input: ebInput_borderColor<br>
+                    status: ebInput-status_ok
+                </td>
+            </tr>
+            <tr>
+                <td width="250">
+                    <input type="text" class="ebInput ebInput_borderColor_red" placeholder="lowercase" pattern="[a-z]+"
+                           value="aaa">
+                    <span class="ebInput-status ebInput-status_error">
+                        <span class="ebInput-statusInfo">Lowercase</span>
+                        <span class="ebInput-statusOk">OK</span>
+                        <span class="ebInput-statusError">Error</span>
+                    </span>
+                </td>
+                <td>input: ebInput_borderColor_red<br>
+                    status: ebInput-status_error
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>

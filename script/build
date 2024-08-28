@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -e
+
+script/clean
+script/bootstrap
+
+# Version
+VERSION=`script/version`
+
+# Proxy
+if [ -z "$CDT_PROXY" ]; then
+    CDT_PROXY="null"
+fi
+
+# Build assets
+node node_modules/cdt-build --proxy $CDT_PROXY --no-color --prop-version $VERSION
+
+# Build demo
+# mkdir -p target/pre-site/resources/showcase/demos/network_explorer
+# node ~/Code/ericsson/cdt/cdt-build --packages demos/network_explorer --no-color --proxy $CDT_PROXY \
+# --deploy target/pre-site/resources/showcase/demos/network_explorer --deploy-with target/package/,demos/network_explorer/config.js
+
+# Build showcase
+mkdir -p target/pre-site/resources/showcase/library
+node node_modules/cdt-build --packages showcase --no-color --proxy $CDT_PROXY \
+--deploy target/pre-site/resources/showcase/library --deploy-with target/package/ \
+--force-deps assets@target/assets-$VERSION.tar.gz
+
+# Docs
+cp -rf docs/* target/pre-site/
+# A bit hacky here - need better solution
+#mkdir -p target/pre-site/resources/showcase/layouts/
+mkdir -p target/pre-site/resources/showcase/css/
+mkdir -p target/pre-site/resources/showcase/resources/
+mkdir -p target/pre-site/resources/showcase/examples/
+cp -rf target/package/assets/css/* target/pre-site/resources/showcase/css/
+cp -rf target/package/assets/resources/* target/pre-site/resources/showcase/resources/
+#cp -rf layouts/* target/pre-site/resources/showcase/layouts/
+cp -rf examples/* target/pre-site/resources/showcase/examples/
+
+mvn -B post-site

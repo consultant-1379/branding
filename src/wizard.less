@@ -1,0 +1,409 @@
+@import "common/mixins";
+@import "common/variables";
+@import "common/colors";
+
+.hidden() {
+    visibility: hidden;
+    pointer-events: none;
+    touch-action: none;
+}
+
+.ebWizard {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    //----------------------------------------------------------
+    //----------------------------------------------------------
+    // Direct modifiers
+
+    &_firstStep {
+        .ebWizard-headerStepSelectPrevious {
+            .hidden();
+        }
+
+        .ebWizard-footerBtnPrevious {
+            display: none;
+        }
+    }
+
+    &_lastStep {
+        .ebWizard-headerStepSelectNext {
+            .hidden();
+        }
+        .ebWizard-footerBtnNext {
+            display: none;
+        }
+
+        .ebWizard-footerBtnFinish {
+            display: inline-block;
+            visibility: visible;
+            pointer-events: inherit;
+            touch-action: inherit;
+        }
+    }
+
+    &-footerBtnFinish {
+        display: none;
+    }
+
+    //----------------------------------------------------------
+
+    &-headerStepSelect,
+    &-stepList,
+    &-bodyContainer,
+    &-footer {
+        position: relative;
+        width: 100%;
+    }
+
+    &-headerStepSelect,
+    &-footer {
+        height: 36px;
+    }
+
+    &-headerStepSelect {
+        position: relative;
+
+        &Previous,
+        &Next,
+        &DropBtn,
+        .ebWizard-step {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &Previous,
+        &Next,
+        &DropBtn {
+            width: 24px;
+            height: 24px;
+            margin: 2px 12px;
+            border-radius: 100%;
+            background: no-repeat center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+
+        &Previous,
+        &Next {
+            background-color: #33badd;
+
+            &_disabled {
+                background-color: #bbbbbb;
+                cursor: default;
+            }
+            &_hidden {
+                .hidden();
+            }
+        }
+
+        &Previous {
+            margin-left: 0;
+            background-image: url('../resources/16px/ArrowLeft_white_16px.svg');
+        }
+        &Next {
+            margin-right: 0;
+            background-image: url('../resources/16px/ArrowRightSmall_white_16px.svg');
+        }
+
+        &DropBtn {
+            margin-left: -36px;
+            background-color: @white;
+            background-image: url('../resources/16px/ArrowDownSmall_blue_16px.svg');
+        }
+
+        .ebWizard-step {
+            width: calc(~"100% - 72px");
+        }
+
+        @media (min-width: @screen-tablet-min) {
+            &,
+            &DropBtn {
+                display: none;
+            }
+        }
+    }
+
+    &-step {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: 3px;
+        padding: 4px 34px 4px 6px;
+        cursor: pointer;
+        .applyBoxSizing(border-box);
+
+        //----------------------------------------
+        &_disabled {
+            color: #999999;
+            cursor: default;
+        }
+        &_current {
+            color: @white;
+            background-color: #33badd;
+            cursor: default;
+        }
+        &_valid {
+            &:after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                content: '';
+                right: 0;
+                width: 16px;
+                margin-right: 12px;
+                background: url('../resources/16px/simple_green_tick.svg') no-repeat center;
+                background-size: 16px;
+            }
+        }
+
+        @media (min-width: @screen-tablet-min) {
+            max-width: 200px;
+        }
+
+        //----------------------------------------
+        &Title {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(~"100% - 38px");
+            max-height: 100%;
+        }
+        &Number {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 2px 8px 2px 6px;
+            width: 24px;
+            height: 24px;
+            color: @white;
+            text-align: center;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
+            border-radius: 100%;
+            background-color: #33badd;
+        }
+        //----------------------------------------
+        &_current .ebWizard-stepNumber {
+            color: #33badd;
+            background-color: @white;
+        }
+        &_disabled .ebWizard-stepNumber {
+            background-color: #bbbbbb;
+        }
+        //--------------------------------------------------------------
+        //--------------------------------------------------------------
+
+        &List {
+            position: absolute;
+            display: none;
+            left: 0;
+            right: 0;
+            width: calc(~"100% - 72px");
+            list-style: none;
+            margin: 12px auto 0;
+            padding: 0 12px;
+            overflow: auto;
+
+            z-index: 1500;
+            max-height: calc(~"100% - 80px");
+
+            background-color: @white;
+            border: lighten(@black, 75%) solid 1px;
+
+            .applyBoxShadow(~'0 0 5px 0', fade(@black, 20%));
+            .applyBorderRadius(3px);
+            .applyBoxSizing(~'border-box');
+
+
+            &_open {
+                display: block;
+            }
+
+            @media (min-width: @screen-tablet-min) {
+                width: 200px;
+                max-height: calc(~"100% - 49px");
+                float: left;
+                display: block;
+                position: relative;
+                left: inherit;
+                right: inherit;
+                margin: 0;
+                padding: 0;
+                background-color: @white;
+                border: none;
+
+                z-index: inherit;
+
+                .applyBoxShadow(none);
+                .applyBorderRadius(0);
+            }
+
+            &Item {
+                position: relative;
+                display: block;
+                margin: 12px 0;
+                width: 100%;
+
+                //----------------------------------------
+                &:nth-child(1) .ebWizard-stepNumber:before {
+                    content: '1';
+                }
+                &:nth-child(2) .ebWizard-stepNumber:before {
+                    content: '2';
+                }
+                &:nth-child(3) .ebWizard-stepNumber:before {
+                    content: '3';
+                }
+                &:nth-child(4) .ebWizard-stepNumber:before {
+                    content: '4';
+                }
+                &:nth-child(5) .ebWizard-stepNumber:before {
+                    content: '5';
+                }
+                &:nth-child(6) .ebWizard-stepNumber:before {
+                    content: '6';
+                }
+                &:nth-child(7) .ebWizard-stepNumber:before {
+                    content: '7';
+                }
+                &:nth-child(8) .ebWizard-stepNumber:before {
+                    content: '8';
+                }
+                &:nth-child(9) .ebWizard-stepNumber:before {
+                    content: '9';
+                }
+            }
+        }
+    }
+
+
+    &_horizontal &-step {
+        @media (min-width: @screen-desktop-min) {
+            &List {
+                width: 100%;
+                float: none;
+                height: 36px;
+
+                &Item:first-child:nth-last-child(1) {
+                    width: 100%;
+                }
+
+                &Item:first-child:nth-last-child(2),
+                &Item:first-child:nth-last-child(2) ~ .ebWizard-stepListItem {
+                    width: 50%;
+                }
+
+                &Item:first-child:nth-last-child(3),
+                &Item:first-child:nth-last-child(3) ~ .ebWizard-stepListItem {
+                    width: 33.3333%;
+                }
+
+                &Item:first-child:nth-last-child(4),
+                &Item:first-child:nth-last-child(4) ~ .ebWizard-stepListItem {
+                    width: 25%;
+                }
+
+                &Item:first-child:nth-last-child(5),
+                &Item:first-child:nth-last-child(5) ~ .ebWizard-stepListItem {
+                    width: 20%;
+                }
+
+                &Item {
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 100%;
+                    margin: 0;
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        content: '';
+                    }
+
+                    &:before {
+                        left: 0;
+                        border-right: 2px solid #E6E6E6;
+                    }
+
+                    &:first-child:before,
+                    &.ebWizard-step_current:before,
+                    &.ebWizard-step_current + .ebWizard-stepListItem:before {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &_horizontal &-bodyContainer {
+        @media (min-width: @screen-desktop-min) {
+            max-height: calc(~"100% - 110px");
+            width: auto;
+            float: none;
+            margin-left: 0;
+        }
+    }
+
+    &-bodyContainer {
+        max-height: calc(~"100% - 110px");
+        margin: 12px 0;
+        overflow: auto;
+        .applyBoxSizing(border-box);
+        padding-right: 12px;
+
+        @media (min-width: @screen-tablet-min) {
+            width: calc(~"100% - 224px");
+            max-height: calc(~"100% - 74px");
+            float: left;
+            clear: right;
+            margin-left: 24px;
+        }
+    }
+
+    &-footer {
+        border-top: 1px solid #E6E6E6;
+        clear: left;
+        margin-bottom: 12px;
+
+        &CommandList {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: 12px 0 0;
+            padding: 0;
+            list-style: none;
+
+            &Item {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+                padding: 0;
+                line-height: 2.4rem;
+                margin: 0 12px;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: -12px;
+                    content: '';
+                    border-right: 1px solid #E6E6E6;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

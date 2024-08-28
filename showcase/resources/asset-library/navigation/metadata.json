@@ -1,0 +1,24 @@
+{
+    "title": "Navigation",
+    "assetId": "navigation",
+    "status": "none",
+    "items": [
+        {
+            "file": "breadcrumbs/breadcrumb.html",
+            "anchorName": "breadcrumb",
+            "anchorTitle": "Breadcrumb",
+            "status": "baselined"
+        },
+        {
+            "file": "breadcrumbs/breadcrumbWithNavigation.html",
+            "anchorName": "breadcrumbWithNav",
+            "status": "baselined"
+        },
+        {
+            "file": "pagination.html",
+            "anchorName": "pagination",
+            "anchorTitle": "Pagination",
+            "status": "beta"
+        }
+    ]
+}
